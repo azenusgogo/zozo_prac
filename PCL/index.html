@@ -1,0 +1,964 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    <meta name="descriptions" content="季度达人">
+    <meta name="keywords" content="晒照片,发点评,拿大奖">
+    <title>晒照片 发点评 拿大奖</title>
+    <link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+    
+<!--[if IE 6]>
+        <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+        <script type="text/javascript">DD_belatedPNG.fix('#suspension,#banner_inner,#left,#right,.n_logo,.stat_logo,.p_photo,.winny_logo,.tencent,.phoneItem,.pre_spot,.cur_spot,.pro_spot,.padet.png');
+        </script>
+<![endif]-->
+
+    <style type="text/css">
+    .fs_13{font-size:13px;}
+    .fs_14{font-size:14px;}
+    .fs_16{font-size:16px;}
+    .fs_25{font-size:25.24px;}
+    .fs_27{font-size:27px;}
+    .simsun {font-family:SimSun;}
+    .yahei {font-family:Microsoft YaHei;}
+    .rel {
+     position: relative;
+    }
+    .abs {
+    position: absolute;
+    }
+    .clr_fix {
+    clear: both;
+    }
+    .clearfix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+    img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{display:none;}
+     #header {
+    height:41px;
+    background:url("img/header_bg.png") repeat scroll 0 0 transparent;
+    }
+    .header_inner {
+    margin:0 auto;
+    width:980px;
+    height:41px;
+    }
+    .header_logo {
+    width:92px;
+    height:41px;
+    display:inline-block;
+    background:url("img/map_logo.png") no-repeat scroll 0 0 transparent;
+    }
+    #banner {
+    height:353px;
+    width:100%;
+    background-color:#8ed4de;
+    }
+    #banner_inner {
+    height:353px;
+    width:980px;
+    margin:0 auto;
+    background:url(img/banner.png) no-repeat scroll 0 0 transparent;
+    }
+    .download {
+    display:inline-block;
+    width:142px;
+    height:30px;
+    top:109px;
+    left:334px;
+    }
+    .getPrize {
+    display:inline-block;
+    width:142px;
+    height:30px;
+    left:487px;
+    top:109px;
+    }
+    #activity {
+    width:100%;
+    height:607px;
+    background-color:#fec88e;
+    }
+    #act_inner {
+    width:980px;
+    height:100%;
+    margin:0 auto;
+    }
+    #prize_wrapper {
+    width:698px;
+    height:100%;
+    }
+    #tabs {
+    width:980px;
+    height:82px;
+    margin:0 auto;
+    border-bottom:3px dashed #CF8429;
+
+    }
+    #section2 {
+    height:559px;
+    width:100%;   
+    background-color:#e56250;
+    }
+    #section3 {
+    height:294px;/*459px;*/
+    width:100%;   
+    background-color:#55b8a9;
+    }
+    #section4 {
+    height:498px;
+    width:100%;   
+    background-color:#6e60a4;
+    }
+    .title_outer {
+    height:100px;
+    width:980px;
+    margin:0 auto;
+    }
+    .title_inner {
+    width:100%;
+    height:49px;
+    border-bottom:1px solid #ffffff;
+    }
+    .title_mark {
+    background-color: #E56250;
+    color: #FFFFFF;
+    font-size: 24px;
+    height: 100px;
+    left: 372px;
+    line-height: 100px;
+    margin: 0 auto;
+    text-align: center;
+    top: 0;
+    width: 233px;
+    }
+    .phoneList {
+    width:980px;
+    height:459px;
+    margin:0 auto;
+    }
+    .phoneItem {
+    width:225px;
+    height:416px;
+    float:left;
+    margin-left:25px;
+    }
+    .activity_rule {
+    width:980px;
+    line-height:1.6em;
+    text-indent:36px;
+    color:#ffffff;
+    margin:0 auto;
+    font-size:16px;
+    }
+ /*   #slide {
+    width:980px;
+    margin:0 auto;
+    height:192px;
+    }*/
+    #slide_wrap {
+    width:928px;
+    margin:0 auto;
+    height:192px;
+    overflow:hidden;
+    font-size:16px;
+    color:#ffffff;
+    }
+   #slide_wrap img {
+    border:4px solid #ffffff;
+    }
+    #slide_wrap ul {  
+	height:192px;
+	overflow:hidden;
+
+    }
+    #slide_wrap ul li {
+    float:left;
+    overflow:hidden;
+    width:232px;
+    height:192px;
+    text-align:center;
+    }
+    .btn{
+    width:20px;
+    height:40px;
+    cursor:pointer;
+    }
+    #left {top:156px;background:url("img/icons.png") no-repeat scroll -97px -351px transparent}
+    #right {top:156px;right:0px;background:url(img/icons.png) no-repeat scroll -97px -305px transparent;}
+    #tail {
+    width:980px;
+    margin:24px auto 0;
+    height:90px;
+    background:url(img/tail.jpg) no-repeat scroll 0 0 transparent; 
+    display:block;   
+    }
+    #footer {
+    width:980px;
+    margin:34px auto 0;
+    font-size:12px;
+    text-align:center;
+    color:#ffffff;
+    }
+    #share1,#share2 {
+    top:103px;
+    right:0px;
+    width:268px;
+    height:468px;
+    border-radius:6px;
+    background-color:#a13b2d;
+    }
+    .front {
+    width:268px;
+    height:454px;
+    border-radius:6px;
+    background-color:#e56250;
+    }
+    .share_gain {
+    width:217px;
+    height:277px;
+    top:43px;
+    left:25px;
+    border-top:1px solid #fec88e;
+    border-bottom:1px solid #fec88e;
+    }
+    .share_gain2 {
+    width:217px;
+    height:245px;
+    top:43px;
+    left:25px;
+    border-top:1px solid #fec88e;
+    border-bottom:1px solid #fec88e;
+    }
+    .share_gain span,.share_gain2 span {
+    background-color: #E56250;
+    color: #FEC88E;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    width: 80px;
+    }
+    .share1_t1 {
+    left: 72px;
+    top: -14px;
+    }
+    .share1_t2 {
+    bottom: -12px;
+    left: 72px;
+    }
+    .share2_t2 {
+    left: 72px;
+    top: 232px;
+    }
+    .winny {
+    background-color: #FFFFFF;
+    height: 112px;
+    margin: 22px auto 0;
+    padding-top: 8px;
+    text-align: center;
+    width: 190px;
+    }
+    .winny_logo {
+    background: url("img/icons.png") no-repeat scroll 0 -200px transparent;
+    display: inline-block;
+    height: 104px;
+    margin: 0 auto;
+    width: 118px;
+    }
+    .act_desc {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.4em;
+    margin-top: 14px;
+    text-align: center;
+    }
+    .joinus {
+    width:176px;
+    height:27px;
+    line-height:27px;
+    margin:0 auto;
+    padding-left:42px;
+    background-color:#b54737;
+    }
+    .welcome {
+    width:218px;
+    height:27px;
+    line-height:27px;
+    text-align:center;
+    margin:0 auto;
+     background-color:#b54737;
+    }
+    .contact {
+    bottom:40px;
+    left:26px;
+    color:#ffffff;
+    }
+    .tencent {
+    background: url("img/icons.png") no-repeat scroll 0 -313px transparent;
+    float: left;
+    height: 24px;
+    margin-left: -21px;
+    margin-right: 10px;
+    width: 22px;
+    }
+    .share {
+    color: #FFE396;
+    left: 48px;
+    position: absolute;
+    top: 246px;
+    }
+    .marq {    
+    background-color: #E97262;
+    border-radius: 6px 6px 6px 6px;
+    bottom: 28px;
+    color: #f9dbd8;
+    font-size: 14px;
+    height: 130px;
+    left: 21px;
+    padding-left: 8px;
+    width: 220px;
+    }
+    .jiu_userTxt li .blue{
+    width:100px;
+    display:inline-block;
+    }
+    .jiu_userTxt li .orange {
+    margin-left:10px;
+    }
+    #tabs ul {
+    top:22px;
+    position:absolute;
+    }
+    #tabs ul li {
+    display:inline;
+    float:left;
+    margin-left:106px;
+    }
+    .tab_item {
+    width:126px;
+    height:70px;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    }
+
+    .pre_week {
+    height: 39px;
+    width: 126px;
+    background-color:#999999;
+    color:#c2c2c2;
+    box-shadow:3px 4px 0 #666666;
+    }
+    .cur_week {
+    height: 39px;
+    width: 126px;
+    background-color:#e56250;
+    color:#fec88e;
+    box-shadow:3px 4px 0 #A13B2D;
+    }
+    .pro_week {
+    height: 39px;
+    width: 126px;
+    background-color:#cf8429;
+    color:#fec88e;
+    box-shadow:3px 4px 0 #955a13;
+    }
+    
+    .pre_indicator,.pro_indicator {
+    background: url("img/icons.png") no-repeat scroll 0 -186px transparent;
+    height: 14px;
+    left: 57px;
+    top: 39px;
+    visibility: hidden;
+    width: 11px;
+    display:inline;
+    }
+    .cur_indicator {
+   background: url("img/icons.png") no-repeat scroll 0 -186px transparent;
+    height: 14px;
+    left: 57px;
+    visibility: visible;
+    width: 11px;
+    }
+    
+    .pre_spot {
+    background: url("img/icons.png") repeat scroll 0 -142px transparent;
+    border-radius: 50% 50% 50% 50%;
+    bottom: 4px;
+    height: 10px;
+    left: 59px;
+    width: 10px;
+    }
+    .cur_spot {
+    background: url("img/icons.png") repeat scroll 0 -125px transparent;
+    bottom: 2px;
+    height: 16px;
+    left: 55px;
+    width: 16px;
+    }
+    .pro_spot {
+    background: url("img/icons.png") repeat scroll 0 -155px transparent;
+    border-radius: 50% 50% 50% 50%;
+    bottom: 4px;
+    height:10px;
+    left: 59px;
+    width:10px;
+    display:inline;
+    }
+    .notice {
+    width:670px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    background-color:#e56250;
+    text-indent:60px;
+    color:#fec88e;
+    margin:20px auto 0;
+    border-radius:8px;
+    font-weight:bold;
+    }
+    .n_logo {
+    background: url("img/icons.png") no-repeat scroll 0 -365px transparent;
+    height: 30px;
+    left: 86px;
+    top: 0;
+    width: 20px;
+    }
+    .prize_box {
+    width:692px;
+    height:441px;
+    overflow:hidden;
+    position:relative;
+    }
+    .prizeList,#week1,#week2,#week3,#week4 {
+    width:692px;
+    height:441px;
+    }
+    .prizeList li {
+    display:inline;
+    float:left;
+    }
+    .comment_item {
+    width:346px;
+    height:130px;
+    float:left;
+    margin-top:15px;
+    display:inline;
+    }
+    .comment_item .p_photo {
+    display:inline-block;
+    width:130px;
+    height:130px;
+    margin-left:16px;
+    }
+    .prize_info {
+    height: auto;
+    position: absolute;
+    right: 10px;
+    top: 26px;
+    width: 182px;
+    color:#ab6611;
+    }
+    .stat {
+    height: 17px;
+    line-height: 17px;
+    padding-left: 36px;
+    position: absolute;
+    top: 88px;
+    width: 156px;  
+    color:#E56250;
+    font-weight:bold;
+    }
+    .stat_logo {
+   background: url("img/icons.png") no-repeat scroll 0 -345px transparent;
+    height: 17px;
+    left: 155px;
+    top: 88px;
+    width: 22px;
+    }
+    #suspension {
+    background: url("img/icons.png") no-repeat scroll 0 0 transparent;
+    position: fixed;
+    top:272px;
+    left: 50%;
+    margin-left: 490px;
+    width:98px;
+    height:122px;
+    _position:absolute;
+   _top:expression(eval(document.documentElement.scrollTop+272));
+    }
+    </style>
+</head>
+    <body>
+           
+          <div id="suspension" class="fixed"></div>    
+          <div id="header">
+		       <div class="header_inner relative">
+		          <a class="header_logo" href="http://map.baidu.com/" target="_blank"></a>
+		       </div>
+		 </div> 
+		 <div id="banner">
+		      <div id="banner_inner" class="rel">
+		         <a class="download abs" href="http://shouji.baidu.com/map/" target="_blank"></a><a  href="#activity" class="getPrize abs"></a>         
+		      </div>
+		 </div>	
+		 	    
+		 <div id="activity">
+		   <div id="act_inner" class="rel">
+		       <div id="prize_wrapper">
+		          <div id="tabs">
+		            <ul class="slide_num">
+		              <li style="margin-left:77px;">
+			              <div id="tab1" class="tab_item rel">
+			                 <div class="week"><p>第一周</p><p class="time">7.29—8.4</p></div>
+			                 <p class="indicator abs"></p>
+			                 <p class="spot abs"></p>
+			              </div>
+		              </li>
+		              <li>
+			              <div id="tab2" class="tab_item rel">
+			                <div class="week"><p>第二周</p><p class="time">8.5—8.11</p></div>
+			                <p class="indicator abs"></p>
+			                 <p class="spot abs"></p>
+			              </div>
+		              </li>
+		              <li>
+			              <div id="tab3" class="tab_item rel">
+			                <div class="week"><p>第三周</p><p class="time">8.12—8.18</p></div>
+			                <p class="indicator abs"></p>
+			                 <p class="spot abs"></p>
+			              </div>
+		              </li>
+		              <li>
+			              <div id="tab4" class="tab_item rel">
+			                <div class="week"><p>第四周</p><p class="time">8.19—8.25</p></div>
+			                <p class="indicator abs"></p>
+			                 <p class="spot abs"></p>
+			              </div>
+		              </li>
+		              <br class="clr_fix" />
+		            </ul>
+		          </div>
+		          <div class="notice fs_14 rel"><span class="n_logo abs"></span>活动当周在百度手机地图内发表一条商户点评或图片即有机会获得百度熊一个。</div>
+		          
+		          <div id="prize_slide" class="prize_box">
+		              <ul class="prizeList">
+		                 <li>
+			                 <div id="week1">
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em style="background:url(img/padet.png) no-repeat scroll 0 0 transparent;" class="p_photo"></em>
+			                       <span class="prize_info">发表30条点评或商户图片即可获得鼠标垫一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -130px 0 transparent;"></em>
+			                       <span class="prize_info">发表80条点评或商户图片即可获得百度钱包一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -260px 0 transparent;"></em>
+			                       <span class="prize_info">发表150条点评或商户图片即可获得百度U盘一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -396px 0 transparent;"></em>
+			                       <span class="prize_info">发表300条点评或商户图片即可获得百度背包一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -530px 0 transparent;"></em>
+			                       <span class="prize_info">发表900条点评或商户图片即可获得拍立得一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll 0 -262px transparent;"></em>
+			                       <span class="prize_info">活动当月在百度手机地图内发表点评或商户图片最多的用户即可获得IPADMINI一台。不低于1000条。</span>
+			                       <!-- <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span> -->
+			                    </div>
+			                 </div>
+			             </li>
+			             
+			             <li>
+			                 <div id="week2">
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll 0 -130px transparent;"></em>
+			                       <span class="prize_info">发表30条点评或商户图片即可获得手机支架一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -130px -131px transparent;"></em>
+			                       <span class="发表80条点评或商户图片即可获得购物袋一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -260px -131px transparent;"></em>
+			                       <span class="prize_info">发表150条点评或商户图片即可获得百度T恤一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -396px -131px transparent;"></em>
+			                       <span class="prize_info">发表300条点评或商户图片即可获得皮具四件套一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -530px 0 transparent;"></em>
+			                       <span class="prize_info">发表900条点评或商户图片即可获得拍立得一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll 0 -262px transparent;"></em>
+			                       <span class="prize_info">活动当月在百度手机地图内发表点评或商户图片最多的用户即可获得IPADMINI一台。不低于1000条。</span>
+			                       <!-- <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span> -->
+			                    </div>
+			                 </div>
+			             </li>
+			             
+			             
+			             <li>
+			                 <div id="week3">
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/padet.png) no-repeat scroll 0 0 transparent;"></em>
+			                       <span class="prize_info">发表30条点评或商户图片即可获得鼠标垫一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -530px -132px transparent;"></em>
+			                       <span class="prize_info">发表80条点评或商户图片即可获得百度熊一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -260px 0 transparent;"></em>
+			                       <span class="prize_info">发表150条点评或商户图片即可获得百度U盘一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -396px 0 transparent;"></em>
+			                       <span class="prize_info">发表300条点评或商户图片即可获得百度背包一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -530px 0 transparent;"></em>
+			                       <span class="prize_info">发表900条点评或商户图片即可获得拍立得一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll 0 -262px transparent;"></em>
+			                       <span class="prize_info">活动当月在百度手机地图内发表点评或商户图片最多的用户即可获得IPADMINI一台。不低于1000条。</span>
+			                       <!-- <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span> -->
+			                    </div>
+			                 </div>
+			             </li>
+			             
+			             
+			             <li>
+			                 <div id="week4">
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll 0 -131px transparent;"></em>
+			                       <span class="prize_info">发表30条点评或商户图片即可获得手机支架一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -530px -132px transparent;"></em>
+			                       <span class="prize_info">发表80条点评或商户图片即可获得百度熊一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -260px -131px transparent;"></em>
+			                       <span class="prize_info">发表150条点评或商户图片即可获得百度T恤一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -396px -131px transparent;"></em>
+			                       <span class="prize_info">发表300条点评或商户图片即可获得皮具四件套一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel pp">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll -530px 0 transparent;"></em>
+			                       <span class="prize_info">发表900条点评或商户图片即可获得拍立得一个！</span>
+			                       <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span>
+			                    </div>
+			                    
+			                    <div class="comment_item fs_14 rel">
+			                       <em class="p_photo"  style="background:url(img/items.png) no-repeat scroll 0 -262px transparent;"></em>
+			                       <span class="prize_info">活动当月在百度手机地图内发表点评或商户图片最多的用户即可获得IPADMINI一台。不低于1000条。</span>
+			                       <!-- <span class="stat">已送出<span class="send"></span>个，还剩<span class="remain"></span>个</span><span class="stat_logo abs"></span> -->
+			                    </div>
+			                 </div>
+			             </li>
+		              </ul>
+		          </div>
+		       </div>
+		       <div id="share1" class="abs">
+		          <div class="front" class="rel">
+		            <div class="share_gain abs">
+		               <div class="winny"><em class="winny_logo"></em></div>
+		               <p class="act_desc">
+			                   活动期间转发活动微博<br/>
+	                              即有机会获得百度熊一个
+		               </p>
+		              
+		               <span class="share1_t1 abs">分享有奖</span>
+		               <span class="share1_t2 abs">加入我们</span>
+		            </div>
+		            
+		            <div class="share">
+                           <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'活动期间转发活动微博，即有机会获得百度熊一个','pic':'http://map.baidu.com/zt/suishoupai2013/img/winny.jpg','url':'http://map.baidu.com/zt/suishoupai2013'}"><span class="bds_more">我要拿奖：</span><a class="bds_qzone" id="f_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" id="f_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" id="f_tqq" title="分享到腾讯微博" href="#"></a> <a class="bds_renren" id="f_renren" title="分享到人人网" href="#"></a></div>
+                    </div>
+                    
+		            <div class="contact abs">
+			            <div class="joinus fs_14"><span class="tencent"></span>活动QQ群：102855618</div>
+			            <div class="welcome fs_16" style="margin-top:6px;">欢迎加入百度地图QQ群!</div>
+		            </div>
+		            		             
+		          </div>
+		       </div>
+		       
+		       <div id="share2" class="abs">
+		          <div class="front" class="rel">
+		            <div class="share_gain2 abs">
+		               <div class="winny"><em class="winny_logo"></em></div>
+		               <p class="act_desc">
+			                   活动QQ群：102855618<br/>
+	                              欢迎加入百度地图QQ群!
+		               </p>
+		              
+		               <span class="share1_t1 abs">分享有奖</span>
+		               <span class="share2_t2 abs">获奖用户</span>
+		            </div>
+		            
+		            <div class="share">
+                           <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'活动期间转发活动微博，即有机会获得百度熊一个','pic':'http://map.baidu.com/zt/suishoupai2013/img/winny.jpg','url':'http://map.baidu.com/zt/suishoupai2013'}"><span class="bds_more">我要拿奖：</span><a class="bds_qzone" id="f_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" id="f_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" id="f_tqq" title="分享到腾讯微博" href="#"></a> <a class="bds_renren" id="f_renren" title="分享到人人网" href="#"></a></div>
+                    </div>
+                    
+		            <marquee direction="up" class="marq abs" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2">
+			              <ul style="list-style:none;" class="jiu_userTxt">
+							   <li><span class="blue">xiaoboluoxbl</span> 获得 <span class="orange">百度熊一个</li>
+							   <li><span class="blue">lhmzxg0722</span> 获得 <span class="orange">百度熊一个</span></li>
+							   <li><span class="blue">huvinson</span> 获得 <span class="orange">百度熊一个</span></li>
+							   <li><span class="blue">whcgood</span> 获得 <span class="orange">百度熊一个</span></li>							  
+			              </ul>
+                   </marquee>  
+		            		             
+		          </div>
+		       </div>
+		   </div>
+		 </div>
+		
+		 <div id="section2">
+		     <div class="title_outer yahei rel">
+		        <div class="title_inner"></div>
+		        <span class="title_mark abs">我要参与(<a style="text-decoration:none;color:#ffffff;" target="_blank" href="http://shouji.baidu.com/map/">先下载哦</a>)</span>
+		     </div>
+		     
+		     <div class="phoneList clearfix">
+		        <div class="phoneItem" style="background:url(img/cellphones.png) no-repeat scroll 0 0 transparent;margin-left:0;"></div>
+		        <div class="phoneItem" style="background:url(img/cellphones.png) no-repeat scroll -225px 0 transparent;"></div>
+		        <div class="phoneItem" style="background:url(img/cellphones.png) no-repeat scroll -450px 0 transparent;"></div>
+		        <div class="phoneItem" style="background:url(img/cellphones.png) no-repeat scroll -675px 0 transparent;"></div>
+		        <br class="clr_fix"/>
+		     </div>
+		 </div>
+		 
+		 <div id="section3" class="yahei">
+		     <div class="title_outer rel">
+		        <div class="title_inner"></div>
+		        <span class="title_mark abs" style="background-color:#55b8a9">活动规则</span>
+		     </div>
+		     <!--<p class="activity_rule">1、&nbsp;活动时间：2013年7月29日——2013年8月25日24：00结束，共四周，分四个阶段进行。</p>		     
+		     <p class="activity_rule">2、&nbsp;参与者必须为百度手机地图会员，所发表的内容必须为商户的点评或照片。</p>
+		     <p class="activity_rule">3、&nbsp;完成奖品所需要的点评数即可具备获奖资格，按奖品数量，取完成时间靠前者，活动统计时间为每周一的00:00起。</p>
+		     <p class="activity_rule">4、&nbsp;得奖者名单将在百度手机地图“消息中心”内或本网站公布，得奖者必须于收到通知后7日内提供指定个人资料（如姓名、地址、</p><p class="activity_rule" style="text-indent: 66px;">电话），以便百度地图发放自提礼品并核实身份之用，否则将视作放弃领奖。</p>
+		     <p class="activity_rule">5、&nbsp;所有发表的点评或照片不可含有任何违法、重复或抄袭内容，一经发现立即注销得奖资格，百度地图保留刊登及删除点评和照片的</p><p class="activity_rule" style="text-indent: 66px;">权利。</p>
+		     <p class="activity_rule">6、&nbsp;领取奖品方式：奖品款式、颜色随机发放。百度地图包邮但不承担快递过程中任何风险。（请保证手机号码有效并且是本人的，百</p><p class="activity_rule" style="text-indent: 66px;">度地图包邮仅限中国大陆地区）。</p>
+		     <p class="activity_rule">7、&nbsp;每人不限参加次数，但每周只可获赠一份奖品。</p>
+		     <p class="activity_rule">8、&nbsp;所有奖品不得转换或兑换现金，百度地图保留更改奖品的权利，恕不另行通知。</p>
+		     <p class="activity_rule">9、&nbsp;百度地图不负责有关奖品及其相关服务之责任，百度地图拥有此次活动最终解释权。</p>
+		     <p class="activity_rule" style="text-indent: 30px;">10、详情可进入百度地图活动QQ群250481254。</p>-->
+		     <p class="activity_rule">1、&nbsp;参与活动的用户请加入QQ群：102855618，咨询相关事宜，活动结束后将统一收集个人信息并发放礼品。</p>		     
+		     <p class="activity_rule">2、&nbsp;下载/登录百度地图客户端，点击“附近”查看周围美食、酒店等找到想要点评的商户发表评论或上传图片。</p>
+		     <p class="activity_rule">3、&nbsp;完成奖品所需要的点评数即可具备获奖资格，按奖品数量，取完成时间靠前者。统计时间为周一至周日。</p>
+		     <p class="activity_rule">4、&nbsp;所有点评、传图必须为有效信息。无效字符、无关图片、重复输入等均属无效。</p>
+		     <p class="activity_rule">5、&nbsp;参与本活动还可额外获得积分并且兑换礼品，本活动只针对三个月内从未在百度地图参与过评论的用户。</p>
+		     <p class="activity_rule">6、&nbsp;本活动最终解释权归百度地图所有。</p>
+		 </div>
+		 
+		 <div id="section4" class="yahei">
+		     <div style="width:980px;height:498px;margin:0 auto;" class="outer rel">
+		        <div class="title_outer rel">
+			        <div class="title_inner"></div>
+			        <span class="title_mark abs" style="background-color:#6e60a4">热评区</span>
+		        </div>	
+		     	     		     
+		        <div id="slide_wrap" class="rel">
+			       <ul class="abs">
+			            <li><img src="img/8.jpg" /><p>日本料理</p></li>
+				        <li><img src="img/9.jpg" /><p>好乐迪</p></li>
+				        <li><img src="img/10.jpg" /><p>南国饭店</p></li>
+				        <li><img src="img/11.jpg" /><p>丹凤大酒店</p></li>
+				    	<li><img src="img/1.jpg" /><p>荔枝公园</p></li>
+				        <li><img src="img/2.jpg" /><p>瑞麟宾馆</p></li>
+				        <li><img src="img/3.jpg" /><p>三元牛肉火锅</p></li>
+				        <li><img src="img/4.jpg" /><p>味多美</p></li>
+				        <li><img src="img/5.jpg" /><p>湘文府</p></li>
+				        <li><img src="img/6.jpg" /><p>翔韵妩媚ktv</p></li>
+				        <li><img src="img/7.jpg" /><p>永正商务</p></li>				           
+	               </ul>
+	                              
+		          </div>
+		          <span  id="left" class="abs btn"></span>
+                  <span  id="right" class="abs btn"></span>
+                  <a href="http://www.meishichina.com/#utm_source=partner_baidumap_20130729" target="_blank" id="tail"></a>
+                  <div id="footer">©2013&nbsp;Baidu &nbsp;<a href="http://www.baidu.com/duty/" style="text-decoration:none;color:#ffffff;">使用百度前必读</a>&nbsp;&nbsp;京ICP证030173号</div>
+		     </div>	
+		     	     		   
+		 </div>
+   
+    <!-- <iframe id="hook" style="visibility:hidden;background-color:#6E60A4;color:#6E60A4;" width="100%" height="5px"></iframe> -->
+    <script type="text/javascript" src="js/jquery.js"></script>    
+    <script type="text/javascript" src="js/hslide.js?v=1.0"></script>
+    <script type="text/javascript" src="js/uislide.js?v=1.0"></script>
+    
+    <script type="text/javascript">
+      var prod_url = "http://map.baidu.com/maps/interfaces/photocomment/get_data_by_week";           
+      $(function(){
+    	  $("#slide_wrap").vslide({
+  			left_bt:"left",
+  			right_bt:"right",
+  			auto:true
+  		    });
+
+    	  $.ajax({
+  			  url:prod_url,
+  			  type:"get",
+  	          dataType:"jsonp", 
+  	          jsonp:"callback",
+  	          success:function(re){
+  	        	var embedData = function(data,k){
+  				  for(var i=0;i<k;i++){
+  					  $("#week"+(i+1)).find(".pp").each(function(wi,wv){
+  						 $(wv).find(".send").html(data["week"+(i+1)][wi].out);
+  						 $(wv).find(".remain").html(data["week"+(i+1)][wi].residue);
+  					  })
+  				  }
+  			  };
+
+  			  var   tab1 = $("#tab1"),   					      
+					      tab2 = $("#tab2"),
+					      tab3 = $("#tab3"),
+					      tab4 = $("#tab4");
+  			  if(re.week==="1"){
+  				  $("#share1").show();
+  				  $("#share2").hide();
+  				  //当前tab样式变化为：   				 
+		    		       tab1.find(".week").addClass("cur_week");
+		    		       tab1.find(".indicator").addClass("cur_indicator");
+		    		       tab1.find(".spot").addClass("cur_spot");
+  				       tab1.attr("clickable","1");
+  				  //其他tab样式变化为 ：
+  				       $("#tab2,#tab3,#tab4").each(function(i,v){
+  				    	   $(v).attr("clickable","0").find(".week").addClass("pro_week").next().addClass("pro_indicator").next().addClass("pro_spot");
+  				       });
+  				  //组装数据
+  				  embedData(re,Number(re.week));     
+  			  }
+  			  else{
+  				  if(re.week==="2"){
+  					     //当前tab样式变化为：
+  					      tab2.find(".week").addClass("cur_week");
+  					      tab2.find(".indicator").addClass("cur_indicator");
+  					      tab2.find(".spot").addClass("cur_spot");
+  					      $("#tab1,#tab2").attr("clickable","1");
+  					     //其他tab样式变化为 ：
+  					      tab1.find(".week").addClass("pre_week");
+  					      tab1.find(".indicator").addClass("pre_indicator");
+  					      tab1.find(".spot").addClass("pre_spot");
+  					      tab1.find(".time").html("(已结束)");
+  					      $("#tab3,#tab4").each(function(i,v){
+  					    	  $(v).attr("clickable","0").find(".week").addClass("pro_week").next().addClass("pro_indicator").next().addClass("pro_spot");
+  					      });
+  					    //组装数据
+  	    				  embedData(re,Number(re.week));
+  	    				  tab2.trigger("click");
+      			  }
+      			  if(re.week==="3"){
+      				//当前tab样式变化为：
+      				  tab3.find(".week").addClass("cur_week");
+      				  tab3.find(".indicator").addClass("cur_indicator");
+      				  tab3.find(".spot").addClass("cur_spot");
+					      $(tab1,tab2,tab3).attr("clickable","1");
+					    //其他tab样式变化为 ：					     
+					      tab4.attr("clickable","0").find(".week").addClass("pro_week").next().addClass("pro_indicator").next().addClass("pro_spot");
+					      
+					      $("#tab1,#tab2").each(function(i,v){
+					    	  $(v).find(".week").addClass("pre_week").next().addClass("pre_indicator").next().addClass("pre_spot");
+					    	  $(v).find(".time").html("(已结束)");
+					      });
+					      embedData(re,Number(re.week));
+					      tab3.trigger("click");
+      			  }
+      			  if(re.week==="4"){
+      				//当前tab样式变化为：
+      				  tab4.find(".week").addClass("cur_week");
+      				  tab4.find(".indicator").addClass("cur_indicator");
+      				  tab4.find(".spot").addClass("cur_spot");
+					      $("#tab1,#tab2,#tab3,#tab4").attr("clickable","1");   
+					    //其他tab样式变化为 ：	
+					      $("#tab1,#tab2,#tab3").each(function(i,v){
+					    	  $(v).find(".week").addClass("pre_week").next().addClass("pre_indicator").next().addClass("pre_spot");
+					    	  $(v).find(".time").html("(已结束)");
+					      });
+					      embedData(re,Number(re.week));
+					      tab4.trigger("click");
+      			  }
+  				  $("#share1").hide();
+  				  $("#share2").show();
+  			  }
+
+  	          }
+    	 });
+    	 
+    	  $("#prize_slide").UISlide({playTime:4000,duration:800}); 
+    	  /*
+    	  setTimeout(function(){
+    		  $("#hook").attr("src","http://www.meishichina.com/#utm_source=partner_baidumap_20130729");
+    	  },2000);*/
+      });
+    
+    </script>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=194652" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe3e76aa9b6f1d140f7c00daaa57ceb48' type='text/javascript'%3E%3C/script%3E"));
+</script>
+     
+	</body>
+</html>

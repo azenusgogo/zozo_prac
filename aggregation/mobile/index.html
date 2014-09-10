@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>地图活动专区</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
+
+<style type="text/css" media="all">
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+    font-size:16px;
+}
+body {
+background-color:#E6E9ED;
+}
+ul {list-style:none;}
+ .Yahei {font-family:Microsoft YaHei;}
+
+.fs_24 {font-size: 24px;}
+.fs_18 {font-size: 18px;}
+.fs_16 {font-size: 16px;}
+.fs_15 {font-size: 15px;}
+.fs_14 {font-size: 14px;}
+.fs_12 {font-size: 12px;}
+img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{
+display:none;
+}
+.rel {
+     position: relative;
+    }
+.abs {
+    position: absolute;
+    }
+.fl {float:left;}
+.clear:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+.outer {
+margin: 0 auto;
+width: 100%;
+min-width: 320px;
+max-width: 640px;
+
+}
+.inner {
+height: auto;
+min-width: 320px;
+width: 100%;
+margin: 0 auto;
+background-color: #E6E9ED;
+padding-bottom: 2.1875%;
+max-width: 640px;
+}
+.banner {
+display:block;
+width:100%;
+min-width:320px;
+margin:0 auto;
+}
+
+.b_img_wrapper {
+margin:0 auto;
+height:auto;
+}
+.s_img_list {
+    height: auto;
+    margin: 0 auto;
+    min-width: 306px;
+    width: 100%;
+    /*overflow-y:scroll;*/
+}
+.bimg_item{
+    background-color: #FFFFFF;
+    float: left;
+    padding: 0.5%;
+    width: 99%;
+}
+
+#scroller {
+	position:relative;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	overflow:scroll;
+	width:100%;
+	padding:0;
+}
+.s_img_list .s_item,.s_img_list .s_item_exclude {
+	display: -webkit-box;
+	background-color: #FAFAFA;
+	border-radius: 4px;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 2%;
+	min-width: 306px;
+	width: 94%;
+	border: 1px solid #d4d9e0;
+	position: relative;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	padding: 2% 0 2% 2%;
+}
+.s_img_list .s_item a {
+	width: 48.5%;
+	height: 100%;
+	display: block;
+}
+.s_img_list .s_item:first-child {
+    /*margin-top:0;*/
+}
+.s_img {
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+.img_cnt {
+width: 44%;
+height: 100%;
+margin-left: 3%;
+padding: 0 2%;
+}
+.img_cnt .img_title {
+font-weight:bold;
+color:#333333;
+}
+.img_cnt .img_detail {
+font-size:12px;
+color:#737373;
+overflow: hidden;
+text-overflow: ellipsis;
+/*white-space: nowrap;*/
+}
+.img_oper {
+width: 100%;
+padding-top: 4%;
+}
+.time_remained {
+heigth:23px;
+line-height:23px;
+font-size:12px;
+color:#8490a2;
+}
+.img_oper .goto {
+display:inline-block;
+width:60px;
+height:26px;
+line-height:26px;
+border-radius:2px;
+color:#ffffff;
+text-align:center;
+font-size:13px;
+text-decoration:none;
+}
+.cango {
+background-image: -moz-linear-gradient(top, #ffc35c, #ff8914); 
+background-image: -webkit-gradient(linear, left top,left bottom, color-stop(0, #ffc35c), color-stop(1, #ff8914)); 
+}
+.cantgo{
+cursor:not-allowed;
+background-image: -moz-linear-gradient(top, #b7b4b4, #6b6b6b); 
+background-image: -webkit-gradient(linear, left top,left bottom, color-stop(0, #b7b4b4), color-stop(1, #6b6b6b));
+}
+#s_more {
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    margin: 2% auto 0;
+    min-width: 306px;
+    width: 96.5%;
+    height:36px;
+    border:1px solid #d4d9e0;
+    text-align:center;
+    line-height:36px;
+    color:#768398;
+    font-weight:bold;
+    display:block;
+    text-decoration:none;
+}
+.click_more {
+left: 50%;
+margin-left: 16%;
+top: 32%;
+width: 7px;
+height: 13px;
+}
+
+.big_title {
+    bottom: 0%;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 25%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9;
+    font-size:13px;
+}
+.big_front {
+    position: absolute;
+    bottom: 1%;
+    display: inline-block;
+    left: 0;
+    width:100%;
+    height:28%;
+    -moz-opacity:0.7;                 
+    opacity: 0.7; 
+   background-image: -moz-linear-gradient(top, #bbc2ca, #1E1E1E); /*404345*/
+    background-image: -webkit-gradient(linear, left top,left bottom, color-stop(0, #bbc2ca), color-stop(1, #1E1E1E)); 
+      /*background:url("img/mask.png") repeat-x scroll 0 0 transparent;*/
+}
+    @media screen and (max-width:320px)  { /*老手机*/
+          
+    } 
+    @media screen and (min-width:320px) and (max-width:479px) { /*一般智能手机*/
+      /*#slide_wrap ul li img, #slide_wrap ul li a {
+      width:100%;
+      } */
+      .img_cnt .img_title {
+      font-size:1em;}
+      .img_cnt .img_detail {
+      font-size:0.75em;
+      }
+      .time_remained {
+      font-size:0.5em;
+      }
+    } 
+    @media screen and (min-width:480px) and (max-width:639px) { /*android*/
+      /*#slide_wrap ul li img, #slide_wrap ul li a {
+      width:480px
+      } */
+      .img_cnt .img_title {
+      font-size:1.25em;}
+      .img_cnt .img_detail {
+      font-size:1em;
+      }
+      .time_remained {
+      font-size:0.75em;
+      }
+    } 
+     @media screen and (min-width:640px) { /*ios*/
+     /* #slide_wrap ul li img, #slide_wrap ul li a {
+      width:640px
+      }*/
+      .img_cnt .img_title {
+      font-size:1.5em;}
+      .img_cnt .img_detail {
+      font-size:1.25em;
+      }
+      .time_remained {
+      font-size:1em;
+      }
+    } 
+    
+    #slide_wrap {
+    min-width:320px;
+    max-width:640px;
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+    }
+    #slide_wrap ul {
+    overflow:hidden;
+    display:-webkit-box;
+    }
+    #slide_wrap ul li img, #slide_wrap ul li a {
+      -webkit-box-flex:1;
+      width:100%;
+      }
+    .btn{
+    width:20px;
+    height:40px;
+    cursor:pointer;
+    }
+    #left {top:156px;background:url("img/icons.png") no-repeat scroll -97px -351px transparent}
+    #right {top:156px;right:0px;background:url(img/icons.png) no-repeat scroll -97px -305px transparent;}
+</style>
+
+  </head>
+  
+  <body class="relative">
+     <div class="outer relative">
+       <a href="http://map.baidu.com/zt/ystar/mobile/"><img class="banner" src="img/banner.jpg"/></a>
+     <div class="inner relative"> 
+        <!--  <a href="http://map.baidu.com/zt/hotel_shiyi/mobile?active_src=mobile_wap&active_name=hotel_shiyi" class="bimg rel"><img class="bimg_item" src="http://map.baidu.com/fwmap/upload/r/image/2013-09-04/2514d8ca93f9c815b1e874d2dc4c3d5d.png" title="百度地图96酒店节"/><span class='big_title'>百度地图96酒店节</span><span class='big_front'></span></a>     
+           <a href="http://map.baidu.com/zt/swy/mobile?active_src=mobile_nav&title=奢玩一日游" class="bimg rel"><img class="bimg_item" src="http://map.baidu.com/fwmap/upload/r/image/2013-09-04/2f1e28f8d7d83988522ddb47c13f3acb.jpg" title="奢玩一日游"/><span class='big_title'>奢玩一日游</span><span class='big_front'></span></a>     
+           <a href="http://map.baidu.com/zt/qdz/mobile?title=疯狂点评拿大奖" class="bimg rel"><img class="bimg_item" src="http://map.baidu.com/fwmap/upload/r/image/2013-09-04/82e5ffefdc3f1b7aa5eed60012e2f646.jpg" title="疯狂点评拿大奖"/><span class='big_title'>疯狂点评拿大奖</span><span class='big_front'></span></a>     
+           <a href="http://map.baidu.com/zt/dahekuanghuan/mobile/?title=点评达人抢好礼" class="bimg rel"><img class="bimg_item" src="http://map.baidu.com/fwmap/upload/r/image/2013-09-04/f31cd7280cf1221d88e972c02b075ab7.jpg" title="盛夏狂欢 点评传图拿大奖"/><span class='big_title'>盛夏狂欢 点评传图拿大奖</span><span class='big_front'></span></a>      -->   
+        <div class="b_img_wrapper rel" id="slide_wrap">
+           <ul class="rel clear">
+             <li><a href=""><img src="img/big1_320.png" /></a></li>
+             <li><a href=""><img src="img/big2_320.png" /></a></li>
+           </ul>
+        </div>
+
+        <div class="s_img_list">
+          <div class="s_item clear" data-time="1377878400">
+              <a href="http://map.baidu.com/zt/qixi2013/mobile/test.html?title=大胆饰爱，玩疯狂大转盘赢钻石豪礼" class="thumb"><img src="img/6.jpg" class="s_img"/></a>
+             <div class="img_cnt rel">
+                <div class="img_title">大胆饰爱，赢钻石</div>
+                <div class="img_detail">百度地图携手恒信钻石、西堤牛排，浪漫七夕</div>
+
+                <div class="img_oper">
+                <!-- <a class="goto fs_13" href="http://map.baidu.com/zt/qixi2013/mobile/test.html?title=大胆饰爱，玩疯狂大转盘赢钻石豪礼">去看看</a> -->
+                <p  class="time_remained">剩余:<span class="days"></span>天</p>
+                </div>
+             </div>
+               
+          </div>
+          <div class="s_item clear" data-time="1378742400">
+              <a href="http://map.baidu.com/zt/jfmd/mobile/?title=双倍积分获奖名单" class="thumb"><img src="img/4.jpg" class="s_img"/></a>
+             <div class="img_cnt rel">
+                <div class="img_title">双倍积分获奖名单</div>
+                <div class="img_detail">快把礼品带回家。亲，下次活动马上来！</div>
+	            <div class="img_oper">
+	              <!--  <a class="goto fs_13" href="http://map.baidu.com/zt/jfmd/mobile/?title=双倍积分获奖名单">去看看</a>-->
+	                <p  class="time_remained">剩余:<span class="days"></span>天</p>
+	            </div> 
+             </div>
+              
+          </div>
+          <div class="s_item clear" data-time="1376841600">
+              <a href="http://map.baidu.com/zt/gong/mobile/nav.html?title=七夕看《宫》,9.9元" class="thumb"><img src="img/3.jpg" class="s_img"/></a>
+             <div class="img_cnt">
+                <div class="img_title">七夕看《宫》9.9元</div>
+                <div class="img_detail">线上购买电影票，线下影院抽奖，中奖率100%</div>
+                <div class="img_oper">
+                <!-- <a class="goto fs_13" href="http://map.baidu.com/zt/gong/mobile/nav.html?title=七夕看《宫》,9.9元">去看看</a>-->
+                  <p  class="time_remained">剩余:<span class="days"></span>天</p>
+                </div>
+             </div>             
+              
+          </div>
+        </div><!-- end of s_img_list -->
+        
+     </div>
+      
+     </div>
+              
+
+ <script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript" src="js/hslide.js?v=2.0"></script>
+<script>
+  $(function(){
+	  
+      $("#slide_wrap").vslide({
+				auto:true
+			    });
+	 
+
+	  function getRemainedDays (time) {
+		  var thatDateObj = new Date(time);
+		  var d =  Math.floor((thatDateObj.getTime()-(new Date().getTime()))/(1000*60*60*24));
+		  return d<0?0:d;
+		}    	            	
+
+		$(".s_img_list .s_item").each(function(i,v){
+		  var $this = $(this);
+		  var remained = getRemainedDays($(this).data("time") * 1000);
+		   $this.find(".days").html(remained);
+		  if(+remained <= 0){
+		    //$this.find(".goto").addClass("cantgo").html("已结束").attr("href","javascript:void(0)");
+		    $this.find(".thumb").attr("href","javascript:void(0)");
+		  }else{
+		    $this.find(".goto").addClass("cango"); 
+		  }
+		});
+		
+		window.onresize = function(){
+			location.reload(true);
+		}
+  })
+</script>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F75af904afe3b97be4d1ed9cb429a0771' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

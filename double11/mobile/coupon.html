@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>百度团购 全网最低价</title>
+<link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+ body {min-width:320px;max-width:640px;}
+ .rel {position: relative;}
+ .abs {position: absolute;}
+ .clr_fix {clear: both;}
+ .clearfix:after {content: ".";height: 0;visibility: hidden;display: block;clear: both;}
+ #main {width:100%;margin:0 auto;}
+ #banner {background:#402c2b;width:100%;}
+ #banner img {width:100%;}
+ #rush {width:100%;}
+  .item{width: 94%;padding: 3%;background-color: #ffffff;position: relative;display: -webkit-box;border-bottom:1px solid #dbdbdb;-webkit-box-align:center;}  
+  .item a {display:block;position:relative;width:44%;}
+  .item a img {display:block;width:100%;}
+  .item .content {width:54%;margin-left:4%;}
+  .item .caption {width:100%;font-weight:bold;}
+  .item .detail {width:100%;margin-top:2%;}
+  .item .desc {display:-webkit-box;margin-top:3%;color:#636363;}
+  .item .currency {color:#e21104;}
+  .item .discount {color:#e21104;margin-left:2%;}
+  .detail .o_price {color:#888888;margin-left:5%;text-decoration:line-through;}
+  @media screen and (min-width:320px) and (max-width:479px) { /*一般智能手机*/
+  	 .caption,.discount {font-size:1em;}
+       .desc,.currency {font-size:0.8em;}
+       .o_price {font-size:0.75em;} 
+       .counter_title {font-size:1em;}
+       .counter_info {font-size:0.75em;}  
+      .counter_info span {font-size:1.25em;}
+    } 
+  @media screen and (min-width:480px) and (max-width:639px) { /*android*/
+       .caption,.discount {font-size:1.5em;}
+       .desc,.currency {font-size:1.25em;}
+       .o_price {font-size:1.15em;} 
+       .counter_title {font-size:1em;}
+       .counter_info {font-size:1em;}   
+        .counter_info span {font-size:1.5em;}   
+    } 
+   @media screen and (min-width:640px) { /*ios*/
+       .caption,.discount {font-size:2em;}
+       .desc,.currency {font-size:1.5em;}
+       .o_price {font-size:1.375em;}
+       .counter_title {font-size:1em;}
+       .counter_info {font-size:1em;} 
+       .counter_info span {font-size:2em;}    
+    } 
+    .counter_info {width:90%;}
+    .counter_box {z-index:9;position:absolute;width:100%;height:100%;top:0;left:0;background-color:rgba(102,51,51,0.7);color:#ffd361;-webkit-box-pack:center;-webkit-box-align:center;display:-webkit-box;}
+    .counter_info span{display:inline-block;padding: 0 2%;margin: 2%;}
+    .counter_info span:first-child {margin-left:0;}
+    .hour,.mini,.sec {background-color:#ffd361;color:#ad221a;}
+</style>
+</head>
+<body>
+  <div id="main">
+    <section id="banner"><img src="img/coupon_banner.jpg" style="display:block"/></section>
+    <section id="rush">
+      <div class="item" id="coupon1">
+        <a href="http://tuan.baidu.com/selftg/item/mdetail?item_id=20423919"><img src="img/10.jpg" /><div id="mask1" class="counter_box" gid="505536662" itemid="170000157"><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><span class="hour">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</div></div></a>
+        <div class="content">
+          <h1 class="caption">10元优惠券</h1>
+          <p class="desc">大屏幕看片神器来啦！大屏幕看片神器来啦！</p>
+          <div class="detail"><small class="currency">¥</small><big class="discount" >1</big><span class="o_price">原价10</span></div>
+        </div>       
+      </div> 
+      <div class="item" id="coupon2">
+        <a href="http://tuan.baidu.com/selftg/item/mdetail?item_id=20423972"><img src="img/20.jpg" /><div id="mask2" class="counter_box" gid="505536662" itemid="170000157"><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><span class="hour">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</div></div></a>
+        <div class="content">
+          <h1 class="caption">20元优惠券</h1>
+          <p class="desc">大屏幕看片神器来啦！大屏幕看片神器来啦！</p>
+          <div class="detail"><small class="currency">¥</small><big class="discount">10</big><span class="o_price">原价20</span></div>
+        </div>        
+      </div>
+      <div class="item" id="coupon3">
+        <a href="http://tuan.baidu.com/selftg/item/mdetail?item_id=20423983"><img src="img/50.jpg" /><div id="mask3" class="counter_box" gid="505536662" itemid="170000157"><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><span class="hour">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</div></div></a>
+        <div class="content">
+          <h1 class="caption">50元优惠券</h1>
+          <p class="desc">大屏幕看片神器来啦！大屏幕看片神器来啦！</p>
+          <div class="detail"><small class="currency">¥</small><big class="discount">25</big><span class="o_price">原价50</span></div>
+        </div>        
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript" src="js/zepto_dev.js?v=1.0"></script>
+  <script type="text/javascript">
+    	(function(g){
+	      g.utils.initPage();     	
+	 	})(window);
+  </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+
+ <!--[if IE 6]>
+        <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+        <script type="text/javascript">DD_belatedPNG.fix('.pngfix');
+        </script>
+    <![endif]-->
+<title>POI纠错</title>
+<style type="text/css" media="all" id="innerStyleSheet">
+*html{  background-image:url(about:blank);  background-attachment:fixed;  }
+ul {list-style:none;}
+    img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{display:none; }
+	.yahei {font-family:Microsoft YaHei;}
+    .rel { position: relative;}
+    .abs {position: absolute;}
+    .clr_fix {clear: both;}
+    .clearfix:after {content: ".";height: 0;visibility: hidden;display: block;clear: both; }    
+     #main {width:980px;margin:0 auto;}
+     #banner {width:100%;height:380px;background:url(img/banner.jpg) no-repeat 0 0 transparent;}
+     #qq {top:5px;right:10px;color:#ffffff;}
+     #lottery {width:980px;height:416px;padding:20px 0;position:relative;}
+     #tableBox {width:676px;height:414px;float:left;display:inline;}  
+     #tb{top:20px !important;}
+     /*#tb td {width:169px;height:138px;} */
+     #marq_box {width: 278px;height: 402px;background: url(img/dividor_bottom.gif) no-repeat 0 bottom #fdfaf0;text-align: center;color: #666666;position: absolute;top: 32px;right: 0;}
+     #lot_list{width:280px;height:41px;background:url(img/dividor.png) no-repeat 0 0  transparent;_background:url(img/dividor.gif) no-repeat 0 0  transparent;position: absolute;top: -12px;left:0;}
+     #marq {width:278px;height:328px;text-align:center;}
+     #marq ul li {padding:8px 0;}    
+     #rush_ticket {width:293px;height:83px;top:186px;left:192px;background:url(img/rush.png) no-repeat 0 0 transparent;cursor:pointer;z-index:2;}
+      .mask{position:absolute;top:0;left:0;background:url(img/maskpng24.png) repeat 0 0 transparent;_background:url(img/mask_bg.png) repeat 0 0 transparent;width:100%;height:1048px;display:none;z-index:3;}/*background-color:rgba(0,0,0,0.5);*/
+      .drop_box {width:562px;height:	0px;position:absolute;top:20%;left:50%;margin-left:-281px;z-index:9;}
+      .popup_bg {width:100%;display:block;} 
+ .drop_closed {width: 38px;height: 38px;top: 0;right: 27px;position: absolute;cursor: pointer;display: block;zoom: 1;z-index: 12;}
+ .note {top: 50%;left: 50%;margin-left: -133px;text-align: center;margin-top: -57px;color: #666666;width: 266px;font-size: 22px;}
+ .congratulations {color:red;font-size:26px;}
+ .fillInfo {padding: 2% 1%;background-color: #fa6464;color: #ffffff;display: block;width: 146px;height: 32px;line-height: 32px;margin: 12px auto 0 auto;cursor:pointer;}
+ .drop_list {top: 28%;left: 50%;margin-left: -30%;width: 60%;}
+ .drop_list ul li {padding: 2%;}
+  .drop_list ul li input {display: inline-block;width: 72%;}
+ #saveprize {display: block;padding: 3% 5%;background-color: #fa6464;margin: 2% auto 0 auto;width: 84px;height: 24px;line-height: 24px;text-align: center;color: #ffffff;cursor: pointer;margin-top: 9px;}
+ .errormsg {width: 100%;padding: 0 0;text-align: center;color:#fa6464;}
+ .wraper {width:562px;height:390px;}
+ #rules {width:980px;height:46px;} #rules_txt {width: 142px;height:32px;display: inline;float: left;font-size: 24px;_font-size: 20px;color: #ffffff;background-color: #a34035;text-align: center;padding: 7px 0;} #fringe{width:838px;height:46px;display:inline;float:left;zoom:1;}
+#act_cnt {margin:0 auto;width:940px;background-color:#fdfaf0;color:#666666;padding:20px;font-size:14px;line-height:1.5;background:url(img/decoration.png) no-repeat right bottom #fdfaf0;_background:url(img/lou.gif) no-repeat right bottom #fdfaf0;}
+ .glow {background:url(img/glow.png) no-repeat 50% 0 transparent;} 
+</style>
+  </head>  
+  <body class="relative">
+      <div id="main" class="rel">
+      	 <div id="banner" class="rel"><span id="qq" class="abs">活动QQ群：312456000</span></div>
+      	  <div id="lottery" class="rel">
+		         <a id="rush_ticket" class="abs pngfix" canClick="1" resttimes="0"></a>		            
+					<div id="tableBox"></div>
+					<div id="marq_box">
+					    <div id="lot_list"></div>
+						<marquee direction="up" id="marq" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2">						   
+	       	   	          <ul>
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>	
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>
+			       	   	        <li><p>yuqi881227 抽中iPhone 5S一台</p><p>手机号码：130****9908</p></li>
+	       	   	         </ul>
+	               	</marquee>	
+					</div>
+					<br class="clr_fix"/>    
+		      </div>
+		      <div id="rules">
+		      	   <div id="rules_txt">活动规则</div><img id="fringe" src="img/rule_decor.jpg"/><br class="clr_fix"/></div>
+		      </div>
+		      <div id="act_cnt">
+		      	  <p>1、活动时间：2014年1月15-2月11日；</p>
+		      	  <p>2、用户为百度地图纠错一次，可参与一次抽奖，电脑及手机纠错均可；</p>
+		      	  <p>3、用户反馈有效数据最高者给予HTC双卡双待手机一台；</p>
+		      	  <p>4、本次活动仅针对诚意纠错，用各种手段作弊者，均将取消获奖资格，如重复输入、软件作弊、复制粘贴、任意输入等等；</p>
+		      	  <p>5、本次活动QQ群：312456000 活动名单通过QQ群通报；</p>
+		      	  <p>6、本次活动最终解释权归百度地图所有。</p>
+		      </div>
+		      <div class="mask"></div>
+             <div class="drop_box"></div> 
+              <!-- <style type="text/css">
+             	   #lottery2 {width:100%;height:100%;margin:0 auto;}
+             	   /*#tb2 td {width:169px;height:138px;}*/
+             	</style>
+             <div id="lottery2" class="rel"></div>-->
+             
+      </div>
+  
+<script type="text/javascript">
+  var now = (new Date()).getTime();
+  var link = '<script type="text/javascript" src="http://passport.baidu.com/passApi/js/uni_login_wrapper.js?cdnversion='+now+'"><\/script>';
+  document.write(link);
+</script>
+<iframe style="display:none;" class="check_login"></iframe>   
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/unilogin.js"></script>
+<script type="text/javascript" src="js/brickmove.js"></script> 
+<!--<script type="text/javascript" >
+  var js = '<script type="text/javascript" src="js/lottery2.js?v='+new Date().getTime()+'"><\/script>';
+  document.write(js);
+</script>-->
+
+   <script type="text/javascript">
+   	window.zozo = (function(){
+   	    return {
+   	      _baseURL : "http://whp.baidu.com/zt_lottery/index.php/poishuangdan/", //    后端接口所在目录         
+		  _frameURL : "http://tousu.baidu.com/map/ugc?call=userLogin&t="+new Date().getTime(), //在线管理部登录接口
+   		  getUser:function(info){
+            var that = this,txt = '<span class="congratulations">恭喜你！</span><br/>获得<span>'+info.prize_name+'</span><br/><span class="fillInfo">填写联系信息</span>',
+            imgsrc = "img/wellwell.png";
+            var content = '<div class="wraper rel pngfix" style="background:url('+imgsrc+') no-repeat 50% 50% transparent;"><span class="drop_closed"></span><p class="abs note">'+txt+'</p></div>' ;          
+            $(".drop_box").html(content)[0].style.left="50%";
+            $(".mask").show();
+            $(".drop_closed").on("click",function(){
+            	$(this).closest(".drop_box")[0].style.left="-9999px";
+            	$(".mask").hide();
+            	})
+            $(".fillInfo").on("click",function(){            	
+            	imgsrc = "img/submit_info.png";
+            	var content =  '<div class="wraper rel pngfix" style="background:url('+imgsrc+') no-repeat 50% 50% transparent;"><span class="drop_closed"></span><div class="drop_list abs">'+
+                        '<ul>'+
+                          '<li><span class="label_name">姓 名：</span><input type="text" class="user_name" value="" /></li>'+
+                          '<li><span class="label_name">电 话：</span><input type="text" class="user_phone" value="" /></li>'+
+                          '<li><span class="label_name">地 址：</span><input type="text" class="user_address" value="" /></li>'+
+                        '</ul>'+
+                        '<div class="drop_btn_box"><div class="submit" id="saveprize">提 交</div><div class="errormsg"></div></div></div></div>' ;  
+                      $(".drop_box").html(content)[0].style.left="50%"; 
+                      $(".drop_closed").on("click",function(){
+                $(this).closest(".drop_box")[0].style.left="-9999px";
+                $(".mask").hide();
+            });
+            $("#saveprize").on("click",function(){
+                var name = $(".user_name").val();
+                var phone = $(".user_phone").val();
+                var address = $(".user_address").val();
+                if(!$.trim(name)){
+                    $(".errormsg").html('姓名不能为空');
+                    return;
+                }
+                if(!$.trim(phone)){
+                    $(".errormsg").html('电话不能为空');
+                    return;
+                }
+                if(!/^1(3|8|5|6|9|7)\d{9,9}$/.test($.trim(phone))){
+                    $(".errormsg").html('电话格式不正确');
+                    return;
+                }
+                if(!$.trim(address)){
+                    $(".errormsg").html('地址不能为空');
+                    return;
+                }
+                var data = {'name':name,'phone':phone,'address':address,'pid':info.pid,'prize_key':info.prize_key};
+                that.saveUser(data,function(info){
+                    if(info.error ===0)
+                    {
+                           content = '<div class="wraper rel pngfix" style="background:url(img/wellwell.png) no-repeat 50% 50% transparent;"><span class="drop_closed"></span><p class="abs note" style="color:#ef4141;font-size:32px;padding:10px 0;">提交成功</p></div>' ;
+				            $(".drop_box").html(content)[0].style.left="50%";
+				            $(".drop_closed").on("click",function(){
+				                $(this).closest(".drop_box")[0].style.left="-9999px";
+				                $(".mask").hide();
+				            });
+                    }
+                    else{
+                        $(".errormsg").html(info.errormsg);
+                    }
+                });
+            });           
+            	});
+            
+        },
+     showPopup:function(type){
+	   var txt = "",imgsrc="";
+            switch(type){
+                case 1:
+                    txt = "您的纠错数量还不够哦！<br/>赶紧去纠错吧!";//次数不够
+                    imgsrc = "img/notenough.png";
+                    break;
+                case 2:
+                    var msg = ["亲～快去纠错吧！<br/>下一个大奖没准就是你哦～","加油！<br/>大奖正在向你迈进！"];                   
+                    txt = msg[parseInt(Math.floor(Math.random()*2))];//没有中奖
+                    imgsrc = "img/failed.png";
+                    break;
+            }           
+            content = '<div class="wraper rel pngfix" style="background:url('+imgsrc+') no-repeat 50% 50% transparent;"><span class="drop_closed"></span><p class="abs note">'+txt+'</p></div>' ;
+            $(".mask").show();
+            $(".drop_box").html(content)[0].style.left = '50%';
+            $(".drop_closed").on("click",function(){
+                $(this).closest(".drop_box")[0].style.left="-9999px";
+                $(".mask").hide();
+            });
+	},
+	 saveUser:function(data,callback){
+            callback = callback || function(){};
+            $.ajax({
+                url: this._baseURL + "save_user",
+                type: 'GET',
+                data: data,
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                success: function(info){
+                    callback(info);
+                }
+            })
+        },
+        initPage:function(){
+        	    var that = this;
+        	    var obj = Oyeah({imgsrc:"img/laohuji.png",row:3,col:4,tableId:"tb",containerId:"tableBox"
+                   	                                	});
+        	    $("#rush_ticket").on("click",function(){
+	   	   	   	   if($(this).attr("canClick")==="0"){
+	   	   	   	   	  return;
+   	   	   	   	 }
+   	   	   	  _hmt.push(['_trackEvent', "抽奖人数", "click"]);
+   	   	   	    $.ajax({
+                url: that._baseURL + "lottery", //    "data.txt?v="+new Date().getTime() 
+                type: 'GET',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                success: function(re){
+                   if(re.login === 0){
+                        $(".check_login").attr("src",that._frameURL);
+                    }
+                   else{ //已登录
+                   	if(re.count === 0){
+                        that.showPopup(1);
+                      }
+                      else if(re.status === 0){
+                      obj.startLottery({
+                      	 mapping:{index:[4]},
+                   	     hitCallback:function(data){                  	                                	  
+                   	                                	  that.showPopup(2);                   	                                	     
+                   	                                	   },
+                      	data:re
+                      	}); 
+                                          
+                      }
+                      else if(re.status === 1){
+                         _hmt.push(['_trackEvent', "中奖人数", "click"]); 
+                   	                                	obj.startLottery({
+                   	                                mapping:{mapKey:"gid",relations:{"128":0,"129":1,"130":2,"131":3,"132":8,"133":7,"134":5,"135":6,"136":9}},
+                   	                                hitCallback:function(data){                  	                                	  
+                   	                                	  that.getUser(data);                   	                                	     
+                   	                                	   },
+                   	                                data:re});                                          	                            	             	                                                   	                    
+                      }
+                                      	
+                   	}
+                }
+            })
+   	   	   	})
+        	  }
+   		   	}
+   		}());
+    $(function(){ 
+    	  zozo.initPage();    	      	   	   	   
+   	   	})
+   	</script>
+   	<div style="display:none;"><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76ae7ed25712a3f2084123e5ba2f15a1' type='text/javascript'%3E%3C/script%3E"));
+</script></div>
+  </body>
+</html>

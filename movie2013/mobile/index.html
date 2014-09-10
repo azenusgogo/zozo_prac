@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>电影选座购票活动</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <!--  <link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/> -->
+ <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
+ <script type="application/javascript" src="js/iscroll.js"></script>
+<style type="text/css" media="all">
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+    font-size:16px;
+}
+ul {list-style:none;}
+ .Yahei {font-family:Microsoft YaHei;}
+
+.fs_24 {font-size: 24px;}
+.fs_18 {font-size: 18px;}
+.fs_16 {font-size: 16px;}
+.fs_15 {font-size: 15px;}
+.fs_14 {font-size: 14px;}
+.fs_12 {font-size: 12px;}
+.relative {
+     position: relative;
+    }
+.absolute {
+    position: absolute;
+    }
+.fl {float:left;}
+.clear:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+.outer {
+margin-right:auto;
+margin-left:auto;
+width:100%;
+min-width:320px;
+max-width:640px;
+background-color:#000000;
+}
+.inner {
+background-color:#e2e0db;
+ height:471px;
+ min-width:320px;
+ max-width:640px;
+ margin:0 auto;
+}
+.banner {
+display:block;
+width:100%;
+min-width:320px;
+max-width:640px;
+margin:0 auto;
+/*background:url(img/banner_neo.jpg) no-repeat scroll 0 0 transparent;*/
+}
+.title_info {
+width:100%;
+max-width:640px;
+min-width:320px;
+margin:0 auto;
+font-size:0.875em;/*14/16*/
+color:#666666;
+text-indent:5.3125%;/*17/320*/
+height:38px;
+line-height:38px;
+}
+.procedure {
+margin-right:auto;
+margin-left:auto;
+max-width:95.9375%;/*614/640*/
+height:25%;/*223/892*/
+border-radius:0.25em;
+border:0.125em solid #b8b7b4; 
+background-color:#ffffff;
+color:#666666;
+}
+.cinema {
+margin-right:auto;
+margin-left:auto;
+max-width:95.9375%;/*614/640*/
+border-radius:0.25em;
+border:0.125em solid #b8b7b4; 
+/*height:187px;*/
+margin-top:10px;
+}
+#wrapper {
+overflow:auto;
+height:166px;
+}
+#cinemaList {
+background-color:#ffffff;
+width:100%;
+position:relative;
+min-width:307px;
+}
+#scroller {
+	position:relative;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	overflow:scroll;
+	width:100%;
+	padding:0;
+}
+.cityTab {
+ height:37px;
+ border-bottom:2px solid #b8b7b4; 
+ color:#666666;
+}
+.cityTab ul {
+    display: block;
+    height: 37px;
+    margin: 0 auto;
+    width: 94.77%;
+}
+.cityTab ul li {
+/*float:left;
+height:37px;
+line-height:37px;
+margin:0 auto;
+margin-left:10px;*/
+    float: left;
+    height: 37px;
+    line-height: 37px;
+    margin: 0 auto 0 2%;
+    text-align: center;
+    width: 12%;
+}
+.cityTab ul li a {
+display:inline-block;
+font-size:15px;
+cursor:pointer;
+
+}
+
+.activityWrap {
+margin:0 auto;
+max-width:95.9375%;/*614/640*/
+height:70px;
+border-radius:0.25em;
+border:0.125em solid #b8b7b4; 
+margin-top:10px;
+}
+.activityinner {
+    border: 0.125em solid #B8B7B4;
+    border-radius: 0.25em 0.25em 0.25em 0.25em;
+    height: 84%;
+    margin: 4px auto;
+    width: 98%;
+    position:relative; 
+}
+.up_left {
+width:99px;
+float:left;
+margin-left:10px;
+}
+.up_right{
+width:176px;
+float:left;
+margin-left:7px;
+}
+.down {
+width:283px;
+margin-left:10px;
+}
+.rule_item {
+float:left;
+display:inline-block;
+font-size:14px;
+padding-left:13px;
+position:relative;
+margin-top:7px;
+}
+.sequence {
+font-size:9px;
+display:inline-block;
+width:12px;
+height:12px;
+background-color:#39a4ec;
+border-radius:50%;
+color:#ffffff;
+line-height:12px;
+text-align:center;
+position:absolute;
+top:3.5px;
+left:0;
+}
+#seq3 {
+margin-left:34px;
+}
+#ticket_quantity {
+margin-left:5px;
+}
+.actLeft {
+    position: absolute;
+    top:19px;
+    left:11px;
+}
+.actRight {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    right: 22px;
+    top: 18px;
+}
+.instant10 {
+/*font-size:19px;*/
+color:#2f2f2f;
+font-weight:bold;
+}
+#img_minus10 {
+ background: url("img/minus15.png") no-repeat scroll 0 0 transparent;
+ background-size:43px 21px;
+    height: 21px;
+    left: 80px;
+    position: absolute;
+    top: 0;
+    width: 43px;
+}
+.dayTickets {margin-top:2px;color:#515151;}  
+.pop_mask{position: absolute;top: 0;left: 0;width: 100%;height: 100%;display: none;opacity: 0.5;filter: alpha(opacity=50);z-index: 200;background: url(img/hui.png) repeat scroll 0 0 transparent;
+}
+.cur {
+color:#1b92e2;
+}
+.cin_item {
+height:72px;
+border-top:1px solid #c7c7c7;
+}
+.cin_item:first-child {
+border:none;
+}
+.popup_wrap {
+display:none;
+width:276px;
+height:116px;
+background-color:#697ec4;
+font-size:9px;
+z-index:201;
+}
+.popup_title {
+height:18px;
+line-height:18px;
+background-color:#525ead;
+color:#ffffff;
+text-indent:20px;
+}
+.popup_info {
+color:#ffffff;
+font-size:11px;
+}
+.popup_inner {
+height: 56px;
+line-height: 13px;
+margin: 16px auto 0;
+width: 236px;
+}
+.close_popup{
+    background: url("img/close.png") no-repeat scroll 0 0  transparent;
+    background-size:8px 8px;
+    float: right;
+    height: 15px;
+    margin-top:5px;
+    margin-right:2px;
+    width: 15px;
+}
+.buy {
+width:65px;
+height:27px;
+line-height:27px;
+color:#ffffff;
+float:right;
+margin-right:7px;
+margin-top:9px;
+border-radius:2px;
+text-align:center;
+font-size:14px;
+text-decoration:none;
+background-image: -moz-linear-gradient(top, #feae01, #fe8301); 
+background-image: -webkit-gradient(linear, left top,left bottom, color-stop(0, #feae01), color-stop(1, #fe8301)); 
+}
+.buy_clicked {
+background-image: -moz-linear-gradient(top, #feae01, #fe8508); 
+background-image: -webkit-gradient(linear, left top,left bottom, color-stop(0, #feae01), color-stop(1, #fe8508)); 
+}
+.cin_info {
+}
+.cin_name {
+    float: left;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 224px;
+    margin:16px 0 0 11px;
+}
+.address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	font-size:12px;
+	margin-left:10px;
+	float:left;
+	margin-top:8px;
+	max-width:90%;
+}
+.raindrop {
+margin-right:7px;
+width:9px;
+height:12px;
+display:inline-block;
+background:url(img/point.png) no-repeat scroll 0 0  transparent;
+background-size:9px 12px;
+}
+.indicator {
+display:inline-block;
+width:13px;
+height:7px;
+background:url(img/indicator.png) no-repeat scroll 0 0  transparent;
+background-size:13px 7px;
+position:absolute;
+bottom:-2px;
+left:50%;
+margin-left:-6.5px;
+z-index:1;
+}
+
+</style>
+  </head>
+  
+  <body class="relative">
+     <div class="outer relative">
+       <img class="banner" src="img/banner_neo.jpg"/>
+     <div class="inner relative"> 
+        <div class="title_info">选座购票秘笈:</div>       
+        <div class="procedure">
+          <div class="up"> 
+             <div class="up_left">
+               <div class="rule_item" id="seq1"><span class="sequence">1</span>选择影院</div>
+               <div class="rule_item" id="seq4"><span class="sequence">4</span>选择座位</div>
+               <div class="rule_item" id="seq6"><span class="sequence">6</span>确认订单支付</div>
+             </div>
+             <div class="up_right">
+                
+                  <div class="rule_item" id="seq2"><span class="sequence">2</span>选择影片</div>
+                  <div class="rule_item" id="seq3"><span class="sequence">3</span>选择场次</div>          
+                  <div class="rule_item" id="seq5"><span class="sequence">5</span>填写手机号及验证码</div>          
+                  <div class="rule_item" id="seq7"><span class="sequence">7</span>接收取票信息</div>
+                
+             </div>
+          </div>
+          <div class="down">
+            <div class="rule_item" id="seq8"><span class="sequence">8</span>影院终端机自助取票</div>
+          </div>
+                             
+        </div>
+        <div class="activityWrap">
+            <div class="activityinner">
+               <div class="actLeft">
+                  <div class="instant10">购票立减 <span id="img_minus10"></span></div>
+                  <!-- <div class="dayTickets fs_14"><span>今日票量:</span><span id="total"></span>张</div> -->
+               </div>
+               <div class="actRight">活动规则</div>
+            </div>
+        </div>
+        <div class="cinema">
+           <div class="cityTab">
+             <ul>
+                <li class="relative"><a class="" ci="北京市">北京</a><span class="indicator"></span></li>
+                <li class="relative"><a ci="上海市">上海</a><span class=""></span></li>
+                <li class="relative"><a ci="广州市">广州</a><span class=""></span></li>
+                <li class="relative"><a ci="深圳市">深圳</a><span class=""></span></li>
+                <li class="relative"><a ci="重庆市">重庆</a><span class=""></span></li>
+                <li class="relative"><a ci="成都市">成都</a><span class=""></span></li>
+                <li class="relative"><a ci="武汉市">武汉</a><span class=""></span></li>
+             </ul>
+           </div>
+           <div id="wrapper" class="clear relative">
+		          <div id="scroller">		              
+	              	  <div id="cinemaList"></div>
+	              
+		              <div id="pullUp">
+					      <span class="pullUpIcon"></span><span class="pullUpLabel">上拉查看更多影院...</span>
+				      </div>
+	              </div>
+           </div>
+        </div>
+       
+     </div>
+      
+     </div>
+     <div class="pop_mask"></div>
+     <!--弹窗  -->
+       <div class="popup_wrap">
+         <div class="popup_title">活动规则<a href="javascript:void(0)" title="" class="close_popup"></a></div>
+         <div class="popup_info"><div class="popup_inner">每天8:00-22:00，您在活动页面选择所在城市及影院，点击“选座购票”按钮，选择任何场次进行支付购买，即享每张电影票折后再减15元优惠，限量13000张，先到先得，抢完为止。</div></div>
+       </div>         
+     <script type="text/javascript" src="js/zepto.min.js"></script>
+     <script type="text/javascript">
+        var GLOBAL_URL = "http://map.baidu.com";
+        $(function(){
+        	 var myScroll = {},
+        	       cacheArray = [],
+        	       paraStr = "",
+        	       isArrBottom=false,
+        	       _targetStr = location.search,       	           
+        	       qs = _targetStr.substring(_targetStr.indexOf("?")+1,_targetStr.indexOf("&")).split("=")[1],
+        		   pullUpEl = document.getElementById('pullUp'),
+        		   pullUpOffset = pullUpEl.offsetHeight;
+       	     if(qs==="poster_qr"){
+       	    	paraStr = "wapapp1";
+       	     }else if(qs==="mobile_push"){
+       	    	paraStr = "wapapp2";
+       	     }
+        	function tpl(template, data, label) {
+        		var tmp = String(template), s = label || /&\{([^}]*)\}/mg;
+    		return tmp.replace(s, function(value, name) {
+    					if (data[$.trim(name)] === '') {
+    						return value = '&nbsp';
+    					}
+    					return value = data[$.trim(name)];
+    				});
+    	     };
+    	   function  switchCity(whichCity){
+    	    	 var _url = GLOBAL_URL+"/maps/interfaces/movie/get_wap_cinema_info?callback=?&city=";
+    	    	 cacheArray.length=0;
+    	   $.ajaxJSONP({
+   			  url:_url+encodeURIComponent(whichCity)+"&t="+new Date().getTime(),
+   	          success:function(data){   
+   	        	  var template = '<div class="cin_item"><div class="cin_info clear"><div class="cin_name">@&{name}</div><a class="buy" uid="&{uid}" para="&{href}" href="javascript:void(0)" target="_blank">选座购票</a></div><div class="address"><span class="raindrop"></span>&{address}</div></div>';
+   	        	  var str = "";
+   	        	  $.each(data,function(i,v){
+   	        		cacheArray.push(tpl(template,v).replace("@",++i+". "));
+   	        	  });
+   	        	  for(var i=0;i<2;i++){
+   	        		  str += cacheArray.shift();
+   	        	  }
+   	        	  $("#cinemaList").html(str);
+   	        	//scrollInit();
+   	        	myScroll.refresh();	 
+   	        	//根据城市 定位tab
+			      $(".cityTab a").each(function(i,v){
+			    	  if($(v).attr("ci")==whichCity){
+			    		  $(".cityTab a").removeClass("cur").next().removeClass("indicator");
+			    		  $(v).addClass("cur").next().addClass("indicator");
+			    	  }
+			      });
+			      $(".buy").on("click",function(){
+	        		  var _uid = $(this).attr("uid");
+	        		  var _url = "http://map.baidu.com/mobile/#place/detail/qt=inf&uid="+_uid+"&nostat=1"+"&channel="+paraStr+$(this).attr("para");
+	        		  //$(this).attr("href",_url);
+	        		   $(this).attr("href","http://map.baidu.com/mobile/zt/movie2013/wap_mid.html?jump="+encodeURIComponent(_url));
+	        		  return true;
+	        	  });
+   	          	        	
+   	          }
+  		     });
+    	     };//end switchCity
+        	
+        	$.ajaxJSONP({
+				url : "http://map.baidu.com/maps/services/location/ip?cb=?",//"http://map.baidu.com/maps/services/location/gps?cb=?&lng="+lng+"&lat="+lat+"&t="+new Date().getTime(),  
+				success : function(re) {            						
+					if (re.result.error === 0){
+						var cityPool = ["北京市","上海市","成都市","广州市","深圳市","武汉市","重庆市"],
+						      _cityName = re.content.addr.city,
+						      isMatch=false;
+						      for(var i=0,l=cityPool.length;i<l;i++){
+						    	  if(cityPool[i]===_cityName){
+						    		  isMatch = true;
+						    	  }
+						      }           							      
+						      //根据城市 发请求获得影院数据
+						      if(isMatch){
+						    	  switchCity(_cityName);
+						      }else{
+						    	  switchCity("北京市");
+						      }
+						     
+					}else { 
+						switchCity("北京市");
+					}
+				}
+			})
+        	/*$.ajaxJSONP({
+    			  url:GLOBAL_URL+"/maps/interfaces/movie/init?callback=?",
+    	          success:function(re){   	        	
+    	        	  $("#total").html(re.total);
+    	          }
+      	 });*/
+        	 
+          $(".actRight").on("click",function(){
+        	  $(".pop_mask").show();
+        	  popupUpdate();
+        	  $(".popup_wrap").show();
+          });
+          $(".cityTab a").on("click",function(){
+        	  isArrBottom = false;
+        	  $(".pullUpLabel").html("上拉查看更多影院...");
+        	  var ci = $(this).attr("ci");
+        	  switchCity(ci);
+          });
+          $(".close_popup").on("click",function(){
+        	  $(".pop_mask").hide();
+        	  $(".popup_wrap").hide();
+          });
+          $(window).on("resize",function(){
+        	  popupUpdate();
+          })
+          function popupUpdate(){
+        	  
+        	//获取窗口的大小
+      	    var getClientSize = function(){
+      	        if(document.compatMode === "CSS1Compat"){
+      	            return {
+      	                width:document.documentElement.clientWidth,
+      	                height:document.documentElement.clientHeight
+      	            }
+      	        }else{
+      	            return {
+      	                width:document.body.clientWidth,
+      	                height:document.body.clientHeight
+      	            }
+      	        }
+      	    }; 
+      	    //获取页面高度
+      	    var getPageHeight = function(){
+      	            var D = document;
+      	            return Math.max(
+      	            Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+      	            Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+      	            Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+      	        );
+      	    };
+      	  $(".popup_wrap").css({position:"fixed",top:(getClientSize().height-116)/2+"px",left:(getClientSize().width-276)/2+"px"});
+          }
+          function pullUpAction () {       		
+        	 setTimeout(function(){
+        		 var el, item, i,l=4;        				
+ 			el = $('#cinemaList'); 
+			if(l<cacheArray.length){
+				l=4;
+			}else{
+				l=cacheArray.length;
+				isArrBottom=true;
+			}
+			
+			for (i=0; i<l; i++) {
+				item = cacheArray.shift();       				
+				el.append($(item));
+			}
+			$(".buy").live("click",function(){
+      		  var _uid = $(this).attr("uid");
+      		  var _url = "http://map.baidu.com/mobile/#place/detail/qt=inf&uid="+_uid+"&nostat=1"+"&channel="+paraStr+$(this).attr("para");
+      		  $(this).attr("href","http://map.baidu.com/mobile/zt/movie2013/wap_mid.html?jump="+encodeURIComponent(_url));
+      		  return true;
+      	  });
+			myScroll.refresh();	  },1000)                    		     		
+        	};
+        	function scrollInit(){
+        		myScroll = new iScroll("wrapper",{   	        	   	        		        		        		
+	        		scrollbarClass: "myScrollbar",
+	        		useTransition:false,
+	        		hScrollbar:false,	
+	        		momentum:true,
+	        		vScroll:true,
+	        		vScrollbar:true,
+	        		onRefresh: function () {
+	        		     if (pullUpEl.className.match('loading')) {
+	        				pullUpEl.className = '';	        			
+	        			    pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉查看更多影院...';	        					        						        				        				
+	        			 }if(isArrBottom){
+	        				pullUpEl.querySelector('.pullUpLabel').innerHTML = '已经没有更多影院了...';
+	        			}
+	        		},
+	        		onScrollMove: function () {
+	        			 if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+	        				pullUpEl.className = 'flip';
+	        				pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+	        				this.maxScrollY = this.maxScrollY;
+	        			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+	        				pullUpEl.className = '';
+	        				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉查看更多影院...';
+	        				this.maxScrollY = pullUpOffset;
+	        			}
+	        		},
+	        		onScrollEnd: function () {
+	        			 if (pullUpEl.className.match('flip')) {
+	        				pullUpEl.className = 'loading';
+	        				pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';				
+	        				pullUpAction();	
+	        			}
+	        		}
+	             });
+        	};
+        	
+        		scrollInit();
+        		
+        })
+     </script>
+     <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2613474e021c309d4abc081e7a6fab05' type='text/javascript'%3E%3C/script%3E"));
+</script>
+     
+  </body>
+</html>

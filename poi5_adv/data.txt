@@ -1,0 +1,9 @@
+{
+"login": 1,
+"count": 1,
+"status": 1,
+"gid": 129,
+"pid": "19930",
+"prize_name": "小茶壶",
+"prize_key": "e633d6391b69bfd6022ab9c553273744"
+}

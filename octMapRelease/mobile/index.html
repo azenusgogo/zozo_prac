@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>百度地图 之 再见孙悟空</title>
+<link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+
+<style type="text/css">
+ body{_overflow:hidden;min-width:320px;/*max-width:640px;*/margin: 0 auto;background: black;}
+ .yahei {font-family:Microsoft YaHei;}
+ .rel {position: relative;}
+ .abs {position: absolute;}
+ .clr_fix {clear: both;}
+ .clearfix:after {content: ".";height: 0;visibility: hidden;display: block;clear: both;}
+ #wrap1 {width:100%;background:url(img/wrap1.jpg) repeat scroll 0 0 transparent;/*height:577px;*/}
+ #sec1  { display:block;margin:0 auto;width:100%; height:100%;z-index:1;} 
+ #wrap2 {width:100%;background-color:#c9e9fe}
+ #sec2  {display:block;margin:0 auto;width:100%; height:100%;background-size:100% 100%;}
+ #wrap3 {width:100%;background:url(img/wrap3.jpg) repeat scroll 0 0 transparent;/*height:581px;*/}
+ #sec3  {margin:0 auto;width:100%; height:100%;}
+ #wrap4 {width:100%;background-color:#bae2e1;/*height:579px;*/}
+ #wrap5 {width:100%;background-color:#fff9d4;/*height:584px;*/}
+ #wrap6 {width:100%;background-color:#f1defc;/*height:581px;*/}
+ #wrap7 {width:100%;background-color:#e3f4ff;/*height:582px;*/}
+ #wrap8 {width:100%;background:url(img/wrap8.jpg) repeat scroll 0 0 transparent;/*height:581px;*/}
+ #andriod {bottom:7.96%;left:50%;position:absolute;z-index:9;}
+ #iphone {bottom:7.96%;left:73%;position:absolute;z-index:9;}
+ #sec4,#sec5,#sec6,#sec7,#sec8  {display:block;margin:0 auto;width:100%; height:100%;}
+ .btn {width:19.5%;height:11.7%;/*width:208px;height:66px;*/display:inline-block;cursor:pointer;position:absolute;}
+ .btn_special {width:19.5%;height:11.7%;position:absolute;cursor:pointer;}
+ .btn img {width:100%;height:100%;display:block;} 
+ #tryit {top: 50%;left: 62%;position:absolute;}
+ #shortcut {top: 54%;left: 69%;}
+ #path {top: 34%;left: 17.5%;cursor:pointer;-moz-transform:rotate(-10deg);-o-transform:rotate(-10deg);-webkit-transform:rotate(-10deg);transform:rotate(-10deg);;}
+ #delicacy {top: 49%;left: 65%;}
+ #share {top: 39%;left: 27%;position:absolute;}
+</style>
+</head>
+<body class="rel">     
+    <div id="wrap1" class="rel">
+         <img id="sec1" src="img/sec1.png"/>
+         <a id="andriod" href="http://wuxian.baidu.com/map/map_download.html" class="btn" target="_blank"><img src="img/andriod.gif"/></a>
+         <a id="iphone" href="http://wuxian.baidu.com/map/iphone.html" class="btn" target="_blank"><img src="img/iphone.gif"/></a>          
+    </div>
+    <div id="wrap2" class="rel">
+      <img id="sec2" src="img/sec2.png"/>
+    </div>
+    <div id="wrap3" class="rel">
+      <img id="sec3" src="img/sec3.png"/>
+      <a id="tryit" class="btn" target="_blank" href="http://map.baidu.com/detail?qt=template&detail=hotel_list&from=home&s=s%26wd%3D%E9%85%92%E5%BA%97%26c%3D131"><img src="img/tryit.gif"/></a>
+    </div>
+    <div id="wrap7" class="rel">
+      <img id="sec7" src="img/sec7.png"/>
+      <a class="btn" id="delicacy" href="http://map.baidu.com/" target="_blank"><img src="img/tryit.gif"/></a>
+    </div>
+    <div id="wrap4" class="rel">
+      <span><img id="sec4" src="img/sec4.png"/></span>
+    </div>
+    <div id="wrap5" class="rel">
+      <img id="sec5" src="img/sec5.png"/>
+     <a class="btn" id="shortcut" href="http://map.baidu.com/" target="_blank"><img src="img/tryit.gif"/></a>
+    </div>
+    <div id="wrap6" class="rel">
+      <img id="sec6" src="img/sec6.png"/>
+      <a class="btn_special" id="path" href="http://j.map.baidu.com/YszGM" target="_blank"><img src="img/tryit.gif" width="100%"/></a>
+    </div>
+    
+    <div id="wrap8" class="rel">
+      <img id="sec8" src="img/sec8.png"/>
+      <a class="btn" id="share" href="" target="_blank">                    
+         <img src="img/tryit.gif" width="100%" height="100%"/>                          
+      </a>
+    </div>
+	             
+   </body>
+</html>

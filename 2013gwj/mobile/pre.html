@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>为人民服务活动</title>
+<link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+ body {}
+ img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{display:none;}
+ .rel {position: relative;}
+ .abs {position: absolute;}
+ .clr_fix {clear: both;}
+ .clearfix:after {content: ".";height: 0;visibility: hidden;display: block;clear: both;}
+ @media screen and (min-width:320px) and (max-width:479px) { 
+     .link{font-size:0.8em;}
+    } 
+    @media screen and (min-width:480px) and (max-width:639px) { 
+     .link{font-size:1.125em;}
+    } 
+     @media screen and (min-width:640px) and (max-width:719px) {
+    .link{font-size:1.375em;}
+    } 
+     @media screen and (min-width:720px)  {
+    .link{font-size:1.675em;}
+    }      
+ #main {width:100%;margin:0 auto;}
+ #banner img{width:100%;display:block;}
+ #cnt {background:url(img/bg.jpg) repeat 0 0 transparent;width:100%;}
+ #cnt_wrapper {width:93%;margin:0 auto;border:2px solid #b42720;background-color:rgba(190,30,24,0.3)}
+ #cnt_wrapper img{width:100%;display:block;}
+ #links {display: -webkit-box;-webkit-box-orient: horizontal;height: 20%;padding: 5%;}
+ .link{width: 38.625%;color:#1c1c1c;background: -webkit-linear-gradient(top,#fefefe,#d5d5d5);display: -webkit-box;padding: 3% 3%;border-radius: 4px;margin-right: 10%;text-decoration:none;}
+ .link p{padding:0 7%;}
+#down,#tuan{width: 20%;display: block;vertical-align: middle;margin-left: 4%;}
+</style>
+</head>
+<body>
+  <div id="main">
+    <section id="banner"><img id="banerImg" src="img/banner.jpg"/></section><!-- banner:640*192-->
+    <section id="cnt">
+      <div id="cnt_wrapper"><img src="img/content.gif"/></div>
+      <section id="links">
+    	<a class="link" href="http://mo.baidu.com/map/code/?from=dtnb10057"><img id="down" src="img/download.png" /><p>下载地图APP<br/>享受全部优惠</p></a>
+    	<a class="link" href="http://m.tuan.baidu.com/getapp"><img id="tuan" src="img/tuan.png"/><p>前往百度团购<br/>享受最低折扣</p></a>
+      </section>
+    </section>
+    
+  </div>
+   <script type="text/javascript">
+   	   (function(g){
+   	   	  g.util = {getPlatform : function (){
+    		var sys = {
+           		 ios:false,
+           		android:false
+           	},ua = navigator.userAgent.toLowerCase();
+    		sys.ios = ua.indexOf("iphone")>-1;
+    		sys.android = ua.indexOf("android")>-1;
+    		return sys;       		
+    	}}
+    	var pt =g.util.getPlatform();
+   	   	  g.onload = function(){
+   	   	  	 var bannerImg = document.getElementById("banerImg");
+   	   	  	     
+   	   	  	}
+   	   	})(window)
+   	</script>
+  <!-- <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9d42fd25c065b35bac16b6db9f33e88a' type='text/javascript'%3E%3C/script%3E"));
+</script>-->
+</body>
+</html>

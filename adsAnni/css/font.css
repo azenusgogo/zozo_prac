@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'BurberryCapitals';
+	src: url('../fonts/BurberryCapitals.otf');
+}
+@font-face {
+	font-family: 'BurberryCapitalsSmall';
+	src: url('../fonts/BurberryCapitalsSmall.otf');
+}
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Roman';
+	src: url('../fonts/HelveticaNeueLTStd-Roman.otf');
+}
+
+body{font-family: Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Tohoma,Arial;}

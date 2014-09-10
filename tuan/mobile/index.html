@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度团购日</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link type="text/css" rel="stylesheet" href="css/LBS-reset.css" /> 
+
+  </head>
+  
+  <body>
+     <div id="main">
+        <div id="imgWrapper">
+          <img alt="每周五 百度团购日TOP1最畅销团单" src="http://webmap3.map.bdimg.com/maps/services/thumbnails?width=640&height=480&align=center,center&src=http://tuan.baidu.com/event/fridaytuan/mobile/img/banner.jpg"class="banner"/>
+          <p id="issue">第五期</p>     
+       </div>
+        <div id="cnt">
+           
+        </div>
+     </div>
+       <script type="text/javascript" src="js/zepto.min.js"></script>
+       <script type="text/javascript">
+       (function(global){
+    	   $.ajax({
+				url : "http://api.map.baidu.com/location/ip?ak=F454f8a5efe5e577997931cc01de3974",//http://map.baidu.com/maps/services/location/gps?cb=?&lng="+lng+"&lat="+lat+"&t="+new Date().getTime(),  
+				type:"get",
+			    dataType:"jsonp",
+				success : function(re) {            						
+					if (re.status === 0){						
+						global.utils.initPage(re.content.address_detail.city_code);						     						     
+					}else{
+						global.utils.initPage(131);	
+					}
+				}
+			})
+    	   
+       })(this);
+       </script>
+       <script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbee8e2816b7a268c00d2d263604faf27' type='text/javascript'%3E%3C/script%3E"));
+	   </script>
+  </body>
+</html>

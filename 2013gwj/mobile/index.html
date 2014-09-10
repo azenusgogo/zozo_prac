@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>团购会场 全网最低价</title>
+<link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+ body {min-width:320px;/*max-width:640px;*/margin:0 auto;}
+ .rel {position: relative;} .abs {position: absolute;} .clr_fix {clear: both;} .clearfix:after {content: ".";height: 0;visibility: hidden;display: block;clear: both;}
+ img {width:100%;display:block;} img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{display:none;}
+ #main {width:100%;margin:0 auto;}
+ #banner {background:#402c2b;width:100%;position:relative;}
+ #banner img {width:100%;}#rush {width:100%;}
+  #issue {position:absolute;top:78%;display:-webkit-box;-webkit-box-pack:center; -webkit-box-align:center;margin-left:-50%;left:50%;color:#ffffff;min-width:320px;width:100%;}
+  .item{width: 96%;padding: 2%;background-color: #ffffff;position: relative;display: -webkit-box;border-bottom:1px solid #dbdbdb;-webkit-box-align:center;}  
+  .item a {display:block;position:relative;width:41%;}
+  .item a img {display:block;width:100%;}
+  .item .content {width:56%;margin-left:3%;}
+  .item .caption {width:100%;font-weight:bold;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+  .item .detail {width:100%;margin-top:2%;position:relative;}
+  .item .desc {display:-webkit-box;margin-top:3%;color:#636363;}
+  .item .currency {color:#e21104;}
+  .item .discount {color:#e21104;margin-left:2%;}
+  .detail .o_price {color:#888888;margin-left:5%;text-decoration:line-through;}
+  @media screen and (min-width:320px) and (max-width:479px) { .caption,.discount {font-size:1em;}.desc,.currency {font-size:0.8em;}.o_price,.population {font-size:0.75em;} 
+       .counter_title {font-size:1em;}
+       .counter_info {font-size:0.65em;}  
+      .counter_info span {font-size:1.25em;}
+      #jump {font-size:1.5em;} 
+      .end{font-size:1em;}
+      .tuan_b{font-size:0.8em;}
+      #issue,#notice {font-size:0.8em;}
+      #act_cnt {font-size:0.875em;}
+    } 
+  @media screen and (min-width:480px) and (max-width:639px) {
+       .caption,.discount {font-size:1.25em;}
+       .desc,.currency,.o_price,.population{font-size:1em;}
+       .counter_title {font-size:1em;}
+       .counter_info {font-size:0.9em;}   
+        .counter_info span {font-size:1.5em;}  
+         #jump {font-size:2em;}  
+         .end{font-size:1.25em;}
+         .tuan_b{font-size:1.15em;}
+          #issue,#notice {font-size:1.25em;}
+          #act_cnt {font-size:1em;}
+    } 
+   @media screen and (min-width:640px) and (max-width:1023px){
+       .caption,.discount {font-size:1.6em;}
+       .desc,.currency {font-size:1.5em;}
+       .o_price,.population {font-size:1.375em;}
+       .counter_title {font-size:1em;}
+       .counter_info {font-size:1em;} 
+       .counter_info span {font-size:2em;} 
+       #jump {font-size:2.625em;}  
+       .end,.tuan_b{font-size:1.5em;}
+        #issue,#notice {font-size:1.375em;}
+        #act_cnt {font-size:1.25em;}
+    } 
+    @media screen and (min-width:1024px){
+       .caption,.discount {font-size:3em;}
+       .desc,.currency {font-size:2em;}
+       .o_price,.population {font-size:2.5em;}
+       .counter_title {font-size:1.4em;}
+       .counter_info {font-size:1.5em;}
+       .counter_info span {font-size:2em;} 
+       #jump {font-size:2.625em;}  
+       .end,.tuan_b{font-size:4em;}
+        #issue,#notice {font-size:1.75em;}
+        #act_cnt {font-size:2em;}
+    }
+    .counter_info {width:90%;}
+    .counter_title {text-align:center;color:#ffffff;}
+    .counter_box {z-index:9;position:absolute;width:100%;height:100%;top:0;left:0;background-color:rgba(102,51,51,0.7);color:#ffd361;-webkit-box-pack:center;-webkit-box-align:center;display:-webkit-box;}
+    .counter_info span{display:inline-block;padding: 0 2%;margin: 2%;}
+    .counter_info span:first-child {margin-left:0;}
+    .hour,.mini,.sec {background-color:#ffd361;color:#ad221a;}
+    .population {color: #777777;position: absolute;top: 16%;right: 0;}
+    #tuan {width:100%;}
+    #jump {display: -webkit-box;width: 46.875%;background: -webkit-linear-gradient(top,#ef4840,#cc332b);border-radius: 8px;text-decoration: none;margin: 0 auto;color: #ffffff;font-weight: bold;-webkit-box-pack: center;-webkit-box-align: center;padding: 2% 0;text-align: center;}
+    .item .desc a {width:100%;text-decoration:none;color:#636363;}
+    .end {z-index: 10;position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(102,51,51,0.7);color: #ffffff;-webkit-box-pack: center;-webkit-box-align: center;display: -webkit-box;}
+    .tuan_b {width: 96%;color: #444444;display: -webkit-box;-webkit-box-align: center;padding: 2%;background:-webkit-linear-gradient(top,#ffffff,#d9d8d9);font-weight:bold;}
+    .tuan_b img {width: 6%;display: block;vertical-align: middle;margin-right:8px;}
+    .tuan_b span {display: inline-block;}
+    #notice {width:88%;padding:2% 6%;border-bottom:1px solid #dbdbdb;text-align:center;color:#828181;}
+    #adv {width:100%;} #act_cnt{background-color: #f6f5f6;padding: 4%;line-height: 1.5em;} 
+    .timer {text-align:center;}
+    #tuanjump {display: block;width: 82%;margin: 0 auto;padding: 3% 0;}
+    #tuanjump img {width:100%;}
+    #partner {color:red;text-align:center;}
+</style>
+</head>
+<body>
+  <div id="main">
+    <section id="banner">
+    	<img src="img/new_banner.jpg" style="display:block"/>    	
+    	<p id="issue">活动时间：12月20日-2014年1月1日</p>
+    </section>
+    <section id="adv">
+	    	<div class ="tuan_b"><img src="img/adv_logo.png"/><span>先屯券，腐败更彻底（全场无限制通用）</span></div>
+	 </section>
+    <section id="notice">活动时间每天上午11点准时开抢</section>    
+    <section id="rush">
+      <div class="item" id="coupon1"><!-- 原线上id：55827916  20423919-->
+        <a href="http://tuan.baidu.com/selftg/item/detail?item_id=20606027" target="_blank"><img class="quan" id="10yuan" src="img/10yuan.jpg" /><div id="mask1" class="counter_box" gid="57782139" itemid="20606027"><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><p class="timer"><span class="hour">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</p></div></div></a>
+        <div class="content">
+          <h1 class="caption">10元优惠券</h1>
+          <p class="desc">仅售0.1元，价值10元代金券，限量1000张，先抢先得！</p>
+          <div class="detail"><small class="currency">¥</small><big class="discount" >0.1</big><span class="o_price">原价10</span></div>
+        </div>       
+      </div> 
+      <div class="item" id="coupon2">
+        <a href="http://tuan.baidu.com/selftg/item/detail?item_id=20606112" target="_blank"><img class="quan" id="50yuan" src="img/50yuan.jpg" /><div id="mask2" class="counter_box" gid="57781504" itemid="20606112"><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><p class="timer"><span class="hour">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</p></div></div></a>
+        <div class="content">
+          <h1 class="caption">50元优惠券</h1>
+          <p class="desc">仅售25元，价值50元代金券，限量1000张，先抢先得！</p>
+          <div class="detail"><small class="currency">¥</small><big class="discount">25</big><span class="o_price">原价50</span></div>
+        </div>        
+      </div>
+      <div class="item" id="coupon3">
+        <a href="http://tuan.baidu.com/selftg/item/detail?item_id=20606074" target="_blank"><img class="quan" id="100yuan" src="img/100yuan.jpg" /><div id="mask3" class="counter_box" gid="57781503" itemid="20606074"><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><p class="timer"><span class="hour">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</p></div></div></a>
+        <div class="content">
+          <h1 class="caption">100元优惠券</h1>
+          <p class="desc">仅售50元，价值100元代金券，限量500张，先抢先得！</p>
+          <div class="detail"><small class="currency">¥</small><big class="discount">50</big><span class="o_price">原价100</span></div>
+        </div>        
+      </div>
+    </section>
+    <div id="tuan">
+    	<section id="jingpin">
+	    	<div class ="tuan_b"><img src="img/jingpin_logo.png"/><span>精品团单</span></div>
+	    </section>     	   	    	    	    	    	    
+	    <section id="meishi">
+	    	<div class ="tuan_b"><img src="img/meishi_logo.png"/><span>美食</span></div>
+	    </section>
+	    <section id="dianying">
+	    	<div class ="tuan_b"><img src="img/dianying_logo.png"/><span>电影</span></div>
+	    </section>
+	    <section id="jiudian">
+	    	<div class ="tuan_b"><img src="img/jiudian_logo.png"/><span>酒店</span></div>
+	    </section>
+	    <section id="yule">
+	    	<div class ="tuan_b"><img src="img/yule_logo.png"/><span>休闲</span></div>
+	    </section>	 
+	    <section id="activity">
+	    	<div class ="tuan_b"><img src="img/act_logo.png"/><span>详情</span></div>
+	    	<div id="act_cnt">
+	    	  <p>1.疯抢优惠券</p>
+	         <p>0.1元抢10元代金券、25元抢50元代金券、50元抢100元代金券，每天11点准时开抢，每人每个面值限购一张，代金券有效期截止2014年1月1日24点。</p>
+	         <p style="margin-top:3%;">2.全场9折，买满100返200</p>
+	         <p>下单即可享受全场9折优惠，并且单笔订单折前满100再返200元代金券，包括2张价值50元代金券（需消费满200使用），1张价值100元代金券（需消费满400使用），有效期截止获取日当天24点（每天都可享受一次满100返200）。</p>	        
+	         <p style="margin-top:3%;">3.百度团购在法律范围内保留本次活动解释权，百度团购有权取消作弊用户的代金券。</p>
+	    	  <a id="tuanjump" href="http://m.tuan.baidu.com/"><img src="img/tuan_jump.png"/></a>
+	    	  <p id="partner">战略合作伙伴：百度手机客户端</p>
+	    	</div>
+	    	
+	    </section> 
+	      
+    </div>    
+  </div>    
+  <script type="text/javascript" src="js/zepto_dev.js?v=1.0"></script>
+  <script type="text/javascript">(function(g){g.utils.initPage().locateCity();})(window);</script>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F24fad065b919fd82fe31f0e94a1e8fce' type='text/javascript'%3E%3C/script%3E"));
+</script></body></html>

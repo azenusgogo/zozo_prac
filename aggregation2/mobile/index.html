@@ -1,0 +1,138 @@
+{literal}
+<!DOCTYPE html>
+<html>
+<head>
+<title>地图活动专区</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="stylesheet" type="text/css" href="css/scrollbar.css?v=3.0">
+ <style type="text/css">
+ 	#s_more {
+ 		background-color: #FAFAFA;
+	border-radius: 4px;
+	margin: 2% auto 0;
+	min-width: 306px;
+	width: 96.5%;
+	height: 36px;
+	border: 1px solid #d4d9e0;
+	text-align: center;
+	line-height: 36px;
+	color: #768398;
+	font-weight: bold;
+	display: block;
+	text-decoration: none;	
+ 		}
+ </style>
+  </head>
+  
+  <body class="relative">
+     <div class="outer relative">
+       <a href="http://map.baidu.com/zt/ystar/mobile/"><img class="banner" src="img/banner.jpg"/></a>
+     <div class="inner relative">         
+        <div class="b_img_wrapper rel" id="slide_wrap">
+           <ul class="rel clear">                       
+           </ul>
+        </div>
+
+        <div class="s_img_list">                 
+        </div><!-- end of s_img_list -->
+        <div id="s_more" class="rel">更多精彩活动敬请期待</div>
+     </div>
+      
+     </div>
+              
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script>
+$(function(){	      	
+	 $.ajax({
+	 	url:"http://api.map.baidu.com/location/ip?ak=F454f8a5efe5e577997931cc01de3974",//http://map.baidu.com/maps/services/location/ip?cb=?
+	 	type:"get",
+                dataType:"jsonp",
+	 	success:function(re){
+	 	  var _cityName
+	 	  if (re.status === 0){
+					_cityName = re.content.address_detail.city
+                  }else{
+                        _cityName = ''
+                  }    
+					     var temp1 = '<li><a href="&{hop_url}"><img src="&{img_url}" /></a></li>',
+					     temp2 = '<div class="s_item clear" data-time="">'+
+          '<a href="&{hop_url}" class="thumb">'+
+          '<img src="&{img_url}" class="s_img"/></a><div class="img_cnt rel">'+
+          '<div class="img_title">&{caption}</div>'+
+          '<div class="img_detail">&{detail}</div>'+
+          '<div class="img_oper"><p  class="time_remained">剩余:'+
+          '<span class="days">^</span>天</p></div></div></div>',
+         ele_str = "",banner_str="";
+        utils.data = [ 
+{/literal}
+{foreach from=$rows item='row'} 
+ {
+"needLoc":"{$row.data.needLoc|escape:'javascript'}",
+"cityName":"{$row.data.cityName|escape:'javascript'}",
+"activity_time":"{$row.data.activity_time|escape:'javascript'}",
+"hop_url":"{$row.data.hop_url|escape:'javascript'}",
+"img_url":"{$row.data.img_url|escape:'javascript'}",
+"caption":"{$row.data.caption|escape:'javascript'}",
+"detail":"{$row.data.detail|escape:'javascript'}",
+"isBanner":"{$row.data.isBanner|escape:'javascript'}"
+}, 
+{/foreach}
+{
+
+}
+                     ];
+
+{literal}
+        $.each(utils.data,function(i,v){
+            if(i===utils.data.length-1){
+            return;
+            }
+        	if(v.isBanner==="1"){
+        	banner_str += utils.tpl(temp1,v);
+        	$("#slide_wrap ul").html(banner_str);
+        	}else{
+        	var frag = utils.tpl(temp2,v),
+        	    activity_time_arr = v.activity_time.split(","),
+        	    remained = utils.getRemainedDays(activity_time_arr[0],activity_time_arr[1],activity_time_arr[2]);        	
+        	if(v.needLoc==1&&v.cityName.indexOf(_cityName)>-1&&remained>0){
+        		frag = frag.replace("^",remained.toString());
+        		ele_str += frag ;
+        	 }
+        	 if(v.needLoc==0&&remained>0){
+        	 	frag = frag.replace("^",remained.toString());
+        		ele_str += frag ;
+        	 }
+        	
+        	}
+        	 /*else{
+    		frag = frag.replace("^","0").replace("@","<span style='float:right;'>活动已结束</span>");
+    		frag = '<div class="s_item clear" data-time="">'+$(frag).find(".thumb").attr("href","javascript:void(0)").end().html()+'</div>';
+    	}*/
+        	
+        });
+        $("#slide_wrap ul li img, #slide_wrap ul li a").width($("#slide_wrap").width());
+        $(".s_img_list").html(ele_str);
+        $("#slide_wrap").vslide({
+				auto:0
+			    });
+					}	
+	 	 //  }
+	 	})	
+        
+
+});
+
+</script>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F75af904afe3b97be4d1ed9cb429a0771' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>
+{/literal}

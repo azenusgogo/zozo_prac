@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>百度团购购物节</title>	
+	 <link type="text/css" rel="stylesheet" href="css/LBS-reset.css" />
+	 <!--[if lt IE 7]>
+            <script type="text/javascript">document.execCommand("BackgroundImageCache",false,true);</script>
+        <![endif]-->
+	 <!--[if IE 6]>
+        <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+        <script type="text/javascript">DD_belatedPNG.fix('#banner,#ban_cnt,.menban,.end,.rear');
+        </script>
+    <![endif]-->
+	<style type="text/css" media="all">
+	*html{  background-image:url(about:blank);  background-attachment:fixed;  }
+	body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	    margin: 0;
+	    padding: 0;
+	    font-family: 'Microsoft YaHei';
+	    font-size:16px;
+	}
+	body {background:url(img/content_bg.jpg) repeat 0 0  #ca0000;}
+	a {
+	text-decoration:none;
+	}
+	ul {list-style:none;}
+    img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{
+     display:none;
+    }
+	.yahei {font-family:Microsoft YaHei;}
+    .rel {
+     position: relative;
+    }
+    .abs {
+    position: absolute;
+    }
+    .clr_fix {
+    clear: both;
+    }
+    .clearfix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }   
+	#header {
+	    background-color: #ffffff;
+	    height: 36px;
+	    width: 100%;
+        min-width: 1280px;
+	}	
+	.header_inner {
+	    height: 36px;
+	    margin: 0 auto;
+	    width: 1000px;
+	}
+	.header_logo {
+    background: url("img/tuan_logo.jpg") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 36px;
+    width: 94px;
+    }   
+    #tuangou {
+    height: 575px;/*442px*/
+    left: 50%;
+    margin-left: -528px;/*-433px*/
+    position: absolute;
+    top: -15px;
+    width: 1056px;
+    z-index:3;
+    }
+    #info_banner {
+    width:980px;
+    padding:20px;
+    height:1084px;
+    margin:0 auto;
+    background:url(img/red_bg.gif) repeat 0 0 transparent;
+    }
+    #rule {
+    width:990px;
+    height:465px;
+    margin:0 auto;  
+    color:#ffffff;
+    font-size:12px; 
+    background:url(img/red_bg.gif) repeat 0 0 transparent;
+    padding:0 15px;
+    line-height:2.4em;
+    zoom:1;  
+    margin-bottom:80px; 
+    }
+    #rule_inner {background-color: #8f0f11;width: 938px;margin: 0 auto;padding: 15px;}
+    #rule_inner h1{font-size:24px; padding:8px 0;}
+  /*  .item .title1 {
+    width:456px;
+    height:65px;
+    background:url("img/all.gif") no-repeat scroll 0 -198px transparent;
+    }
+    .item .title2 {
+    width:455px;
+    height:65px;
+    background:url("img/all.gif") no-repeat scroll 0 -265px  transparent;
+    }*/
+    #more {
+    position:absolute;
+    top:52px;
+    left:336px;
+    width:325px;
+    height:77px;
+    /*background:url("img/all.gif") no-repeat scroll 0 -114px transparent;*/
+    }
+
+    #accordion1,#accordion2 {
+    margin-top:7px;
+    }
+    .oper { 
+    height:104px;
+    background-color:#ffffff;   
+    width:396px;
+    padding:10px;
+    margin-top:0;
+    }
+    .caption {
+    font-size:16px;
+    font-weight:bold;
+    color:#444444;
+    line-height:1.8em;
+    }
+    .desc {
+color: #000000;
+font-size: 18px;
+line-height: 1.3em;
+/*overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;*/
+width: 90%;
+padding: 10px;
+height: 48px;
+font-weight:600;
+    }
+    .detail {
+    width:294px;
+    padding:0 10px;
+    height:auto;
+    }
+    .symbol {
+    color:#ff6600;
+    font-size:20px;
+    font-weight:bold;
+    vertical-align:middle;
+    }
+    .price {
+    color: #FF6600;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 0.2em;
+    vertical-align: middle;
+    }
+    .rediscount {
+	background-color: #FF6600;
+	color: #FFFFFF;
+	display: none;/*inline-block*/
+	font-size: 12px;
+	font-weight: bold;
+	height: 32px;
+	line-height: 16px;
+	margin-left: 14px;
+	padding: 2px 3px;
+	vertical-align: middle;
+	width: 60px;
+	text-indent: 0;
+	text-align: center;
+    /*visibility:hidden;*/
+    }
+
+    .rush {
+	background-color: #E43462;
+	bottom: 12px;
+	color: #FFFFFF;
+	display: inline-block;
+	font-weight: bold;
+	height: 35px;
+	line-height: 35px;
+	position: absolute;
+	right: 19px;
+	text-align: center;
+	width: 95px;
+	text-decoration: none;
+    }
+    .sub {
+    display: inline-block;
+	width: 62%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+    }
+    .real_discount {
+    color:#444444;
+    font-size:14px;
+    vertical-align:middle;
+    }
+    .front .population {
+    position:absolute;
+    right:1.4em;
+    bottom:0;
+    }
+   /* .tag1 {
+    display: block;
+    background: url("img/all.gif") no-repeat scroll 0 0 transparent;
+    height: 37px;
+    width: 69px;
+
+    }
+    .tag2 {
+    display: block;
+    height: 37px;
+    width: 69px;
+    background-image:url("img/all.gif");
+    }*/
+    .tags1 {
+    z-index: 1;
+    font-size:16px;
+    color:#ffffff;
+    line-height: 30px;
+    text-align:center;
+    left: 15px;
+    top: 0;
+    }
+    .tags2 {
+    line-height: 30px;
+    text-align:center;
+    left: 110px;
+    top: 0;
+    z-index: 1;
+    /*visibility:hidden;*/
+    display:none;
+    }
+    .share {
+    right: 137px;
+    top: 6px;	
+    }
+    .front {
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    height: 34px;
+    left: 0;
+    line-height: 34px;
+    text-indent: 1%;
+    width: 416px;
+    z-index: 2;
+    font-weight:bold;
+    visibility:visible;
+    }
+    .rear {
+    display:block;
+    width:416px;
+    height:34px;
+    visibility:visible;
+    background:url("img/new_bg.png") repeat scroll 0 0 transparent;
+    /*_background:none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/hui.png" ,sizingMethod="scale");*/	
+    bottom:0;
+    left:0;
+    z-index: 1;
+    zoom:1;
+    }
+    .seq {
+    background-color: #E43462;
+    height: 20px;
+    left: 20px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    width: 20px;
+    }
+    .illu {
+    display:block;
+    width:416px;
+    height:220px;
+    }
+    .op {
+    height:220px;
+    /*overflow:hidden;*/
+    }
+    .range {
+    width:65%;
+    display:inline-block;
+    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+    }
+     #tuanwrapper {
+    width:938px;
+    height:539px;
+    position:absolute;
+    top:72px;
+    left:50%;
+    margin-left:-471px;
+    background:url(img/hui.png) repeat 0 0 transparent; 
+    _background:none;
+    z-index:9;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/new_bg.png" ,sizingMethod="scale");	
+    }
+    #cd_wrapper {width:980px;height:206px;zoom:1;}
+    .cd_item {display:inline;width:300px;height:206px;float:left;margin-left:40px;position:relative;}
+    .cd_item img{width: 96%;display: block;margin: 7px auto 0 auto;}
+    .counter_box {zoom:1;width:100%;height:100%;position:absolute;z-index:9;top:0;left:0;}    
+    .counter_info {color:#ffd361;position:absolute;top:50%;width: 240px;height:74px;left: 50%;margin-left: -120px;margin-top:-37px;}
+    .counter_title{text-align:center;font-size:18px;font-weight:600;color:#e9be4d;}
+    .counter_info span {display: inline-block;padding: 0 2%;margin: 2%;font-size:32px;vertical-align:middle;/*width:54px;height:36px;*/}
+    .hour, .mini, .sec{background-color:#ffd361;color:#ad221a;}
+    .wtip {font-size:17px;color:#ffffff;padding-top:15px;text-align:center;}
+    .menban {position:absolute;top:0;left:0;width:100%;height:206px;display:block;background:url(img/uni_hui.png) repeat 0 0  transparent;}
+    .quan_detail {width: 100%;margin-top: 8px;position:relative;}
+    .currency {color: #ffbe21;font-size:24px;margin-left:5px;font-weight:bold;}
+    .discount {color: #ffbe21;margin-left: 2%;font-size:32px;font-weight:bold;}
+    .quan_rush {background-color: #ffd96a;bottom: 4px;color: #ca322a;display: inline-block;font-weight: bold;height: 35px;line-height: 35px;position: absolute;right: 6px;text-align: center;width: 95px;text-decoration: none;border-radius:4px;}
+	.end {z-index: 10;position: absolute;width: 100%;height: 206px;line-height:206px;top: 0;left: 0;background: url(img/uni_hui.png) repeat 0 0  transparent;color: #ffffff;font-size:30px;text-align:center;}
+	#info_wrapper {margin: -35px auto 0;width: 1016px;min-width: 1280px;}
+	#banner {margin: 0 auto;height: 641px;background: url("img/banner_bg.png") repeat scroll 0 0 transparent;/*_background: url("img/banner_bg.gif") repeat scroll 0 0 transparent;*/min-width: 1280px;width: 100%;}
+	#ban_cnt {width:740px;height:606px;margin:0 auto;background:url(img/ban_cnt.png) no-repeat 0 0 transparent; /*_background:url(img/ban_cnt.gif) no-repeat 0 0 transparent;*/ }
+	#divider {padding-bottom:15px;width:980px;height:49px;line-height:46px;text-indent:2em;font-weight:800;min-width:980px;margin:0 auto;background:url(img/dividor.gif) no-repeat 0 0 transparent; }
+	#divider .red_title {color:#c63330;font-size:24px;text-indent:2em;} #divider .yellow_title {color:#b99b49;font-size:24px;}
+	#div_jingpin {width:980px;height:76px;margin-top:40px;_margin-top:0;background:url(img/div_jingpin.png) no-repeat 0 0 transparent;_background:url(img/div_jingpin.gif) no-repeat 0 0 transparent;}
+	 .more{width: 50px;height: 20px;right: 28px;top: 26px;cursor: pointer;}
+	#tuan_jingpin {width:980px;height:712px;margin:0 auto;}
+	 .tuanitem {width:314px;height:340px;float:left;display:inline;padding:6px;}
+	 .tuanitem:first-child {margin-left:0;}
+	 .tuanitem .upper {width:314px;height:302px;background-color:#ffffff;}
+	 .tuanitem .lower {width:294px;height:28px;line-height:28px;background-color:#fef2ee;color:#999999;padding:0 10px;}
+	 .tuanitem .lower .population {right:1em;top:0;}
+	 .tuanitem .upper a img{display:block;margin:0 auto;}
+	 .tuanitem .upper .symbol {color: #de0909;font-size: 20px;font-weight: bold;vertical-align: middle;}
+	 .tuanitem .upper .price {color: #de0909;font-size: 30px;font-weight: bold;margin-left: 0.2em;vertical-align: middle;}
+	 .tuanitem .upper .orginal {margin-left: 10px;color: #999999;font-size: 16px;text-decoration: line-through;vertical-align: middle;}
+	 .tuanitem .upper .real_discount {color: #de0909;font-size: 18px;vertical-align: middle;font-weight: 600;top: 8px;right: 12px;}
+	  /*美食*/
+	 #meishi_box {width: 980px;padding: 20px;height: 794px;margin: 0 auto;background: url(img/yellow_bg.gif) repeat 0 0 transparent;}	
+	 #div_meishi {width:980px;height:76px;background:url(img/div_meishi.png) no-repeat 0 0 transparent;_background:url(img/div_meishi.gif) no-repeat 0 0 transparent;}
+	 #tuan_meishi {width:980px;height:710px;margin:0 auto;overflow:hidden;}
+	 /*电影*/
+	 #dianying_box{width: 980px;padding: 20px;height: 794px;margin: 0 auto;background: url(img/blue_bg.gif) repeat 0 0 transparent;}	
+	 #div_dianying {width:980px;height:76px;background:url(img/div_dianying.png) no-repeat 0 0 transparent;_background:url(img/div_dianying.gif) no-repeat 0 0 transparent;}
+	 #tuan_dianying {width:980px;height:710px;margin:0 auto;overflow:hidden;}
+	 /*酒店*/
+	 #jiudian_box{width: 980px;padding: 20px;height: 794px;margin: 0 auto;background: url(img/pink_bg.gif) repeat 0 0 transparent;}	
+	 #div_jiudian {width:980px;height:76px;background:url(img/div_jiudian.png) no-repeat 0 0 transparent;_background:url(img/div_jiudian.gif) no-repeat 0 0 transparent;}
+	 #tuan_jiudian {width:980px;height:710px;margin:0 auto;overflow:hidden;}
+	 /*娱乐*/
+	 #yule_box{width: 980px;padding: 20px;height: 794px;margin: 0 auto;background: url(img/red_bg.gif) repeat 0 0 transparent;}	
+	 #div_yule {width:980px;height:76px;background:url(img/div_yule.png) no-repeat 0 0 transparent;_background:url(img/div_yule.gif) no-repeat 0 0 transparent;}
+	 #tuan_yule {width:980px;height:710px;margin:0 auto;overflow:hidden;}
+	 .anchor_box {width:100%;height:317px;padding-top: 64px;}
+     .anchor{width:124px;height:38px;display:block;margin-bottom:9px;}
+     .anchor a{width:124px;height:38px;display:block;}
+     .postpune{background:url(img/loading.gif) no-repeat 50% 50% transparent;}
+     .imutate {width:314px;height:252px;padding-top:12px;margin:0 auto;zoom:1;display:block;}
+     .imutate:hover{background-color:#ca0000;}
+     .imutate:hover .desc{color:#ffffff;}
+     #act_nav {bottom:184px;right:10px;width:204px;height:75px;cursor:pointer;display:block;}
+	</style>
+  </head>
+  
+  <body class="rel">    
+     <div id="header" class="rel">
+		       <div class="header_inner rel">
+		          <a target="_blank" href="http://tuan.baidu.com?active_src=bdtuan_bannertuan" class="header_logo"></a>
+		       </div>
+		       <div class="share abs">
+                  <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'百度团购全场9折，买满100元再返200元红包，还有1毛抢10元代金券、25抢50元代金券、50抢100元代金券，还等什么？数显有限，先到先得！','pic':'http://tuan.baidu.com/event/2013gwj/img/weibo.jpg','url':'http://tuan.baidu.com/event/2013gwj?active_src=bdtuan_weibo'}"><span class="bds_more">分享到：</span><a class="bds_qzone" id="f_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" id="f_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" id="f_tqq" title="分享到腾讯微博" href="#"></a> <a class="bds_renren" id="f_renren" title="分享到人人网" href="#"></a></div>
+               </div>
+     </div>
+     <div id="banner" class="rel">
+        <div id="ban_cnt" class="rel">
+           <a id="act_nav" class="abs" href="#rule"></a>
+        </div>       
+     </div>
+     <div id="info_wrapper" class="rel">
+       <div id="info_banner" class="rel">
+        <div id="divider"><span class="red_title">先囤券，腐败更彻底<span><span class="yellow_title">(全场无限制通用)<span></div>
+       	  <div id="cd_wrapper" class="">
+       	    	<div class="cd_item" style="margin-left:0;"><img src="img/10yuan.jpg"/><div class="quan_detail"><small class="currency">¥</small><big class="discount">0.1元</big><a id="10yuan" class="quan_rush" href="http://tuan.baidu.com/selftg/item/detail?item_id=20606027" target="_blank">立即抢购</a></div><div id="mask1" class="counter_box" gid="57782139" itemid="20606027"><div class="menban"></div><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><span class="hour" style="margin-left:12px">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</div></div></div>
+       	    	<div class="cd_item"><img src="img/50yuan.jpg"/><div class="quan_detail"><small class="currency">¥</small><big class="discount">25元</big><a id="50yuan" class="quan_rush" href="http://tuan.baidu.com/selftg/item/detail?item_id=20606112" target="_blank">立即抢购</a></div><div id="mask2" class="counter_box" gid="57781504" itemid="20606112"><div class="menban"></div><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><span class="hour" style="margin-left:12px">00</span>时<span  class="mini">00</span>分<span class="sec">00</span>秒</div></div></div>
+       	    	<div class="cd_item"><img src="img/100yuan.jpg"/><div class="quan_detail"><small class="currency">¥</small><big class="discount">50元</big><a id="100yuan" class="quan_rush" href="http://tuan.baidu.com/selftg/item/detail?item_id=20606074" target="_blank">立即抢购</a></div><div id="mask3" class="counter_box" gid="57781503" itemid="20606074"><div class="menban"></div><div class="counter_info"><p class="counter_title">距离抢券开始还有:</p><span class="hour" style="margin-left:12px">00</span>时<span class="mini">00</span>分<span class="sec">00</span>秒</div></div></div>       	    	
+       	    	<br class="clr_fix"/>
+       	    	<p class="wtip">温馨提示：活动期间，所有售卖与发放的优惠券，使用截止日期为2014年1月1日，在有效时间内，把券用光，尽情腐败吧！</p>       	    	
+       	  </div>
+       	  <div id="div_jingpin" class="rel"><a class="more abs" href="http://tuan.baidu.com/"></a></div>
+       	  <div id="tuan_jingpin">     	  	 
+       	  </div>
+       	</div>
+       	<!-- 美食-->
+       	<div id="meishi_box">
+         <div id="div_meishi" class="cap rel"><a class="more abs" href="http://tuan.baidu.com/local/@@/canyinmeishi-tg" target="_blank"></a></div>
+         <div id="tuan_meishi"></div>
+       </div>
+       <!-- 电影-->
+       <div id="dianying_box">
+         <div id="div_dianying" class="cap rel"><a class="more abs" href="http://tuan.baidu.com/local/@@/canyinmeishi-tg" target="_blank"></a></div>
+         <div id="tuan_dianying"></div>
+       </div>       
+      <!-- 酒店-->
+       <div id="jiudian_box">
+         <div id="div_jiudian" class="cap rel"><a class="more abs" href="http://tuan.baidu.com/local/@@/jiudian-tg" target="_blank"></a></div>
+         <div id="tuan_jiudian"></div>
+       </div>
+       <!-- 娱乐-->
+       <div id="yule_box">
+         <div id="div_yule" class="cap rel"><a class="more abs" href="http://tuan.baidu.com/local/@@/xiuxianyule-tg" target="_blank"></a></div>
+         <div id="tuan_yule"></div>
+       </div>
+       <div id="rule" class= "rel">
+         <div  id="rule_inner">
+	         <h1>活动规则</h1>
+	         <p>1.活动时间：2013年12月20日-2014年1月1日</p>
+	         <p>2.疯抢优惠券（2013年12月20日-2014年1月1日）</p>
+	         <p style="padding-left:12px;">每日0.1元买10元代金券（限量1000张）、25元买50元代金券（限量1000张）、50元买100元代金券（限量500张），代金券有效期截止2014年1月1日24点。每个用户限购一张，全场商品无限制通用，每天11点准时开售，先抢先得。</p>
+	         <p style="padding-left:12px;">每笔订单可使用1张代金券，代金券不找零，不兑现。</p>
+	         <p style="padding-left:12px;">使用代金券购买订单若发生退款，仅退回实际支付金额，代金券不能再次使用。</p>
+	         <p>3.全场9折，买满100返200（2013年12月20日-2014年1月1日）</p>
+	         <p style="padding-left:12px;">用户下单即可享受全场9折优惠，并且单笔订单折前满100再返200元代金券，包括2张价值50元代金券（需消费满200使用），1张价值100元代金券（需消费满400使用），有效期截止获取日当天24点（每天都可享受一次满100返200）。</p>
+	         <p style="padding-left:12px;">同一用户（一个百度账号或手机号）每天享受1次，每笔订单可使用1张代金券，代金券不找零，不兑现。</p>
+	         <p style="padding-left:12px;">使用代金券购买订单若发生退款，仅退回实际支付金额，代金券不能再次使用。</p>
+	         <p>4.百度团购在法律范围内保留本次活动解释权，百度团购有权取消作弊用户的代金券。</p>	         
+             <p style="padding-left:12px;">活动QQ群：137467333，如有疑难问题可咨询相关事宜。</p>
+         </div>
+     </div>
+      <!--  -->
+     </div>
+     <div id="2d_code" style="position:fixed;display:block;width:124px;height:317px;top:248px;right:0;margin-right:4px;background:url(img/suspension.png) no-repeat scroll 0 0 transparent;_background:url(img/suspension.gif) no-repeat scroll 0 0 transparent;z-index:10;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+200));"><!-- _top:expression(eval(document.documentElement.scrollTop+311));-->
+     	 <ul class="anchor_box">
+     	 	 <li class="anchor"><a href="#div_jingpin"></a></li>
+     	 	 <li class="anchor"><a href="#meishi_box"></a></li>
+     	 	 <li class="anchor"><a href="#dianying_box"></a></li>
+     	 	 <li class="anchor"><a href="#jiudian_box"></a></li>
+     	 	 <li class="anchor"  style="margin-bottom:0;"><a href="#yule_box"></a></li>
+     	 	 <li class="anchor"><a href="#header"></a></li>
+     	 </ul>
+     </div>
+    
+    <script type="text/javascript" src="js/jquery.js?v=1.0"></script>
+   <script type="text/javascript">
+   	  (function(g){
+   	  	g.utils.initPage();
+   	  	})(window)
+   	</script>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=194652" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+    <!-- tongji -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7b4f7dadfd47c8fb87d38e4b6dca1f1b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+  </body>
+</html>
+                    

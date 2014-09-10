@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=640" />
+<title>Demo</title>
+<link rel="stylesheet" href="css/font.css">
+<link href="css/mobile.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.js"></script>
+<script src="js/api.js"></script>
+<script src="js/control.js?v.1.0"></script>
+<script src="js/ort.js"></script>
+</head>
+<body scroll="no">
+
+<div id="nonsupport"></div>
+
+<div id="loading-black">
+	<div class="load">
+	  <img class="animate-load" src="images/loading-black.png" />
+	  <p><img src="images/Preloader.png" /></p>
+	</div>
+</div>
+
+<div id="loading">
+	<div class="load">
+	  <img class="animate-load" src="images/loading.png" />
+	    <p><img src="images/Preloader_White.png" /></p>
+    </div>
+</div>
+
+<!-- <div id="view-potrait"></div> -->
+
+<div id="main">
+		<section id="stage1" class="stage">
+				<div class="activity-detail">
+						<div class="header">
+							<h1 id="activity-name">London in Shanghai 博柏利盛典</h1>
+							<p class="activity-info">
+								<span class="activity-meta no-extra" id="post-date">2014-04-16</span>
+								<a class="activity-meta" id="post-user"><span class="text-ellipsis">Burberry</span></a>
+							</p>
+						</div>
+						
+						<div class="page-content">
+							<span class="yes">关注伦敦 - 上海旅程<br>截至4月20日赢得盛典入场券</span>
+							<span class="non">关注伦敦 - 上海旅程<br>开启艺术体验</span>
+						</div>
+						<div id="start" class="control2">
+								<div class="is-shake">
+									<div class="shake animate"></div>
+									<p class="p1"><img src="images/txt-shake-start.png" alt="摇一摇开始" /></p>
+								</div>
+								<div class="no-shake">
+									<div class="touch animate"></div>
+									<p class="p1"><img src="images/txt-touch-start.png" alt="轻点屏幕开始" /></p>
+								</div>
+						</div>
+						
+				</div>
+				
+				<div class="widget-panel">
+						<h2><img src="images/txt-open.png" /></h2>
+				</div>
+				<div class="background">
+						<div class="motion">
+							<img class="an1" src="images/bg1.jpg" />
+						</div>
+				</div>
+				<div class="simple"></div>
+				<div class="control">
+						<div class="touch-white animate"></div>
+						<p class="yes"><img src="images/txt-step1.png" /></p>
+						<p class="non"><img src="images/txt-step12.png" /></p>
+				</div>
+				<div id="stage-1-tab" class="control-layer"></div>
+		</section>
+		<section id="stage2" class="stage">
+				<div class="widget-panel">
+						<h2><img data-src="images/txt-fog.png" /></h2>
+				</div>
+				<div class="background">
+						<div id="fog-top"><img data-src="images/fog3.png" src="images/fog3.png?fds" /></div>
+						<div class="motion">
+							<img data-src="images/bg21.jpg" />
+						</div>
+				</div>
+				<div class="simple"></div>
+				<div class="control">
+						<div class="swipe animate"></div>
+						<p><img data-src="images/txt-step2.png" /></p>
+				</div>
+				<div id="stage-2-fog" class="control-layer"></div>
+				<div class="imgLOAD"><img data-src="images/Generic.png" /><img data-src="images/SWIPE_v06_120x120_BLACK_PNG8.png"></div>
+		</section>
+		<section id="stage3" class="stage">
+				<div class="widget-panel">
+						<h2><img data-src="images/txt-tower.png" /></h2>
+				</div>
+				<div class="background">
+						<div class="motion">
+							<div id="towter">
+								<div id="tower-bg">
+									<img data-src="images/tower2.jpg" />
+								</div>
+								<div id="water-mask">
+									<ul id="tower-spirit" class="tower-spirit">
+										<li class="t1"><img data-src="images/ripple01.jpg" /></li>
+										<li class="t2"><img data-src="images/ripple02.jpg" /></li>
+										<li class="t3"><img data-src="images/ripple03.jpg" /></li>
+										<li class="t4"><img data-src="images/ripple04.jpg" /></li>
+										<li class="t5"><img data-src="images/ripple05.jpg" /></li>
+										<li class="t6"><img data-src="images/ripple06.jpg" /></li>
+										<li class="t7"><img data-src="images/ripple07.jpg" /></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="control">
+						<div class="touch-white animate"></div>
+						<p><img data-src="images/txt-step3.png" /></p>
+				</div>
+				<div id="stage-3-water" class="control-layer"></div>
+				<div id="stage-3-tower" class="control-layer"></div>
+				<div class="imgLOAD"><img data-src="images/Swipe_Ink.png" /><img data-src="images/TAP_v04_120x120_WHITE_PNG8.png"></div>
+		</section>
+		<section id="stage4" class="stage">
+				<div class="widget-panel">
+						<h2><img data-src="images/txt-sunset.png" /></h2>
+				</div>
+				<div class="background">
+						<div class="motion">
+							<img data-src="images/bg4.jpg" />
+						</div>
+				</div>
+				<div class="control">
+						<div class="touch-white animate"></div>
+						<p><img data-src="images/txt-step4.png" id="fz" /></p>
+				</div>
+				<div class="imgLOAD"><img data-src="images/Swipe_Ink2.png" /></div>
+		</section>
+		<section id="stage5" class="stage">
+				<div id="touch">
+						<div id="click-left" class="btn btnclick1"><span></span><i></i></div>
+						<div id="click-right" class="btn btnclick2"><span></span><i></i></div>
+						<div id="click-center" class="btn btnclick3"><span></span><i></i></div>
+				</div>
+				<div class="widget-panel">
+						<h2 id="count">倒数第<span>10</span>天</h2>
+						<p><img data-src="images/txt-shanghai.png" /></p>
+				</div>
+				<div class="background">
+						<div class="motion">
+							<img data-src="images/bg5.jpg" />
+						</div>
+				</div>
+				<div class="touch1"></div>
+				<div class="touch2"></div>
+				<div class="touch3"></div>
+				<div class="control">
+						<div class="is-shake">
+								<div class="shake-white animate"></div>
+								<p class="yes"><img data-src="images/txt-step5.png" /></p>
+								<p class="non"><img data-src="images/txt-non-step5.png" /></p>
+						</div>
+						<div class="no-shake">
+								<div class="touch-white animate"></div>
+								<p class="yes"><img data-src="images/txt-step52.png" /></p>
+								<p class="non"><img data-src="images/txt-non-step52.png" /></p>
+						</div>
+				</div>
+				<div id="stage-5-ad" class="control-layer"></div>
+			<div class="imgLOAD">
+				<img data-src="images/Touch1.png" /><img
+					data-src="images/Touch2.png" /><img data-src="images/Touch3.png" /><img
+					data-src="images/Touch4.png" /><img
+					data-src="images/SHAKE_v04_120x120_WHITE_PNG8.png">
+			</div>
+		</section>
+		
+		<!-- 国外感谢页面 -->
+		<section id="stage6" class="stage">
+				<div class="thx-tab">
+					<table border="0" cellspacing="0" cellpadding="0">
+							<tr><td><img data-src="images/txt-foreign-thx.png" /></td></tr>
+							<tr><td class="thx-video"><img data-src="images/v.png" /></td></tr>
+							<tr><td><img data-src="images/txt-more.png" /></td></tr>
+					</table>
+				</div>
+		</section>
+		
+		
+</div>
+
+<section id="stage11">
+		<a href="javascript:;" class="close" onClick="$('#iframe').fadeOut(100,function(){$(window).scrollTop(0);$('#stage11').fadeOut(300,function(){$('#iframe').show();})});">关闭</a>
+		<div class="bar"></div>
+		<div class="ft"></div>
+		<iframe id="iframe" src="" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
+</section>
+
+
+<script>
+var touch = window.navigator.msPointerEnabled ? "MSPointerDown" : "touchmove";
+$(document).bind(touch, function(event) {
+	if(event && event.preventDefault){
+		event.preventDefault();
+	}else{
+		window.event.returnValue = false;
+	}
+});
+
+</script>
+<div id="imgLOAD">
+	<div id="introLoad">
+		<img id="introMask" data-src="" >
+		<img data-src="images/SHAKE_v04_120x120_BLACK_PNG8.png" >
+		<img data-src="images/TAP_v04_120x120_BLACK_PNG8.png" >
+	</div><!-- 加载前检测 -->
+	
+
+</div>
+</body>
+
+</html>

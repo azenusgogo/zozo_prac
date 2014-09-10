@@ -1,0 +1,97 @@
+/**
+*  下拉刷新、滚动样式
+*  author zuonan
+*  2013-06-10
+*/
+
+#pullUp {
+height: 12%;
+font-weight: bold;
+font-size: 1.25em;
+color: #888;
+width: 96%;
+display: -webkit-box;
+-webkit-box-align: center;
+-webkit-box-pack:center;
+padding-left: 4%;
+line-height:30px;
+}
+#pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:20px; height:20px;
+	background:url(../img/pull-icon.png) 0 0 no-repeat;
+	-webkit-background-size:20px 40px; background-size:20px 40px;
+	-webkit-transition-property:-webkit-transform;
+	-moz-transition-property:-moz-transform;
+	-webkit-transition-duration:250ms;	
+	-moz-transition-duration:250ms;	
+}
+#pullUp .pullUpIcon  {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+	-moz-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-moz-transform:rotate(0deg) translateZ(0);
+	
+}
+
+#pullUp.loading .pullUpIcon {
+	background-position:0 100%;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	
+	-moz-transform:rotate(0deg) translateZ(0);
+	-moz-transition-duration:0ms;
+	-moz-animation-name:loading;
+	-moz-animation-duration:2s;
+	-moz-animation-iteration-count:infinite;
+	-moz-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+@-moz-keyframes loading {
+	from { -moz-transform:rotate(0deg) translateZ(0); }
+	to { -moz-transform:rotate(360deg) translateZ(0); }
+}
+.myScrollbarH {
+	position:absolute;
+	z-index:100;
+	height:7px;
+	bottom:1px;
+	left:2px;
+	right:7px
+}
+
+.myScrollbarH > div {
+	height:100%;
+}
+.myScrollbarV {
+	position:absolute;
+	z-index:98;
+	width:7px;bottom:7px;top:2px;right:1px
+}
+.myScrollbarV > div {
+	width:100%;
+}
+.myScrollbarV > div {
+	position:absolute;
+	z-index:98;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;	
+	border-width:3px;
+	-webkit-border-image:url(../img/scrollbar.png) 6 6 6 6;
+	-moz-border-image:url(../img/scrollbar.png) 6 6 6 6;
+	-o-border-image:url(../img/scrollbar.png) 6 6 6 6;
+	border-image:url(../img/scrollbar.png) 6 6 6 6;
+}

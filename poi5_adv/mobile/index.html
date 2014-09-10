@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>POI纠错</title>
+<link href="css/LBS-reset.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+    font-size:12px;
+}
+body {min-width:320px;margin:0 auto;max-width:1024px;}
+.rel {position: relative;} .abs {position: absolute;} .clr_fix {clear: both;} .clearfix:after {content: ".";height: 0;visibility: hidden;display: block;clear: both;}
+img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{display:none;}
+  @media screen and (min-width:320px) and (max-width:479px) {#saveprize{font-size:0.8em;}.fillInfo{font-size:0.8em;}.congratulations,.label_name{font-size:0.75em;}.note{font-size:1.1em;}.qq{font-size:0.75em;} .cap,.rule_cnt{font-size:1em;} .item p{font-size:0.75em;}#lottery_go {border-width:2px !important;font-size:1.875em;}.marq ul li p{font-size:1em;}} 
+  @media screen and (min-width:480px) and (max-width:639px) {#saveprize{font-size:1.2em;}.fillInfo{font-size:0.9em;}.congratulations,.label_name{font-size:1em;}.note{font-size:1.65em;}.qq{font-size:1.2em;} .cap,.rule_cnt{font-size:1.5em;} .item p{font-size:1.2em;} #lottery_go {border-width:2px !important;font-size:2.8125em;}.marq ul li p{font-size:1.5em;}} 
+  @media screen and (min-width:640px) and (max-width:1023px){#saveprize{font-size:1.6em;}.fillInfo{font-size:1em;}.congratulations,.label_name{font-size:1.5em;}.note{font-size:2.2em;}.qq{font-size:1.5em;} .cap,.rule_cnt{font-size:2em;}.item p{font-size:1.5em;}#lottery_go {font-size:3.75em;}.marq ul li p{font-size:2em;}} 
+  @media screen and (min-width:1024px){.qq{font-size:2em;} .cap,.rule_cnt{font-size:3em;}.item p{font-size:2em;}#lottery_go {font-size:4.5em;}.marq ul li p{font-size:3em;}.note{font-size:3.2em;}}
+  #banner{width:100%;position:relative;}#banner img {display:block;width:100%;}
+  #main {width:96%;padding:2%;margin:0 auto;position:relative;}
+  #outer {width:100%;position:relative;}
+  #rule {width:100%;display:-webkit-box;padding-top:2%;}
+  .cap{width:29%;background-color:#a34035;color:#ffffff;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;padding:1% 0;}
+  .decor {width:71%;display:-webkit-box;} .decor img {display:block;width:100%;}
+  .rule_cnt {width:96%;padding:2%;margin:0 auto;background-color:#fdfaf0;color:#666666;}
+  .cnt_box {display:-webkit-box;} .seq{width:5%;height:50%;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;border-radius:50%;background-color:#eb5c40;color:#ffffff;}
+  .cnt_text {width:91%;padding:0 2%;}
+  #lottery_box{width:100%;display:-webkit-box;-webkit-box-orient:vertical;padding-top:2%;}
+  #level1,#level2 {display:-webkit-box;width:100%;}
+  #level1 .item,#level2  .item {width:20%;-webkit-box-flex:1;padding:1% 0;}
+  #level2  .item2 {-webkit-box-flex:5;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;width:24%;} 
+ .item p{width:95%;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;background-color:#ef765f;color:#ffffff;margin:0 auto;padding:2% 0;}
+ .item img{margin:0 auto;display:block;width:95%;}
+ #lottery_go {border:4px solid #ffffff;box-shadow:-1px 1px 2px 0 #666666;padding:3% 2%;display:block;width:70%;height:50%;color:#ffffff;background-color:red;background: -webkit-linear-gradient(top,#ffaa95,#ff3300);display:-webkit-box;-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;}
+ .marq {width:100%;margin:0 auto;background:url(img/fringe.png) no-repeat 50% 100% #fdfaf0;background-size:100%;/*padding:5% 0;*/}
+ .marq ul{width:70%;margin:0 auto;} .marq ul li{padding:2% 0;} .marq ul li p {color:#666666;text-align:center;}
+ .qq {position:absolute;top:1%;left:2%;color:#ffffff;}
+ .mask{position:absolute;top:0;left:0;background-color:rgba(0,0,0,0.5);width:100%;height:100%;display:none;}
+ .drop_box {width:89%;position:fixed;top:20%;left:50%;margin-left:-45%;z-index:9;}
+ .wraper {width:100%;display:block;}
+ .popup_bg {width:100%;display:block;} 
+ .drop_closed {width: 5%;height: 8%;top: 1%;right: 6%;position: absolute;}
+ .note {top: 50%;left: 50%;margin-left: -25%;text-align: center;margin-top: -11%;color: #666666;width: 50%;}
+ .congratulations {color:red;}
+ .fillInfo {padding: 2%;background-color: #fa6464;color: #ffffff;margin: 3% auto 0;display: block;width: 56%;}
+ .drop_list {top: 28%;left: 50%;margin-left: -30%;width: 60%;}
+ .drop_list ul li {padding: 2%;}
+  .drop_list ul li input {display: inline-block;width: 72%;}
+ #saveprize {display:block;padding:1% 4%;background-color:#fa6464;margin:2%  auto 0 auto;width:25%;text-align:center;}
+ .errormsg {width: 100%;padding: 0 0;text-align: center;color:#fa6464;}
+</style>
+  </head>
+ 
+  <body class="relative">
+     <div id="banner"><img src="img/banner.gif"/><span class="qq">活动QQ群：312456000</span></div>
+     <div id="main">
+     	<div id="rule">
+         <div class="cap">活动规则</div>
+       	  <div class="decor"><img src="img/dividor.gif"/></div>
+       </div>
+       <div class="rule_cnt">
+       	   <div class="cnt_box"><div class="seq">1</div><div class="cnt_text">活动时间：2014年1月15日~2月11日；</div></div>
+       	   <div class="cnt_box" style="margin-top:2%;"><div class="seq">2</div><div class="cnt_text">用户为百度地图纠错一次，可参与一次抽奖，PC端与客户端均可；</div></div>
+       	   <div class="cnt_box" style="margin-top:2%;"><div class="seq">3</div><div class="cnt_text">活动期间用户反馈有效数据最高者给予HTC双卡双待手机一台；</div></div>
+       	</div>
+       	<div id="lottery_box">
+       	  	<div id="level1">
+       	  	   <div class="item">
+       	  	   	   <img src="img/caca.gif"/>
+       	  	   	   <p>乐扣3件套</p>
+       	  	   	</div>
+       	  	   	<div class="item">
+       	  	   	   <img src="img/E-book.gif"/>
+       	  	   	   <p>盛大电子书</p>
+       	  	   	</div>	
+       	  	   	<div class="item">
+       	  	   	   <img src="img/pot.gif"/>
+       	  	   	   <p>奥克斯电水壶</p>
+       	  	   	</div>
+       	  	   	<div class="item">
+       	  	   	   <img src="img/warmbao.gif"/>
+       	  	   	   <p>USB暖脚宝</p>
+       	  	   	</div>
+       	  	</div>
+       	  	
+       	  	<div id="level2">
+       	  	   <div class="item">
+       	  	   	   <img src="img/iphone5s.gif"/>
+       	  	   	   <p>iPhone 5S</p>
+       	  	   	</div>
+       	  	   
+       	  	   	<div class="item2">
+       	  	   	   <div id="lottery_go">猛戳抽奖</div>
+       	  	   	</div>
+       	  	   	
+       	  	   	<div class="item">
+       	  	   	   <img src="img/comeon.gif"/>
+       	  	   	   <p>谢谢参与</p>
+       	  	   	</div>
+       	  	</div>
+       	  	
+       	  	<div id="level1">
+       	  	   <div class="item">
+       	  	   	   <img src="img/m-power.gif"/>
+       	  	   	   <p>乐泡移动电源</p>
+       	  	   	</div>
+       	  	   	<div class="item">
+       	  	   	   <img src="img/5yuan.gif"/>
+       	  	   	   <p>5元团购券</p>
+       	  	   	</div>	
+       	  	   	<div class="item">
+       	  	   	   <img src="img/cell-frame.gif"/>
+       	  	   	   <p>手机支架</p>
+       	  	   	</div>
+       	  	   	<div class="item">
+       	  	   	   <img src="img/10yuan.gif"/>
+       	  	   	   <p>10元团购券</p>
+       	  	   	</div>
+       	  	</div>
+       	</div>
+       	<div id="rule">
+         <div class="cap">中奖名单</div>
+       	  <div class="decor"><img src="img/dividor.gif"/></div>
+       </div>
+      
+       <marquee direction="up" class="marq" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2">
+       	   	    <ul>
+       	   	        <li><p>ksqd1008抽中iPhone 5S一台</p><p>手机号码：130****9231</p></li>	
+			       	   	        <li><p>zzz00127 抽中乐扣乐扣三件套</p><p>手机号码：131****9653</p></li>
+			       	   	        <li><p>yp61987368 抽中5元团购卷一张</p><p>手机号码：137****9718</p></li>
+			       	   	        <li><p>hu01367抽中乐泡磐石移动电源一台</p><p>手机号码：134****9217</p></li>
+			       	   	        <li><p>yuqi881227 抽中盛大超薄6英寸电子书一台</p><p>手机号码：147****9908</p></li>
+			       	   	        <li><p>wji76819 抽中奥克斯电水壶一台</p><p>手机号码：187****6238</p></li>
+			       	   	        <li><p>rf7829472 抽中USB暖脚宝</p><p>手机号码：136****1064</p></li>
+                              <li><p>飘逸的风**抽中奥克斯电水壶一台</p><p>手机号码：138****9941</p></li>	
+			       	   	        <li><p>t136**2381 抽中乐扣乐扣三件套</p><p>手机号码：137****0831</p></li>
+			       	   	        <li><p>yezi在飘 抽中10元团购卷一张</p><p>手机号码：134****9738</p></li>
+			       	   	        <li><p>宝宝宝宝1990抽中乐泡磐石移动电源一台</p><p>手机号码：132****9637</p></li>
+			       	   	        <li><p> 137&3184490抽中手机支架一台</p><p>手机号码：137****4490</p></li>
+			       	   	        <li><p>忘记过去04 抽中奥克斯电水壶一台</p><p>手机号码：131****9038</p></li>
+			       	   	        <li><p>tuzhongming02 抽中USB暖脚宝</p><p>手机号码：135****1924</p></li>
+                              <li><p>anan031###抽中iPhone 5S一台</p><p>手机号码：134****1126</p></li>	
+			       	   	        <li><p>彬彬bb 抽中乐扣乐扣三件套</p><p>手机号码：187****9763</p></li>
+			       	   	        <li><p>0001mq 抽中5元团购卷一张</p><p>手机号码：138****1008</p></li>
+			       	   	        <li><p>张1234抽中乐泡磐石移动电源一台</p><p>手机号码：187****1814</p></li>
+                              <li><p> 百分比%yy抽中iPhone 5S一台</p><p>手机号码：136****0217</p></li>	
+			       	   	        <li><p>爱哭的wo 抽中乐扣乐扣三件套</p><p>手机号码：136****9263</p></li>
+			       	   	        <li><p> 獨わりないwu 抽中10元团购卷一张</p><p>手机号码：136****1908</p></li>
+			       	   	        <li><p>小刚V͇̿I 抽中乐泡磐石移动电源一台</p><p>手机号码：131****1774</p></li>
+                              <li><p>宝宝爱吃<。糖 抽中iPhone 5S一台</p><p>手机号码：130****8910</p></li>	
+			       	   	        <li><p>aini一生 抽中乐扣乐扣三件套</p><p>手机号码：131****9257</p></li>
+			       	   	        <li><p>咩世界咩咩 抽中10元团购卷一张</p><p>手机号码：134****2205</p></li>
+			       	   	        <li><p>哎西西里m 抽中乐泡磐石移动电源一台</p><p>手机号码：139****9907</p></li>
+                              <li><p>爱上TA 抽中iPhone 5S一台</p><p>手机号码：131****1120</p></li>	
+			       	   	        <li><p>小女人ym 抽中乐扣乐扣三件套</p><p>手机号码：132****9874</p></li>
+			       	   	        <li><p>007小兔子 抽中10元团购卷一张</p><p>手机号码：137****2905</p></li>
+								 <li><p>哎西西里m 抽中乐泡磐石移动电源一台</p><p>手机号码：139****9907</p></li>
+								 <li><p> 悲剧的人生 抽中手机支架一台</p><p>手机号码：137****9977</p></li>
+       	   	    </ul>
+       	</marquee>     
+       <div id="rule">
+         <div class="cap">注意事项</div>
+       	  <div class="decor"><img src="img/dividor.gif"/></div>
+       </div>
+       <div class="rule_cnt">
+       	   <div class="cnt_box"><div class="seq">1</div><div class="cnt_text">本次活动仅针对诚意纠错，用各种手段作弊者，均将取消获奖资格，如重复输入、软件作弊、复制粘贴、任意输入等等；</div></div>
+       	   <div class="cnt_box" style="margin-top:2%;"><div class="seq">2</div><div class="cnt_text">本次活动QQ群：312456000 活动名单通过QQ群通报；</div></div>
+       	   <div class="cnt_box" style="margin-top:2%;"><div class="seq">3</div><div class="cnt_text" id="alter">本次活动最终解释权归百度地图所有。</div></div>
+       	</div>
+    </div> 
+    <div class="mask"></div>
+    <div class="drop_box"></div>
+  
+  <script src="js/zepto_dev.js?v2.0"></script>
+  <script type="text/javascript">
+  	 (function(g){
+  	 	g.utils.lotteryBind();
+  	 	g.utils.getPlatform().ios?$("#alter").html("以上活动由百度公司主办 与Apple Inc.无关"):$("#alter").html("本次活动最终解释权归百度地图所有。");
+  	 	}(window))
+  </script>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F26c174082712b183d8394f43bc81681a' type='text/javascript'%3E%3C/script%3E"));
+</script>
+  </body>
+</html>

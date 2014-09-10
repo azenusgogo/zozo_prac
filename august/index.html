@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度地图打车赠话费</title>
+	<meta charset="utf-8">	
+	 <link type="text/css" rel="stylesheet" href="css/LBS-reset.css" /> 
+	<!--[if IE 6]>
+	        <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+	        <script type="text/javascript">DD_belatedPNG.fix('');
+	        </script>
+	<![endif]-->
+	 
+	<style type="text/css" media="all">
+	a {
+	text-decoration:none;
+	}
+	ul {list-style:none;}
+	.yahei {font-family:Microsoft YaHei;}
+    .rel {
+     position: relative;
+    }
+    .abs {
+    position: absolute;
+    }
+    .clr_fix {
+    clear: both;
+    }
+    .clearfix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }   
+    #header {
+    width:100%;
+    height:41px;
+    background:url("img/header_bg.png") repeat scroll 0 0 transparent;
+    }
+    
+    .header_inner {
+    margin:0 auto;
+    width:980px;
+    height:41px;
+    }
+    .header_logo {
+    width:92px;
+    height:41px;
+    display:inline-block;
+    background:url("img/map_logo.png") no-repeat scroll 0 0 transparent;
+    }
+    .share {
+	right: 22%;
+	top: 7px;
+    }
+   
+    #activity {
+    width:100%;
+    margin:0 auto;
+        background-color:#cde2f6;
+    }
+    #main {
+    width:100%;
+    }
+	</style>
+  </head>
+  
+  <body class="rel">
+     
+     <div id="header">
+		       <div class="header_inner relative">
+		          <a class="header_logo" href="http://map.baidu.com/" target="_blank"></a>
+		       </div>
+		       <div class="share abs">
+                  <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'此刻起至9月11日，首次打车成功无违约，两天内就有五块钱话费送给你。现在立刻马上截此信息图发到新浪微博并@百度地图，就能参与抽奖啦。','pic':'http://map.baidu.com/zt/august/img/banner.png','url':'http://map.baidu.com/zt/august/'}"><span class="bds_more">分享到：</span><a class="bds_qzone" id="f_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" id="f_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" id="f_tqq" title="分享到腾讯微博" href="#"></a> <a class="bds_renren" id="f_renren" title="分享到人人网" href="#"></a></div>
+               </div>
+     </div>
+     <div id="activity">
+       <img src="img/main.png" id="main"/>
+     </div>
+ 
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=194652" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+  </body>
+</html>

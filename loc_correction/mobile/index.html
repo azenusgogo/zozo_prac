@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>玩地点纠错活动</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link type="text/css" rel="stylesheet" href="css/LBS-reset.css" /> 
+<style type="text/css" media="all">
+
+	html,body {
+	min-width:320px;
+	font-size: 100%;
+    font-family:Microsoft YaHei;
+    position:relative;
+    /*-webkit-text-size-adjust:none;*/
+	}
+    #main {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 640px;
+	height: 100%;
+	background-color: #cfe9ff;
+	min-width: 320px;
+    }
+    .rel {position:relative;}
+    .abs {position:absolute;}
+    .banner {
+    display:block;
+    width:100%;
+    margin:0 auto;
+    max-width:640px;
+    }
+    #cnt {
+    width:96.09335%;
+    margin:0 auto;
+    max-width:640px;
+    padding:2% 0;
+    }
+    .clearfix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+    .item {
+	float: left;
+	width: 31.8%;
+	height:100%;
+	background-color: #ffffff;
+	margin-left: 2.2%;
+    }
+    .item .caption {
+    width:100%;
+    text-align:center;
+    line-height:1.8;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#449cef;
+    }
+    .item .illu {
+    width:100%;
+    display:block;
+    margin:0 auto;
+    }
+    .item .btn_wrapper {
+    width:136px;
+    height:41px;
+    display:block;
+    margin:0 auto;
+    margin-bottom:4.86%;
+    }
+    #btn_1,#btn_2,#btn_3{
+	width: 68.68%;
+	height: 10.8%;
+	left: 50%;
+	bottom: 4%;
+	margin-left: -34%;
+	position: absolute;
+	display: -webkit-box;
+	border-radius: 4px;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	font-weight: bold;
+    }
+    #final_btn {
+    width:78.28%;
+    height:9.09%;
+	display: -webkit-box;
+	margin: 0 auto;
+    left: 50%;
+	bottom: 6%;
+	margin-left: -39%;
+	position: absolute;
+    -webkit-box-align: center;
+	-webkit-box-pack: center;
+	font-weight: bold;
+	border-radius:4px;
+    }
+    .enlottery {
+    background-image:-webkit-linear-gradient(top,#c72e2e,#cd4747);
+    color:#ffffff;
+    border:2px solid #e58686;
+    }
+    .dislottery {
+    background-color:#cbcbcb;
+    color:#848484;
+    border:2px solid #e2e2e2;
+    }
+    .end {
+    background-color:#cbcbcb;
+    color:#848484;
+    border:2px solid #e2e2e2;
+    }
+ /*   .enfin {
+    background:url("img/enfin.png") no-repeat scroll 0 0 transparent;
+    background-size:78px 20px;
+    }
+    .disfin {
+    background:url("img/disfin.png") no-repeat scroll 0 0 transparent;
+    background-size:78px 20px;
+    }
+    .finend {
+    background:url("img/endfin.png") no-repeat scroll 0 0 transparent;
+    background-size:78px 20px;
+    }*/
+    .rules {
+	width: 96.09335%;
+	margin: 0 auto;
+	display:-webkit-box;
+	display:-o-box;
+	padding-bottom:2%;
+    }
+    .notice {
+    width: 96.09335%;
+	margin: 0 auto;
+    }
+    .activity_rule {
+    width:65.6%;
+    	background-color:#fcfcfc;
+    }
+    .notice_info {
+    width:92%;
+    background-color:#ffffff;
+    }
+    .caption {
+	width: 100%;
+	text-indent: 1em;
+	color: #ffffff;
+	background-color: #449cef;
+	font-weight: bold;
+	line-height: 1.8;
+    }
+    .rule_info,.notice_info {
+    padding:2% 4%;
+
+    color:#606060;
+    font-weight:bold;
+    }
+    .rule_info p,.notice_info p{
+    margin-top:2%;
+    width:100%;
+    height:25%;
+    font-size:100%;
+    }
+    .finalWrapper {
+	width: 31.8%;
+	margin-left: 2.2%;
+	background: #ffffff;
+	float:right;
+    }
+    .sumsung {
+    width:100%;
+    margin:0 auto;
+    display:block;
+    }
+    .footer {
+    width:100%;
+    margin:0 auto;
+    margin-top:2%;
+    overflow:hidden;
+    }
+    .footer img {
+    width:100%;
+    max-width:640px;
+    min-width:320px;
+    display:block;
+    }
+    @media screen and (max-width:320px)  { /*老手机*/
+      .rule_info p,.notice_info p,.caption {
+      font-size:12px;
+      }
+      #btn_1,#btn_2,#btn_3,#final_btn {
+      font-size:12px;
+      }
+    } 
+    @media screen and (min-width:321px) and (max-width:479px) { /*一般智能手机*/
+      .rule_info p,.notice_info p,.caption {
+      font-size:14px;
+      }
+      #btn_1,#btn_2,#btn_3,#final_btn {
+      font-size:14px;
+      }
+    } 
+    @media screen and (min-width:480px) and (max-width:639px) { /*android*/
+      .rule_info p,.notice_info p,.caption {
+      font-size:20px;
+      }
+      #btn_1,#btn_2,#btn_3,#final_btn {
+      font-size:20px;
+      }
+    } 
+     @media screen and (min-width:640px) { /*ios*/
+      .rule_info p,.notice_info p,.caption {
+      font-size:24px;
+      }
+      #btn_1,#btn_2,#btn_3,#final_btn {
+      font-size:24px;
+      }
+    } 
+    #pop_mask {
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index:1;
+	position:absolute;
+	top:0;
+    }
+    #popup_wrap{
+	width:270px;
+	height:auto;
+	z-index:2;
+	background-color:rgba(237,239,245,0.9);
+	margin:0 auto;
+	padding-bottom: 15px;
+	padding-top: 35px;
+	border-radius:4px;
+	border:1px solid #6690cc;
+	 }
+    #popup_cnt {
+	width:84.48%;
+	margin:0 auto;
+	color:#606060;
+	font-size:14px;
+	text-align:center;
+	}
+	#popup_cnt p {
+	margin-top:5px;
+	}
+	#popup_cnt input,#popup_cnt textarea {
+	width:170px;
+	margin-left:5px;
+	}
+	#popup_cnt input {
+	width:170px;
+	margin-left:5px;
+	}
+	#close_btn {
+    background-color: #93A8C6;
+    border-radius: 50% 50% 50% 50%;
+    color: #EDEFF5;
+    display: block;
+    font-size: 27px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    right: 6px;
+    text-align: center;
+    text-indent: 0;
+    top: 6px;
+    width: 25px;
+    cursor:pointer;
+	}
+	#confirmed {
+	display:block;
+	width:137px;
+	height:37px;
+	margin:0 auto;
+	margin-top:20px;
+	background:url("img/btns.png") no-repeat scroll 0 -292px transparent;
+	}
+	</style>
+  </head>
+  
+  <body class="rel">
+     <div id="main">
+        
+        <img alt="每周五 百度团购日TOP1最畅销团单" src="img/banner.png"class="banner"/>     
+        <!-- 任务列表 -->
+        <div id="cnt" class="clearfix">
+           <div class="item rel" style="margin-left:0;">
+             
+             <img class="illu" src="img/bear.png"/>
+             <a id="btn_1" class="enlottery" state="0" lot_type="lottery_once">抽奖</a>
+           </div>
+           <div class="item rel">
+             
+             <img class="illu" src="img/claw.png"/>
+             <a id="btn_2" class="end" state="0" lot_type="lottery_triple">已结束</a>
+           </div>
+           <div class="item rel">
+             
+             <img class="illu" src="img/pack.png"/>
+             <a id="btn_3" class="dislottery" state="0" lot_type="lottery_comment">抽奖</a>
+           </div>
+        </div>
+        <!-- 活动规则 -->
+        <div class="rules clearfix">
+          <div class="activity_rule">
+             <div class="caption">活动规则</div>
+             <div class="rule_info" type="1" start="1">
+               <p>1.&nbsp;活动时间：2013年9月9日至2013年9月15日；</p>
+               <p>2.&nbsp;根据任务内容完成相应任务，即可点亮抽奖按钮，获得相应奖品的抽奖机会1次；</p>
+               <p>3.&nbsp;所有任务全部完成即可点亮终极大抽奖按钮，抽取三星 Galaxy SIII；</p>
+               <p>4.&nbsp;活动期间每位用户每天可以通过完成任务抽奖1次，次日可继续参加。</p>
+             </div>
+          </div>
+          <div class="finalWrapper rel">
+            <img src="img/sumsung.jpg" class="sumsung"/>
+            <a class="dislottery" id="final_btn" state="0" lot_type="lottery_final">终极大抽奖</a>
+          </div>
+        </div>
+        
+        <!-- 注意事项 -->
+        <div class="notice">
+          <div class="caption">注意事项</div>
+          <div class="notice_info" type="1" start="1">
+               <p>1.&nbsp;活动期间必须登录才能获得相应的抽奖机会；</p>
+               <p>2.&nbsp;抽中奖品后请您务必留下您的详细信息，以便为您快递奖品；</p>
+               <p>3.&nbsp;请您如实完成任务，如遇恶意纠错或作弊，百度地图将回收您的中奖机会；</p>
+               <p>4.&nbsp;遇其他问题可前往“百度地图纠错爱好者”群进行咨询，群号：320096518</p>
+          </div>
+        </div>
+        
+         <!-- footer -->
+        <div class="footer"><a><img src="img/footer.jpg"/></a></div>
+        <!-- 弹窗 -->
+        <div id="pop_mask"></div>
+        <div id="popup_wrap" class="rel" style="display:none;">
+             <div id="popup_cnt"></div>
+             <a id="confirmed"></a>
+             <a id="close_btn" class="abs">×</a>
+        </div>
+     </div>    
+    
+       <script type="text/javascript" src="js/zepto.min.js"></script>
+       <script type="text/javascript">
+       (function(global){
+    	   var utils  = global.utils,
+    	       u_info = utils.userInfo,
+    	       g_url    = {
+		    			   "prod_env":"http://map.baidu.com/interfaces/jiucuo4_mo/",
+		    			   "test_env":"http://cq01-apptest-map05-bbtocq.vm.baidu.com:8187/interfaces/jiucuo4_mo"
+    			           };//设置接口的全局地址
+    	   var init = function(){
+    		 
+    		   $.ajax({
+    			   type:"get",
+    			   dataType:"jsonp",
+    			   url:"http://mc.map.baidu.com/passport/Session3.php?callback=?",
+    			   success:function(data){
+    				   if(data.isOnline==0){
+        				   alert("您尚未登录！");
+        				   return;
+        			   }else if(data.uName){
+        				   $.ajaxJSONP({
+        	    			   url:g_url.test_env+"/get_info_mobile?callback=?&account_name="+encodeURIComponent(data.uName),
+        	    			   success:function(re){
+        	    				   if(re.result){
+        	    					 var data =  re.result;
+        	    					    if(data.lottery_once==="1"){ //任务一的抽奖按钮状态为红色可点
+        	    					    	$("#btn_1").removeClass().addClass("enlottery").attr("state","1").html("抽奖");       	    					    	
+        	    					    }
+        	    					    if(data.lottery_once==="2"){ //任务一已经抽过奖 状态变为灰色已抽奖
+        	    					    	$("#btn_1").removeClass().addClass("end").attr("state","2").html("已抽奖"); 
+        	    					    }
+        	    					    if(data.lottery_triple==="1"){ //任务二的抽奖按钮状态为红色可点
+        	    					    	$("#btn_2").removeClass().addClass("enlottery").attr("state","1").html("抽奖");       	    					    	
+        	    					    }
+        	    					    if(data.lottery_triple==="2"){ //任务二已经抽过奖 状态变为灰色已抽奖
+        	    					    	$("#btn_2").removeClass().addClass("end").attr("state","2").html("已抽奖"); 
+        	    					    }
+        	    					    if(data.lottery_comment==="1"){ //任务三的抽奖按钮状态为红色可点
+        	    					    	$("#btn_3").removeClass().addClass("enlottery").attr("state","1").html("抽奖");       	    					    	
+        	    					    }
+        	    					    if(data.lottery_comment==="2"){ //任务三已经抽过奖 状态变为灰色已抽奖
+        	    					    	$("#btn_3").removeClass().addClass("end").attr("state","2").html("已抽奖"); 
+        	    					    }
+        	    					    
+        	    					    if(data.lottery_final==="1"){ //终极大抽奖按钮状态为红色可点
+        	    					    	$("#btn_3").removeClass().addClass("enlottery").attr("state","1").html("终极大抽奖");       	    					    	
+        	    					    }
+        	    					    if(data.lottery_final==="2"){ //终极大抽奖已经抽过 状态变为灰色已抽奖
+        	    					    	$("#btn_3").removeClass().addClass("end").attr("state","2").html("已抽奖"); 
+        	    					    }
+        	    				   }
+        	    			   },
+        	    			   error:function(){
+        	    				   alert("ajax failure! please refresh")
+        	    			   }
+        	    		   });	
+        			   }
+    			   }
+    		   })
+    		   
+    		     
+    			   };
+    	   $(function(){
+    		   init();  //初始化各个按钮的状态
+    		   $("#btn_1,#btn_2,#btn_3,#final_btn").on("click",function(){
+    			   var that = $(this);
+    			   if(that.attr("state")!=="1"){//按钮不为红色时不可点
+    				   return;
+    			   }else{ 
+    				   var lot_type = that.attr("lot_type"),
+    				       popup    = $("#popup_wrap");     //弹出层容器
+    				   $.ajax({
+    					   type:"get",
+    	    			   dataType:"jsonp",
+    					   url:g_url.test_env+"/lottery_mobile?callback=?&lot_type="+lot_type,
+    					   success:function(re){
+    						   if(re.error){ //未中奖
+    						    $("#pop_mask").show();
+                       			$("#popup_cnt").html("很遗憾 <br/>明日参加任务可继续抽奖");
+                       			popup.show();                       			                       		
+    						   }
+    						   else{ //中奖了
+    							 u_info["prize_key"]= re.key ;
+    							 u_info["pid"]= re.pid; /*保存中奖信息*/
+    							 var bingo = "<p class='popup_info'>恭喜你！获得<span style='color:#4876cf;'>"+re.prize_name+"</span> 请填写以下个人信息，以方便我们和你取得联系！</p>"+
+    								         "<p><label>姓&nbsp;&nbsp;&nbsp;&nbsp;名<input style='margin-left:6px;' type='text' value='' id='user_name'/></label></p>"+
+			                                 "<p><label>手机号<input type='tel' value='' id='cellphone'/></label></p>"+
+			                                 "<p><label style='vertical-align:top;'>地&nbsp;&nbsp;&nbsp;&nbsp;址<textarea style='margin-left:6px;' id='address'></textarea></label></p>";  
+    							    $("#pop_mask").show();
+    	        				    $("#popup_cnt").html(bingo);
+    	        				    popup.show();   						     
+    						   }
+    						    
+                      			that.removeClass().addClass("end").attr("state","2").html("已抽奖"); //抽奖后按钮变为‘已抽奖’状态
+                      			utils.reposition(popup); //弹出层重新定位
+    					   }
+    				   });
+    			   }
+    		   });
+    		   
+    		   $("#close_btn").on("click",function(){
+           		$("#pop_mask").hide();
+           		$(this).closest("#popup_wrap").hide();
+           	   });
+    		   
+    		   $("#confirmed").on("click",function(){ //提交按钮监听
+           		     
+           			var  prize_key = $("#prize_key").val(),
+          		               name = $("#user_name").val(),
+          		               address = $("#address").val(),
+          		               tel = $("#cellphone").val();
+           			if(name==""){
+           				alert("请填写您的姓名");
+           				return;
+           			}
+           			if(tel==""){
+           				alert("请填写您的手机号");
+           				return;
+           			}
+           			if(!utils.isCellNum(tel)){
+           				alert("请填入合法的手机号");
+           				return;
+           			}
+           			if(address==""){
+           				alert("请填写您的地址");
+           				return;
+           			}
+           			$.ajax({
+           				type:"get",
+         			    dataType:"jsonp",
+           				url:g_url.test_env+"/save_user?callback=?&pid="+pid+"&key="+prize_key+"&name="+encodeURIComponent(name)+"&phone="+tel+"&address="+encodeURIComponent(address),
+           				success:function(data){
+           					if(data.error===0){
+           						u_info = {};
+           						alert("提交成功!");
+           						$("#pop_mask").hide();
+           		        		$("#popup_wrap").hide();
+           					}
+           				}
+           			})
+           		
+          		
+           	});
+    		   
+    	   });
+    	   global.onresize = function(){
+    		   utils.reposition($("#popup_wrap"));
+    	   }
+       })(this);
+       </script>
+  </body>
+</html>

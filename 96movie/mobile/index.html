@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>地图活动专区</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" type="text/css" href="css/scrollbar.css">
+
+<style type="text/css" media="all">
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+    font-size:16px;
+}
+
+ul {list-style:none;}
+img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{
+display:none;
+}
+.rel {
+     position: relative;
+    }
+.abs {
+    position: absolute;
+    }
+.clear:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+    @media screen and (max-width:319px)  { /*老手机*/
+          
+    } 
+    @media screen and (min-width:320px) and (max-width:479px) { /*一般智能手机*/
+      .cdwrapper {font-size:0.65em;}
+      .streamer {font-size:0.85em;}
+      .activity_info p,.img_cap {font-size:0.75em;}
+      .cin_title{font-size:1em;}
+      .cin_address,.jump{font-size:0.85em;}
+     #pullUp {font-size:1em;} 
+    } 
+    @media screen and (min-width:480px) and (max-width:639px) { /*android*/
+      .cdwrapper {font-size:0.95em;}
+      .streamer {font-size:1.25em;}
+      .activity_info p,.img_cap{font-size:1em;}  
+      .cin_title{font-size:1.25em;}
+      .cin_address,.jump{font-size:1em;} 
+      #pullUp {font-size:1em;}   
+    } 
+     @media screen and (min-width:640px) { /*ios*/
+      .cdwrapper {font-size:1.25em;}
+      .streamer {font-size:1.5em;}
+      .activity_info p,.img_cap {font-size:1.25em;}  
+      .cin_title{font-size:1.5em;}
+      .cin_address,.jump{font-size:1.25em;} 
+      #pullUp {font-size:1.25em;} 
+    }      
+    .outer,.main {
+    width:100%;
+    max-width:640px;
+    min-width:320px; 
+    margin:0 auto;   
+    overflow-x:hidden;
+    }
+    .purple {
+    background-color:#7e43a1;   	
+    }
+    .banner {
+    width:100%;
+    display:block;
+    }
+    .cdwrapper{
+	width: 53.125%;
+	top: 68%;
+	height: 15%;
+	left: 50%;
+	border-radius: 12px;
+	margin-left: -27.5%;
+	background-color: #f9ef8d;
+	color:#d6175e; 	
+	font-weight:bold;
+	text-align:center;
+    }
+    #s1,#s2,#s3 {
+    margin:0 auto;
+    width:100%;
+    height:100%;
+    display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+    	}
+    #shrink {
+	position: absolute;
+	width: 20px;
+	height: 11px;
+	background: url(img/shrink.png) no-repeat 50% 50% transparent;
+	right: 5%;
+	top: 50%;
+	margin-top: -15px;
+	-webkit-transition: -webkit-transform 0.2s linear;
+	padding: 10px;
+    }
+    .p_right {-webkit-transform:rotate(-90deg);}
+    .bar {
+		width: 96%;
+		height: 10px;
+		border-radius: 1em;
+		background-color: #36124c;
+		margin: 0 auto;
+    	}
+    .streamer {
+		width: 92%;
+		color: #ffffff;
+		margin: 0 auto;
+		margin-top: -10px;
+		z-index: 1;
+		background-color: rgba(200,34,96,0.95);
+		padding: 2% 0;
+		text-indent:4%;
+    	}
+    	.fringe {
+    	width: 92%;
+    	height:6px;
+    	background:url(img/fringe.png) repeat-x transparent;
+    	margin: 0 auto;
+    		}
+    	.rotation_h {width:100%;}
+    	.fs_20 {color:#f9ef8d;}
+    	.activity_info {color: #ffffff;padding: 2% 8%;width: 84%;margin: 0 auto;}
+    	.activity_info p {margin-top:3%;}
+    	#slide_wrap {width:87.5%;margin:2% auto;overflow:hidden;}
+    	#slide_wrap ul,#dlWrapper ul {overflow:hidden;display:-webkit-box;}
+    	#slide_wrap ul li {text-align:center;}
+    	#slide_wrap ul li a {text-decoration:none;color:#ffffff;}
+    	#dlWrapper {width:93.75%;margin:0 auto;overflow:hidden;padding:2% 0;}
+    	.btn1 {top:0;left:1%;width:5%;height:83%;position:absolute;display:-webkit-box;background-color:#622a84;-webkit-box-pack: center;-webkit-box-align: center;color:#ffffff;font-weight:bold;}
+    	.btn2 {top:0;right:1%;width:5%;height:83%;position:absolute;display:-webkit-box;background-color:#622a84;-webkit-box-pack: center;-webkit-box-align: center;color:#ffffff;font-weight:bold;}
+    	#left {opacity:0.5;-webkit-transform:rotate(90deg);background:url(img/shrink.png) no-repeat 50% 50% transparent;display: block;width: 100%;height: 100%;}
+       #right {-webkit-transform:rotate(-90deg);background:url(img/shrink.png) no-repeat 50% 50% transparent;display: block;width: 100%;height: 100%;}
+       #mask {
+       	width: 100%;
+		height: 100%;
+		background-color: rgba(40,40,40,0.5);
+		z-index: 8;
+		position: absolute;
+		top: 0;
+		left:0;
+		display:none;
+		max-width:640px;
+		}
+   
+    #rush_ticket {
+	width: 65%;
+	border-radius: 12px;
+	background: -webkit-linear-gradient(top,#f5e683,#f08a2b);
+	padding: 2% 3%;
+	display: block;
+    }
+    #popup {
+	width: 93.75%;
+	/*height: 61%;*/
+	height:374px;
+	border-radius: 4px;
+	background-color: #ffffff;
+	z-index: 9;
+	margin: 0 auto;
+	max-width: 605px;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	margin-left: -47%;
+    }   
+    #scroller {
+	position: relative;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	overflow: scroll;
+	width: 100%;
+	padding: 0;
+   }
+   #wrapper {
+	overflow:auto;
+   height:315px;
+	width:100%;
+	/*height:85%;*/
+	}
+	#cinemaList {
+       /*		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: scroll;	height: 87%;*/			
+		width:100%;
+		position:relative;	
+		}
+		.cin_item {
+		/*height: 25%;*/
+		height:72px;
+		width: 92%;
+		display: -webkit-box;
+		-webkit-box-align: center;
+		padding: 0 4%;border-bottom:1px solid #cccccc;
+		}
+	#oper {
+		height:55px;/*15%*/
+		border-bottom:1px solid #cccccc;
+		display:-webkit-box;
+		-webkit-box-align:center;}
+	#citys,#district {
+		width:30%;
+		height:60%;
+		margin-left:4%;
+		display:block;
+		}
+		#citys option,#district option{text-align:center;}
+		#close {		
+		/*height: 60%;		display: -webkit-box;
+		-webkit-box-align: center;
+		-webkit-box-pack: center;*/
+       display:block;
+		border-radius: 50%;
+		position: absolute;
+		background: url(img/close.png) no-repeat 50% 50% transparent;
+		top: 50%;
+		right: 2%;
+		/*margin-top: -21px;*/
+		}		
+		
+		.seq {
+	    width: 30px;
+		height: 42px;
+		display: -webkit-box;
+		background: url(img/dripet.png) no-repeat 50% 50% transparent;
+		-webkit-box-align: top;
+		-webkit-box-pack: center;
+		font-size: 1.5em;
+		color: #ffffff;
+		background-size:30px 42px;}
+		.cin_info {margin-left:3%;width:60%;}
+		.cin_address {color:#888;}
+		.cin_address,.cin_title {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+		.jump {
+		width: 27%;
+		height: 38px;
+		line-height: 38px;
+		display: block;
+		border-radius: 18px;
+		color: #ffffff;
+		background: -webkit-linear-gradient(top,#a45dc6,#843bab);
+		position: absolute;
+		top: 50%;
+		margin-top: -18px;
+		right: 2%;
+		text-align: center;
+		text-decoration: none;
+		font-weight:bold;
+		box-shadow:1px 2px 0 #542366;}
+</style>
+
+  </head>
+  
+  <body class="rel">
+     <div class="outer rel">
+        <div class="rel">
+        	<img class="banner" src="img/banner.jpg"/>
+		       <div class="cdwrapper abs">
+		       	   <section id="s1" style="display:none">还剩<span id="day"></span>天<span id="hour"></span>小时<span id="mini"></span>分钟<span id="sec"></span>秒开始</section>
+		       	   <section id="s2" style="display:none"><a id="rush_ticket" ticket_type="抢9元票" cine_name="狄仁杰之神都龙王" cine_id="112216">抢票进行中,GO!</a></section>
+		       	   <section id="s3" style="display:none">下期时间:<span id="nextMonth"></span>月<span id="nextDate"></span>日 12:00,等你来！</section>
+		       	</div>
+        </div>
+        <div class="main purple rel">
+	        <div class="bar"></div>
+	        <div class="streamer rel">查看活动详情<span id="shrink"></span></div>
+	        <div class="fringe"></div>
+	        <div class="activity_info">
+	        	 <p>1.	每周六12:00开始限量发放1000张特价票，不限电影、场次，不限2D、3D，先到先得哦;</p>
+	        	 <p>2.	<span class="fs_20">特价票9元/张</span>，每人每周六限购1次，每次最多5张；当日多次参与抢票会以原价进行结算;</p>
+	        	 <p>3.	订单生成后请马上支付，系统按支付先后顺序发放9元特价票，若订单因支付延时失效会进行自动退款;</p>
+	        	 <p>4.	未抢到9元名额别伤心，周六影片<span class="fs_20">全场减十元</span>哦；</p>
+	        	 <p style="text-align:right;"><a href="" target="_blank" style="text-decoration:none;color:#ffffff;">兑换码换票>></a></p>
+	        </div>
+	        
+	        <div id="10area">
+	            <div class="bar" style="margin-top:3%;"></div>
+	            <div class="streamer">周六影片全场普惠<span class="fs_20" style="margin-left:0.75em;font-size:0.75em">购票四折起，折后立减10元！</span></div>
+	            <div class="fringe"></div>
+	        </div>
+	        
+	        <!-- slide -->
+	        <div class="rotation_h rel">
+	          <div class="b_img_wrapper" id="slide_wrap">
+		           <ul>            
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li>   
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯" /><p class="img_cap">天降美食2</p></li>
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li>
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li> 
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li>   
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li>
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li>
+		             <li><img src="img/sample1.jpg" ticket_type="minus10" cine_name="乔布斯"/><p class="img_cap">天降美食2</p></li>         
+		           </ul>	           
+             </div>
+               <div class="abs btn1"><span id="left"></span></div>
+	           <div class="abs btn2"><span id="right"></span></div>
+	       </div><!-- silde end-->	
+	        
+	     <!-- download-->
+	     <div id="dlWrapper">
+	     	<ul>
+	     	  <li><a href=""><img src="img/download1.jpg" /></a></li>
+	     	  <li><a href=""><img src="img/download2.jpg" /></a></li>
+	     	</ul>
+	     </div>
+	     <div id="popup" style="display:none;">
+		        <div id="oper" class="rel">
+		        	 <select id="citys"></select>
+		        	 <select id="district" style=""></select>
+		        	 <span id="close"></span>
+		        </div>
+		        <div id="wrapper" class="clear rel">
+				           <div id="scroller">	              
+			              	  <div id="cinemaList">
+			              	  	  
+			              	  </div>
+			                    
+				              <div id="pullUp">
+							      <span class="pullUpIcon"></span><span class="pullUpLabel">上拉查看更多影院...</span>
+						      </div>
+			              </div>
+		         </div>
+	       </div>
+        </div>
+        <div id="mask"></div>      	        
+     </div>
+     
+             
+ <script type="text/javascript" src="js/MovieOrder.js"></script>
+ <script type="application/javascript" src="js/iscroll.js"></script>
+ <script type="text/javascript" src="js/jquery.js?v=2.0"></script>
+ <script type="text/javascript" src="js/hslide.js?v=2.0"></script>
+ <script type="text/javascript">       
+	 (function(g){
+	   g.utils.initPage().initSlide().initListener();
+	   $("#slide_wrap,#dlWrapper").vslide({auto:1}); 	       	
+	 	})(window);
+ </script>
+</body>
+</html>

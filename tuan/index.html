@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度团购日</title>
+	<meta charset="utf-8">	
+	 <link type="text/css" rel="stylesheet" href="css/LBS-reset.css" /> 
+	 <link rel="stylesheet" href="css/jquery-ui.css?v=1" />
+	<style type="text/css" media="all">
+	body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	    margin: 0;
+	    padding: 0;
+	    font-family: 'Microsoft YaHei';
+	    font-size:16px;
+	}
+	body {background-color:#6D3580;}
+	a {
+	text-decoration:none;
+	}
+	ul {list-style:none;}
+    img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{
+     display:none;
+    }
+	.yahei {font-family:Microsoft YaHei;}
+    .rel {
+     position: relative;
+    }
+    .abs {
+    position: absolute;
+    }
+    .clr_fix {
+    clear: both;
+    }
+    .clearfix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }   
+	#header {
+	    background-color: #ffffff;
+	    height: 36px;
+	}	
+	.header_inner {
+	    height: 36px;
+	    margin: 0 auto;
+	    width: 1000px;
+	}
+	.header_logo {
+    background: url("img/tuan_logo.jpg") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 36px;
+    width: 94px;
+    }
+   
+    #banner {
+    margin:0 auto;
+    height:460px;
+    background:url("img/banner.jpg") no-repeat scroll 50% 0 #b0255e;
+    }
+    #tuangou {
+    height: 575px;/*442px*/
+    left: 50%;
+    margin-left: -528px;/*-433px*/
+    position: absolute;
+    top: -15px;
+    width: 1056px;
+    z-index:3;
+    }
+    #info_banner {
+    width:1000px;
+    height:306px;
+    margin:0 auto;
+    background:url("img/info_banner.jpg") no-repeat scroll 50% 0 transparent;
+    }
+    #activity {
+    width:1000px;
+    height:633px;
+    margin:0 auto;
+    background:url("img/act_bg.jpg") no-repeat scroll 0 0 transparent;
+    }
+    #activity .item {
+    float:left;
+    width:456px;
+    height:602px;
+    margin-left:28px;
+    display:inline;
+    }
+    .item .title1 {
+    width:456px;
+    height:65px;
+    background:url("img/all.gif") no-repeat scroll 0 -198px transparent;
+    }
+    .item .title2 {
+    width:455px;
+    height:65px;
+    background:url("img/all.gif") no-repeat scroll 0 -265px  transparent;
+    }
+    #more_outer {
+    width:1000px;
+    height:204px;
+    margin:0 auto;
+    position:relative;
+    }
+    #more {
+    position:absolute;
+    top:52px;
+    left:336px;
+    width:325px;
+    height:77px;
+    background:url("img/all.gif") no-repeat scroll 0 -114px transparent;
+    }
+
+    #accordion1,#accordion2 {
+    margin-top:7px;
+    }
+    .oper { 
+    height:104px;
+    background-color:#ffffff;   
+    width:396px;
+    padding:10px;
+    margin-top:0;
+    }
+    .caption {
+    font-size:16px;
+    font-weight:bold;
+    color:#444444;
+    line-height:1.8em;
+    }
+    .desc {
+    color: #AAAAAA;
+    font-size: 14px;
+    line-height: 1.3em;
+    overflow: hidden;
+    text-indent: 0.6em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:396px;
+    }
+    .detail {
+    text-indent:0.6em;
+    width:100%;
+    margin-top:1em;
+    height:auto;
+    }
+    .symbol {
+    color:#ff6600;
+    font-size:20px;
+    font-weight:bold;
+    vertical-align:middle;
+    }
+    .price {
+    color: #FF6600;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 0.2em;
+    vertical-align: middle;
+    }
+    .rediscount {
+	background-color: #FF6600;
+	color: #FFFFFF;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	height: 32px;
+	line-height: 16px;
+	margin-left: 14px;
+	padding: 2px 3px;
+	vertical-align: middle;
+	width: 60px;
+	text-indent: 0;
+	text-align: center;
+    visibility:hidden;
+    }
+    .orginal {
+    margin-left:10px;
+    color:#444444;
+    font-size:12px;
+    text-decoration:line-through;
+    }
+    .rush {
+	background-color: #E43462;
+	bottom: 12px;
+	color: #FFFFFF;
+	display: inline-block;
+	font-weight: bold;
+	height: 35px;
+	line-height: 35px;
+	position: absolute;
+	right: 19px;
+	text-align: center;
+	width: 95px;
+	text-decoration: none;
+    }
+    .sub {
+    display: inline-block;
+	width: 62%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+    }
+    .real_discount {
+    color:#444444;
+    font-size:12px;
+    }
+    .population {
+    position:absolute;
+    right:1.4em;
+    }
+    .front .population {
+    position:absolute;
+    right:1.4em;
+    bottom:0;
+    }
+    .tag1 {
+    display: block;
+    background: url("img/all.gif") no-repeat scroll 0 0 transparent;
+    height: 37px;
+    width: 69px;
+
+    }
+    .tag2 {
+    display: block;
+    height: 37px;
+    width: 69px;
+    background-image:url("img/all.gif");
+    }
+    .tags1 {
+    z-index: 1;
+    font-size:16px;
+    color:#ffffff;
+    line-height: 30px;
+    text-align:center;
+    left: 32px;
+    top: 0;
+    }
+    .tags2 {
+    line-height: 30px;
+    text-align:center;
+    left: 110px;
+    top: 0;
+    z-index: 1;
+    visibility:hidden;
+    }
+    .share {
+    right: 137px;
+    top: 6px;	
+    }
+    .front {
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    height: 34px;
+    left: 0;
+    line-height: 34px;
+    text-indent: 1%;
+    width: 416px;
+    z-index: 2;
+    font-weight:bold;
+    visibility:visible;
+    }
+    .rear {
+    display:block;
+    width:416px;
+    height:34px;
+    visibility:visible;
+    background:url("img/hui.png") repeat scroll 0 0 transparent;
+    _background:none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/hui.png" ,sizingMethod="scale");	
+    bottom:0;
+    left:0;
+    z-index: 1;
+    zoom:1;
+    }
+    .seq {
+    background-color: #E43462;
+    height: 20px;
+    left: 20px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    width: 20px;
+    }
+    .illu {
+    display:block;
+    width:416px;
+    height:220px;
+    }
+   /* .op:hover > span {
+    visibility:visible;
+    }*/
+    .op {
+    height:220px;
+    /*overflow:hidden;*/
+    }
+    .range {
+    width:65%;
+    display:inline-block;
+    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+    }
+     #tuanwrapper {
+    width:938px;
+    height:539px;
+    position:absolute;
+    top:72px;
+    left:50%;
+    margin-left:-471px;
+    background:url(img/hui.png) repeat 0 0 transparent; 
+    _background:none;
+    z-index:9;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/hui.png" ,sizingMethod="scale");	
+    }
+    #tuanmask {
+    width:938px;
+    height:539px;
+    position:absolute;
+    top:72px;
+    left:50%;
+    margin-left:-471px;    
+    background:url("img/tuaninfo.gif") no-repeat 50% 50% transparent;	
+    z-index:10;
+    color:#ffffff;
+    }
+    #tuanmask p {width:730px;height:96px;position:absolute;top:38%;left:11%;}
+    #tuanmask em {font-style:normal;font-size:62px;width:160px;height:84px;display:inline-block;zoom:1;margin-left:3%;padding-top:0.8%;}
+    #tuanmask em span {width:100%;height:100%;}
+	</style>
+  </head>
+  
+  <body class="rel">
+     
+     <div id="header" class="rel">
+		       <div class="header_inner rel">
+		          <a target="_blank" href="http://tuan.baidu.com?active_src=bdtuan_bannertuan" class="header_logo"></a>
+		       </div>
+		       <div class="share abs">
+                  <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'#百度团购日#每周五，美食TOP1最畅销团单【每买1单立减10元，多买多减！】娱乐TOP1最畅销团单【消费满50元立减5元！】在这里，保证全网最低价、最优质的团单提供给您，周末美好生活，从百度团购日开始！猛戳>>','pic':'http://tuan.baidu.com/event/fridaytuan/img/share.jpg','url':'http://tuan.baidu.com/event/fridaytuan?active_src=bdtuan_weibo'}"><span class="bds_more">分享到：</span><a class="bds_qzone" id="f_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" id="f_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" id="f_tqq" title="分享到腾讯微博" href="#"></a> <a class="bds_renren" id="f_renren" title="分享到人人网" href="#"></a></div>
+               </div>
+     </div>
+     <div id="banner" class="rel">
+        <object width="1000" height="575" align="middle" id="tuangou" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+        <param value="#FFFFFF" name="bgcolor">
+        <param value="transparent" name="wmode">
+        <param value="flash/top.swf?issue=5" name="movie">
+        <embed width="1056" height="575" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"  src="flash/top.swf?issue=5" wmode="transparent" ver="9.0.0">
+        </object>
+     </div>
+     <div id="info_wrapper">
+       <div id="info_banner"></div>
+     </div>
+     <div id="activity" class="clearfix rel">
+         <div class="item">
+           <div class="title1"></div>
+           <div id="accordion1"></div>
+         </div>
+         <div class="item">
+           <div class="title2"></div>
+           <div id="accordion2"></div>                     
+         </div>
+         <br class="clr_fix"/>
+     </div>
+     <div class="2d_code" style="position:fixed;width:140px;height:185px;top:311px;left:50%;margin-left:522px;background:url(img/all.gif) no-repeat scroll -337px 0 transparent;z-index:4;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+311));"></div><!--  -->
+     <div id="more_outer">
+       		<a id="more" href="http://tuan.baidu.com?active_src=bdtuan_tuanmore" target="_blank"></a>
+     </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+     <script type="text/javascript" src="js/j.ui.min.js"></script>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=194652" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+    <!-- tongji -->
+    <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd3c6cc82b42f014e8457e18c7b36538b' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+    
+  </body>
+</html>
+                    

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>百度地图抽奖活动</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style type="text/css" media="all">
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+    font-size:16px;
+}
+
+ul {list-style:none;}
+ .Yahei {font-family:Microsoft YaHei;}
+
+.fs_24 {font-size: 24px;}
+.fs_18 {font-size: 18px;}
+.fs_16 {font-size: 16px;}
+.fs_15 {font-size: 15px;}
+.fs_14 {font-size: 14px;}
+.fs_12 {font-size: 12px;}
+.rel {
+     position: relative;
+    }
+.abs {
+    position: absolute;
+    }
+.fl {float:left;}
+.clear:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+.outer {
+margin-right:auto;
+margin-left:auto;
+width:100%;
+min-width:320px;
+max-width:640px;
+}
+ul li {
+height:26px;
+line-height:26px;
+margin-top:6px;
+}
+ul li label input {
+margin-right:8px;
+}
+#sur_f {
+ color:#4d5c7a;
+ height:auto;
+ min-width:320px;
+ max-width:640px;
+ margin:0 auto;
+ background:url("img/sur_bg.png") repeat scroll 0 0 transparent;
+ padding-top:5%;
+ padding-bottom:8%;
+}
+.seq {
+display:inline-block;
+width:16px;
+height:16px;
+line-height:16px;
+background-color:#7399e6;
+text-align:center;
+border-radius:50%;
+color:#ffffff;
+margin-right:4px;
+}
+.sur_title {
+padding-left:4.625%;
+color:#7399e6;
+margin-bottom:10px;
+}
+
+#submit_sur {
+display:block;
+margin:25px auto 0;
+width:84.375%;
+height:50px;
+line-height:50px;
+text-align:center;
+text-decoration:none;
+background-image: -moz-linear-gradient(top, #3965a5, #2e5299); 
+background-image: -webkit-gradient(linear, left top,left bottom, color-stop(0, #3965a5), color-stop(1, #2e5299)); 
+color:#ffffff;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#pop_mask {
+width: 100%;
+height: 100%;
+display: none;
+z-index:1;
+position:absolute;
+top:0;
+}
+#popup_wrap{
+width:270px;
+height:auto;
+z-index:2;
+/*-moz-opacity:0.7;
+-webkit-opacity:0.7;            
+opacity: 0.7;*/
+background-color:rgba(237,239,245,0.9);
+margin:0 auto;
+padding-bottom: 15px;
+padding-top: 35px;
+border-radius:4px;
+border:1px solid #6690cc;
+ }
+#popup_cnt {
+width:84.48%;
+margin:0 auto;
+color:#485876;
+font-size:14px;
+}
+#popup_cnt p {
+margin-top:5px;
+}
+#popup_cnt input,#popup_cnt textarea {
+width:170px;
+margin-left:5px;
+}
+#confirmed {
+display:block;
+width:220px;
+height:40px;
+line-height:40px;
+text-align:center;
+color:#ffffff;
+font-size:18px;
+font-weight:bold;
+margin:0 auto;
+background-color:#6690cc;
+border-radius:4px;
+margin-top:20px;
+}
+#close_btn {
+    background-color: #93A8C6;
+    border-radius: 50% 50% 50% 50%;
+    color: #EDEFF5;
+    display: block;
+    font-size: 27px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    right: 6px;
+    text-align: center;
+    text-indent: 0;
+    top: 6px;
+    width: 25px;
+    cursor:pointer;
+}
+#q1,#q2 {
+padding-left:4.625%;
+}
+#single_ul,#multi_ul {
+padding-left:12%;
+margin-top:6px;
+}
+</style>
+  </head>
+  
+  <body class="rel">
+            
+	     <div class="outer">
+	        <form id="sur_f">
+	         <p class="sur_title">调查问题:</p>
+	         <section>
+	           <p id="q1"><span class="seq">1</span>你通常什么情况下使用百度地图最多？(单选)</p>
+		         <ul id="single_ul">
+		           <li><label><input type="radio" value="1"  name="single"/>旅游或出差时找路、查地点</label></li>
+		           <li><label><input type="radio" value="2" name="single"/>平时用地图搜索好吃、好玩的地方</label></li>
+		           <li><label><input type="radio" value="3" name="single"/>开车出远门时用地图找路和导航</label></li>
+		         </ul>
+	         </section>
+	         
+	         <section>
+	             <p id="q2" style="margin-top:6px"><span class="seq">2</span>你平时使用百度地图的哪些功能？(多选)</p>
+	             <ul id="multi_ul">
+		           <li><label><input type="checkbox" value="1"  name="multi"/>查路线</label></li>
+		           <li><label><input type="checkbox" value="2" name="multi"/>找地点</label></li>
+		           <li><label><input type="checkbox" value="3" name="multi"/>找团购和优惠</label></li>
+		           <li><label><input type="checkbox" value="4" name="multi"/>驾车导航</label></li>
+		           <li><label><input type="checkbox" value="5" name="multi"/>位置共享</label></li>
+		           <li><label><input type="checkbox" value="6" name="multi"/>看卫星地图</label></li>
+		           <li><label><input type="checkbox" value="7" name="multi"/>定个位, 看看我在哪儿</label></li>
+		         </ul>
+	         </section>
+	         <input type="hidden" id="pid" value=""/>
+	         <input type="hidden" id="prize_name" value=""/>
+	         <input type="hidden" id="prize_key" value=""/>
+	         <input type="hidden" id="hasLottery" value="0"/>	         
+	         <a id="submit_sur">提交并参与抽奖</a>
+	     </form>     
+         <div id="pop_mask"></div>
+         <!-- 弹窗 -->
+         <div id="popup_wrap" class="rel" style="display:none;">
+             <div id="popup_cnt"></div>
+             <a id="confirmed">确定</a>
+             <a id="close_btn" class="abs">×</a>
+         </div>
+	     </div>
+             <img id="statImg" src="img/transparent.gif" style="display:none" /> 
+     <script type="text/javascript" src="js/zepto.min.js"></script>
+     <script type="text/javascript" src="js/config.js"></script>
+     <script type="text/javascript">
+        $(function(){
+        	if(getPlatform().ios){
+        		addStat(invest_ios_pv);
+        	}if(getPlatform().android){
+        		addStat(invest_android_pv);
+        	}
+        	$("#submit_sur").on("click",function(){
+        		addStat(start_lottery);
+        		if($("#hasLottery").val()==="1"){
+        			$("#pid").val("");
+        			$("#pop_mask").show();
+        			$("#popup_cnt").html("很抱歉 您已经参与过抽奖了<br/>感谢您对百度地图的支持！").closest("#popup_wrap").show();
+        			return false;
+        		}
+        		if($("input[name='single']:checked").val()===undefined||$("input[name='multi']:checked").val()===undefined){ 
+        			$("#pid").val("");
+        			$("#pop_mask").show();
+        			$("#popup_cnt").html("要回答全部两个问题才可以参与抽奖哦！").closest("#popup_wrap").show();       			
+        			return false;
+        		}
+        		var s_val = $("input[name='single']:checked").val(),
+        		      m_vals = [];
+        		$("input[name='multi']:checked").each(function(i,v){
+        			m_vals.push($(v).val());
+        		});
+        		var post_date = {single:s_val,multi:m_vals};
+        		//提交选题信息
+        		$.ajaxJSONP({
+        			url:GLOBAL_URL+"/zt_lottery/index.php/laoyonghu/lottery?callback=?&single="+s_val+"&multi="+JSON.stringify(m_vals),
+        			success:function(re){
+        				if(re.status===0){
+        					$("#pid").val("");
+        					$("#pop_mask").show();
+                			$("#popup_cnt").html("很遗憾 您没有中奖<br/>感谢您对百度地图的支持！").closest("#popup_wrap").show();               			
+        				}
+        				if(re.status===1){
+        				    var bingo = "<p class='popup_info'>恭喜你！获得<span style='color:#4876cf;'>"+re.prize_name+"</span> 请填写以下个人信息，以方便我们和你取得联系！</p>"+
+        				                      "<p><label>姓&nbsp;&nbsp;&nbsp;&nbsp;名<input style='margin-left:6px;' type='text' value='' id='user_name'/></label></p>"+
+        				                      "<p><label>手机号<input type='tel' value='' id='cellphone'/></label></p>"+
+        				                      "<p><label style='vertical-align:top;'>地&nbsp;&nbsp;&nbsp;&nbsp;址<textarea style='margin-left:6px;' id='address'></textarea></label></p>"+
+        				                      "<p>提示：中奖用户我们会在一周之内和你取得联系，请耐心等待。</p>";
+        				    $("#pid").val(re.pid);
+        				    $("#prize_key").val(re.prize_key);
+        				    $("#pop_mask").show();
+        				    $("#popup_cnt").html(bingo).closest("#popup_wrap").show();
+        				    addStat(win_prize_user);
+        				}
+        				$("#hasLottery").val("1");
+        			}
+        		})
+        	});
+        	$("#close_btn").on("click",function(){
+        		$("#pop_mask").hide();
+        		$(this).closest("#popup_wrap").hide();
+        	});
+        	$("#confirmed").on("click",function(){
+        		var pid = $("#pid").val();
+        		     
+        		if(pid!=""){
+        			var  prize_key = $("#prize_key").val(),
+       		               name = $("#user_name").val(),
+       		               address = $("#address").val(),
+       		               tel = $("#cellphone").val();
+        			if(name==""){
+        				alert("请填写您的姓名");
+        				return;
+        			}
+        			if(tel==""){
+        				alert("请填写您的手机号");
+        				return;
+        			}
+        			if(address==""){
+        				alert("请填写您的地址");
+        				return;
+        			}
+        			$.ajaxJSONP({
+        				url:GLOBAL_URL+"/zt_lottery/index.php/laoyonghu/save_user?callback=?&pid="+pid+"&prize_key="+prize_key+"&name="+encodeURIComponent(name)+"&phone="+tel+"&address="+encodeURIComponent(address),
+        				success:function(data){
+        					if(data.error===0){
+        						$("#pid").val("");
+        						alert("提交成功!");
+        						$("#pop_mask").hide();
+        		        		$("#popup_wrap").hide();
+        					}
+        				}
+        			})
+        		}else{
+        			$(this).next().trigger("click");
+        		}
+       		
+        	})
+        	popupUpdate();
+        	function popupUpdate(){    
+          	    var getClientSize = function(){
+          	        if(document.compatMode === "CSS1Compat"){
+          	            return {
+          	                width:document.documentElement.clientWidth,
+          	                height:document.documentElement.clientHeight
+          	            }
+          	        }else{
+          	            return {
+          	                width:document.body.clientWidth,
+          	                height:document.body.clientHeight
+          	            }
+          	        }
+          	    }; 
+          	    var getPageHeight = function(){
+          	            var D = document;
+          	            return Math.max(
+          	            Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+          	            Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+          	            Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+          	        );
+          	    };
+          	  $("#popup_wrap").css({position:"absolute",top:Math.abs(getClientSize().height-338)/2+"px",left:(getClientSize().width-270)/2+"px"});
+              }
+        	function getPlatform (){
+        		var sys = {
+               		 ios:false,
+               		android:false
+               	},ua = navigator.userAgent;
+        		sys.ios = ua.indexOf("iPhone")>-1;
+        		sys.android = ua.indexOf("Android")>-1;
+        		return sys;       		
+        	}
+        	  $(window).on("resize",function(){
+        		  popupUpdate();
+        	  });        	  
+       	 
+        })
+         
+     </script>     
+  </body>
+</html>

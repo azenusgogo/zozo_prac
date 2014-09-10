@@ -1,0 +1,243 @@
+/*
+Copyright (c) 2011, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.9.0
+*/
+/**
+ * YUI Reset
+ * @module reset
+ * @namespace
+ * @requires 
+ */
+html {
+	color: #000;
+}
+body{
+    font-size: 12px;
+    font-family:Microsoft YaHei;
+    position:relative;
+    min-width:980px;
+
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, select, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,img {
+	border: 0;
+	display: inline-block;
+}
+
+address, button, caption, cite, code, dfn, em, input, optgroup, option, select, strong, textarea, th, var {
+    /*font: inherit;*/
+}
+
+/*del,ins {
+	text-decoration: none;
+}*/
+
+li {
+	list-style: none;
+}
+
+caption,th {
+	text-align: left;
+	font-weight:normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+abbr,acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+sup {
+	vertical-align: baseline;
+}
+
+sub {
+	vertical-align: baseline;
+}
+
+/*because legend doesn't inherit in IE */
+legend {
+	color: #000;
+}
+html,body {
+	min-width:320px;
+	font-size: 16px;
+    font-family:Microsoft YaHei;
+    position:relative;
+    min-width:320px;
+	}
+	a {text-decoration:none;}
+	img[src="http://eiv.baidu.com/hmt/icon/21.gif"]{
+     display:none;
+    }
+    #main {
+    width:100%;
+    margin:0 auto;
+    min-width:320px;
+    max-width:640px;
+    }
+
+    .banner {
+    display:block;
+    width:100%;
+    margin:0 auto;
+    max-width:640px;
+    min-width:320px;
+    }
+    #cnt {
+    width:100%;
+    margin:0 auto;
+    min-width:320px;
+    max-width:640px;
+    background-color:#572967;
+    padding-bottom:1%;
+    }
+    #cnt .item {
+    width:90.625%;
+    margin:0 auto;
+    margin-bottom:4%;
+    }
+        
+    #cnt .title1,#cnt .title2{
+    width:100%;
+    margin:0 auto;  
+    }
+    #accordion1,#accordion2 {background-color:#ffffff;}
+    .title1 img {width:100%;display:block;}
+    .title2 img {width:100%;display:block;}
+    #accordion1 {
+	width: 98%;
+	margin-top: 1%;
+	display: -webkit-box;
+	display: -moz-box;
+	-webkit-box-align:center;
+	-moz-box-align:center;
+	padding: 1%;
+    }
+    .illustration {
+    width:100%;
+    display:block;
+    }
+    .desc {
+    width:58%;
+    margin-left:4%;
+    }
+    .desc_title {
+    color:#444444;
+    width:98%;
+    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;  
+	font-weight:bold; 
+	padding:4% 0; 
+    }
+    .desc_detail {
+    color:#aaaaaa;
+    font-size:8px;
+    width:98%;
+    line-height:1;
+    }
+     @media screen and (max-width:319px)  { /*老手机*/
+        .desc_title {font-size:0.5em;}
+      .desc_detail {font-size:0.35em;}
+      .symbol{font-size:0.5em;}
+      .price {font-size:0.75em;}
+      .rediscount {font-size:0.35em;}
+      .orginal {font-size:0.35em;}
+      .rush {font-size:0.5em;} 
+    } 
+    @media screen and (min-width:320px) and (max-width:479px) { /*一般智能手机*/
+      .desc_title {font-size:0.75em;}
+      .desc_detail {font-size:0.6em;}
+      .symbol{font-size:0.75em;}
+      .price {font-size:0.9375em;}
+      .rediscount {font-size:0.5em;}
+      .orginal {font-size:0.5em;}
+      .rush {font-size:0.75em;} 
+    } 
+    @media screen and (min-width:480px) and (max-width:639px) { /*android*/
+      .desc_title {font-size:1.25em;}
+      .desc_detail {font-size:0.85em;}
+      .symbol{font-size:1.25em;}
+      .price {font-size:1.375em;}
+      .rediscount {font-size:0.5625em;}
+      .orginal {font-size:0.5625em;}
+      .rush {font-size:0.8125em;}
+    } 
+     @media screen and (min-width:640px) { /*ios*/
+      .desc_title {font-size:1.25em;}
+      .desc_detail {font-size:1em;}
+      .symbol{font-size:1.25em;}
+      .price {font-size:1.875em;}
+      .rediscount {font-size:0.5em;}
+      .orginal {font-size:0.75em;}
+      .rush {font-size:1.125em;}
+    } 
+    .oper {
+    width: 100%;
+    margin-top: 5%;
+    height: auto;
+    position:relative;
+    }
+    .symbol {
+    color: #ff6600;
+    font-weight: bold;
+    vertical-align: middle;
+    }
+    .price {
+	color: #FF6600;
+	font-weight: bold;
+	margin-left: 0.1em;
+	vertical-align: middle;
+    }
+    .rediscount {
+	background-color: #FF6600;
+	color: #FFFFFF;
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 3%;
+	width: 20%;
+	padding:1% 0;
+	text-align:center;
+    }
+    .orginal {
+    margin-left:3%;
+    color:#444444;
+    text-decoration:line-through;
+    }
+    .rush {
+	background-color: #E43462;
+	bottom: 2%;
+	color: #FFFFFF;
+	display: inline-block;
+	font-weight: bold;
+	position: absolute;
+	right: 2%;
+	text-align: center;
+	width: 28%;
+	text-decoration: none;
+	padding: 3% 1%;
+    }
+    .imgwrapa {
+    display: block;
+    width: 38%;
+    }

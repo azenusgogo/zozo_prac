@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>POI纠错寻宝第一期</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/cofig.js?v=1"></script>
+</head>
+<body>
+    <div class="jiu_content clearfix">
+        <div class="jiu_left">
+            <!--not-login-title start-->
+            <div class="jiu_tit">
+                <a href="javascript:void(0)" title="登录参与活动" class="jiu_btn login_btn"></a>登录纠错 抽取自己喜爱的宝贝
+            </div>
+            <!--not-login-title end-->
+            <!--success-login-title start-->
+            <div class="login-box" style="display: none;">
+                <h3><span class="f18 uname"></span> 你好：</h3>
+                <strong>今天你还有 <span class="orange uchance">2</span> 次抽奖机会，点击<span class="orange">“抽奖”</span>开始吧。</strong>
+                <p>我们非常感谢您已为地图贡献<span class="utotal">0</span>条纠错。<a href="http://tousu.baidu.com/pscenter" title="" class="blue" target="_blank">详情查看</a></p>
+            </div>
+            <!--success-login-title end-->
+            <div class="jiu_actionbox">
+                <h3>活动介绍</h3>
+                <ul class="jiu_actionList clearfix">
+                    <li>
+                        <span class="num1">1</span>
+                        <span class="rt">1月18日—1月25日期间每个用户每提供一次纠错，可活动一次纠错转转盘摇转机会。每人每天最多可获得<span class="orange">5次</span>机会。<br/>
+                                                            （如贡献纠错为垃圾信息，中奖视为无效，<a href="javascript:void(0)" title="详见" class="blue detail">详见</a>）<br/><p><span class="gift"></span>如何更容易抽中大奖 <a href="javascript:void(0)" title="请戳我"class="blue detail">请戳我</a></p>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="num1">2</span>
+                        <span class="rt">
+                                                          活动结束，我们将从纠错信息被采纳用户中随机抽取<span class="orange">10名</span>，授予百度地图纠错达人称号，并奖励神秘礼包一份。
+                        </span>
+                    </li>
+                </ul>
+            </div><!--jiu_actionbox end-->
+            <div class="jiu_userbox">
+                <h3>获奖用户</h3>
+                <marquee onMouseOut="this.start()" onMouseOver="this.stop()">
+                <ul class="jiu_userTxt"></ul>
+                </marquee>
+            </div><!--jiu_userbox end-->
+        </div><!--jiu_left end-->
+        <div class="jiu_right">
+            <div id="jiu_flash">
+                
+            </div><!--jiu_flash end-->
+        </div><!--jiu_right end-->
+    </div><!--jiu_content end-->
+    <!--login_pop start-->
+    <div class="prompt_box clearfix login_pop" style="display:none;">
+        <div class="prompt_title clearfix"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div><!--prompt_title end-->
+        <div class="prompt_txt">
+            <p>赶快登录参与抽奖吧 好礼等你拿哦！</p>
+            <a href="javascript:void(0)" title="" class="btn login_btn">登录</a>
+        </div>
+    </div>
+    <!--login_pop end-->
+    <!--success_pop start-->
+    <div class="prompt_box clearfix success_pop" style="display:none;">
+        <div class="prompt_title clearfix"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div><!--prompt_title end-->
+        <div class="prompt_txt">
+            <p><span class="smile"></span>恭喜你！抽中了 <span class="award"></span>。</p>
+            <a href="javascript:void(0)" title="" class="btn fill_info">填写信息</a>
+        </div>
+    </div>
+    <!--success_pop end-->
+    <!--fail_pop start-->
+    <div class="prompt_box clearfix fail_pop" style="display:none;">
+        <div class="prompt_title clearfix"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div><!--prompt_title end-->
+        <div class="prompt_txt clearfix">
+            <p><span class="wish"></span>今天运气欠佳，再贡献几条试试！</p>
+            <a href="http://map.baidu.com/" title="" class="btn btn_more" target="_blank">再贡献几条</a>
+            <a href="javascript:void(0)" title="" class="btn btn_close">关闭</a>
+        </div>
+    </div>
+    <!--fail_pop end-->
+    <!--trymore_pop start-->
+    <div class="prompt_box clearfix trymore_pop" style="display:none;">
+        <div class="prompt_title clearfix"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div><!--prompt_title end-->
+        <div class="prompt_txt clearfix">
+            <p><span class="wish"></span>先贡献几条报错吧！</p>
+            <a href="http://map.baidu.com/" title="" class="btn btn_more" target="_blank">再贡献几条</a>
+            <a href="javascript:void(0)" title="" class="btn btn_close">关闭</a>
+        </div>
+    </div>
+    <!--trymore_pop end-->
+    <!--limit_pop start-->
+    <div class="prompt_box clearfix limit_pop" style="display:none;">
+        <div class="prompt_title clearfix"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div><!--prompt_title end-->
+        <div class="prompt_txt clearfix">
+            <p><span class="wish"></span>感谢您的支持，今天的次数已达上限。欢迎明天继续支持。</p>
+        </div>
+    </div>
+    <!--limit_pop end-->
+    <div class="tips_box jiu_complete" style="display:none;">
+        <div class="jiu_completeTit"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div>
+        <div class="jiu_completeContent">
+            <div class="jiu_completegan clearfix"><span class="xin"></span>感谢一路以来对<span class="cole7">百度地图</span>的支持。<br/><em class="f15">出行更精准，缺你不可！</em></div><!--jiu_completegan end-->
+            <div class="jiu_completeTxt">
+                <h3>填写获奖地址</h3>
+                <input type="hidden" value="" id="reward_key">
+                <ul class="jiu_completeList clearfix">
+                    <li><span>姓名</span><input class="complete_input reward_name" maxlength="6"></li>
+                    <li><span>电话</span><input class="complete_input reward_phone" maxlength="11"></li>
+                    <li><span>地址</span><input class="complete_input reward_address" maxlength="64"></li>
+                    <li><a href="javascript:void(0)" title="" class="btn btn_submit">提交信息</a><span class="error">请填写完整的个人信息</span></li>
+                </ul>
+                <p>* 请准确填写地址，如因地址无法配送而导致无法送奖；用户自行承担。<br/>* 奖品将于活动结束后一周左右发出，请中奖用户耐心等待。<br/>* 欢迎加入地图用户群 <span class="cole7">230449399</span>，加群请注明【纠错】<br/></p>
+            </div><!--jiu_jiu_completeTxt end-->
+        </div><!--jiu_completeContent end-->
+    </div><!--jiu_complete end-->
+    <div class="tips_box tips_rules" style="display:none;">
+        <div class="jiu_completeTit"><a href="javascript:void(0)" title="" class="closed"></a><strong>温馨提示</strong></div>
+        <div class="jiu_completeContent">
+            <div class="jiu_completeTxt">
+                <p>
+                    <span class="red">1 如出现多次贡献重复纠错用户，中奖名额会被视为无效，请知晓。</span><br />
+                    <span class="red">2 活动仅限于地点类报错（PC端）。</span><br />
+                    <span class="red">3 标注红星信息请务必填写。</span><br />
+                    4 名称字有错误的，不用提交营业执照;完全不一样需要提交营业执照。<br />
+                    5.简单的有地图上错误名称和正确名称；详细的有营业执照说明、投诉人电话。<br />
+                    6“分类不同”不能修改。如餐饮改为理发店，门诊改为医院。<br />
+                    7.原商户关闭了，同时有新开业的商户。第一要走新增（商户标注），第二要在投诉页面告知反馈关闭信息。<br />
+                    8.请不要恶意提交修改他人信息。如：蒙娜丽莎婚纱摄影修改为IQ蒙娜丽莎婚纱摄影,再变成IQ婚纱摄影。<br />
+                    9.请不要反复提交不同电话、其中手机号不录入。若反复提交不同电话，会将电话滞空。如：搬家公司、广告公司不断提交不同电话，专员无法确认准确性。<br />
+                </p>
+            </div><!--jiu_jiu_completeTxt end-->
+        </div><!--jiu_completeContent end-->
+    </div><!--jiu_complete end-->
+    <div class="pop_mask"></div>
+    <img id="statImg" src="images/transparent.gif" style="display:none" />
+    <script type="text/javascript" src="http://fe.bdimg.com/tangram/2.0.2.0.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+    <iframe id="loginIframe" src="" style="display: none"></iframe>
+</body>
+</html>
